@@ -1,2 +1,2 @@
 # Projects
-these are the projects I've authored outside of school.
+This is a personal project for the Kalimudan Foundation Incorporated
