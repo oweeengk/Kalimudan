@@ -3,6 +3,5 @@ from . import views
 
 app_name = "homepage"
 urlpatterns = [
-  # ex: /polls/
   path("", views.index, name="index"),
 ]
