@@ -9,4 +9,10 @@ urlpatterns = [
   path("volunteering/", views.volunteering, name="volunteering"),
   path("projects/", views.projects, name="projects"),
   path("tesda/", views.tesda, name="tesda"),
+  path("about/orgchart", views.orgchart, name="orgchart"),
+  path("about/visitkfi", views.visitkfi, name="visitkfi"),
+  path("about/accreditations", views.accreditations, name="accreditations"),
+  path("about/administration", views.administration, name="administration"),
+  path("about/factsandfigures", views.factsandfigures, name="factsandfigures"),
+  path("about/vmgs", views.vmgs, name="vmgs"),
 ]

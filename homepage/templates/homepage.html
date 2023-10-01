@@ -12,188 +12,10 @@
       crossorigin="anonymous"
     />
 
-    <style>
-      .navbar {
-        font-family: 'Merriweather', serif !important;
-      }
-      .navbar-nav .nav-item .nav-link {
-        color: black;
-        text-decoration: none; /* Remove default link underline */
-      }
-
-      /* Style for active navbar link with underline */
-      .navbar-nav .nav-item .nav-link.active {
-        text-decoration: underline;
-      }
-      .search-btn-wide {
-        min-width: 120px;
-      }
-      footer a {
-        text-decoration: none;
-      }
-
-      /* Change link color to yellow on hover */
-      a.text-reset:hover {
-        color: orange !important; 
-      }
-    </style>
-
-
     <title>Home - Kalimudan Sa Ranao</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white pt-0">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'homepage:index'%}">
-          <img
-            src="https://raw.githubusercontent.com/oweeengk/Kalimudan/main/photos/Kalimudan%20sa%20ranao%20inc.png"
-            alt="KFI LOGO"
-            class="img-fluid navbar-brand-img"
-          />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-5">
-            <li class="nav-item me-2">
-              <a class="nav-link active fw-bold" aria-current="page" href="{% url 'homepage:index'%}">Home</a>
-            </li>
-            <li class="nav-item dropdown me-2">
-              <a
-                class="nav-link dropdown-toggle fw-bold"
-                href="{% url 'homepage:about' %}"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                About
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                  <a class="dropdown-item" href="#">Organizational Chart</a>
-                </li>
-                <li><a class="dropdown-item" href="#">Visit KFI</a></li>
-                <li><a class="dropdown-item" href="#">Facts and Figures</a></li>
-                <li><a class="dropdown-item" href="#">Administration</a></li>
-                <li><a class="dropdown-item" href="#">Vision</a></li>
-                <li><a class="dropdown-item" href="#">Mission</a></li>
-                <li><a class="dropdown-item" href="#">Goals</a></li>
-                <li><a class="dropdown-item" href="#">Accreditations</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item" href="{% url 'homepage:about' %}">About</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown me-2">
-              <a
-                class="nav-link dropdown-toggle fw-bold"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                News
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Projects</a></li>
-                <li><a class="dropdown-item" href="#">Notices</a></li>
-                <li><a class="dropdown-item" href="#">Statements</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item" href="{% url 'homepage:news' %}">General News</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown me-2">
-              <a
-                class="nav-link dropdown-toggle fw-bold"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Volunteering
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Apply</a></li>
-                <li><a class="dropdown-item" href="#">Notices</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="{% url 'homepage:volunteering' %}">Volunteering</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown me-2">
-              <a
-                class="nav-link dropdown-toggle fw-bold"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Projects
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Partners</a></li>
-                <li><a class="dropdown-item" href="#">Information</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="{% url 'homepage:projects' %}">Projects</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown me-2">
-              <a
-                class="nav-link dropdown-toggle fw-bold"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                TESDA
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                  <a class="dropdown-item" href="#">Courses Offered</a>
-                </li>
-                <li><a class="dropdown-item" href="#">Information</a></li>
-                <li><a class="dropdown-item" href="#">Facts and Figures</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="{% url 'homepage:tesda' %}">TESDA</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown me-2">
-              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img
-                  src="https://raw.githubusercontent.com/oweeengk/Kalimudan/main/photos/searchbutton2.png"
-                  alt="SEARCHBUTTON"
-                  class="img-fluid navbar-brand-img"
-                />
-              </a>
-               <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="searchDropdown">
-                <li>
-                  <form class="px-3 py-0">
-                    <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="searchButton">
-                      <button class="btn btn-outline-secondary search-btn-wide" type="button" id="searchButton">Search</button>
-                    </div>
-                  </form>
-                </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    {% include 'static/navbar.html' %}
     
     <div id="carouselExampleDark" class="carousel carousel-lightdesk slide" data-bs-ride="carousel" >
       <div class="carousel-indicators">
@@ -376,17 +198,23 @@
     </div>
     <br>
 
-    <figure>
-      <blockquote class="blockquote">
-        <h1 class="display-1" style="color: orange;">We help people start on what they know and build on what they have
-        </p>
-      </blockquote>
-      <figcaption class="blockquote-footer">
-        Company motto in <cite title="Source Title">Kalimudan</cite>
-      </figcaption>
-    </figure>
+    <div class="container">
+      <div class="mx-auto">
+        <figure>
+          <blockquote class="blockquote">
+            <h1 class="display-1" style="color: green;">We help people start on what they know and build on what they have
+            </p>
+          </blockquote>
+          <figcaption class="blockquote-footer">
+            Company motto in <cite title="Source Title">Kalimudan</cite>
+          </figcaption>
+        </figure>
+        <br />{% lorem 4 p random %}<br><br>
+      </div>
+    </div>
 
-    <br />{% lorem 4 p random %}</h3><br><br>
+    
+
   
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -470,7 +298,7 @@
         style="background-color: rgba(0, 0, 0, 0.05)"
       >
         © 2023 Copyright:
-        <a class="text-reset fw-bold" href="!#">Kalimudan Foundation Inc.</a>
+        <a class="text-reset fw-bold" href="#">Kalimudan Foundation Inc.</a>
       </div>
 
     </footer>
