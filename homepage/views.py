@@ -4,7 +4,6 @@ from django.template import loader
 from django.http import Http404
 
 def index(request):
-  #return HttpResponse("WTF")
   return render(request, "homepage.html")
 
 def about(request):
@@ -21,3 +20,23 @@ def projects(request):
 
 def tesda(request):
   return render(request, "tesda.html")
+
+def orgchart(request):
+  return render(request, "about/orgchart.html")
+
+def visitkfi(request):
+  return render(request, "about/visitkfi.html")
+
+def accreditations(request):
+  return render(request, "about/accreditations.html")
+
+def administration(request):
+  return render(request, "about/administration.html")
+
+def factsandfigures(request):
+  return render(request, "about/factsandfigures.html")
+
+def vmgs(request):
+  return render(request, "about/vmgs.html")
+
+
