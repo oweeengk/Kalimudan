@@ -1,34 +1,30 @@
-    <style>
-      .navbar {
-        font-family: 'Comic Sans MS', serif !important;
-      }
-      .navbar-nav .nav-item .nav-link {
-        color: darkgreen;
-        text-decoration: none;
-      }
-
-      /* Style for active navbar link with underline */
-      .navbar-nav .nav-item .nav-link.active {
-        color: darkgreen;
-        text-decoration: underline;
-      }
-      .search-btn-wide {
-        min-width: 120px;
-      }
-      footer a {
-        text-decoration: none;
-      }
-
-      /* Change link color to yellow on hover */
-      a.text-reset:hover {
-        color: green !important; 
-      }
-    </style>
+<style>
+  .navbar {
+    font-family: 'Comic Sans MS', serif !important;
+  }
+  .navbar-nav .nav-item .nav-link {
+    color: darkgreen;
+    text-decoration: none;
+  }
+  .navbar-nav .nav-item .nav-link.active {
+    color: darkgreen;
+    text-decoration: underline;
+  }
+  .search-btn-wide {
+    min-width: 120px;
+  }
+  footer a {
+    text-decoration: none;
+  }
+  a.text-reset:hover {
+    color: green !important; 
+  }
+</style>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white pt-0">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'homepage:index'%}">
-          <img
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'homepage:index'%}">
+      <img
             src="https://raw.githubusercontent.com/oweeengk/Kalimudan/main/photos/Kalimudan%20sa%20ranao%20inc.png"
             alt="KFI LOGO"
             class="img-fluid navbar-brand-img"
@@ -48,7 +44,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-5">
             <li class="nav-item me-2">
-              <a class="nav-link active fw-bold" aria-current="page" href="{% url 'homepage:index'%}">Home</a>
+              <a class="nav-link fw-bold" aria-current="page" href="{% url 'homepage:index'%}">Home</a>
             </li>
             <li class="nav-item dropdown me-2">
               <a
