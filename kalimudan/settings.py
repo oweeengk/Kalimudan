@@ -33,9 +33,6 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'homepage.apps.HomepageConfig',
     'polls.apps.PollsConfig',
-    'accreditations.apps.AccreditationsConfig',
-    'vmg.apps.VmgConfig',
-    'orgchart.apps.OrgchartConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
