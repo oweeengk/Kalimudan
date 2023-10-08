@@ -1,6 +1,6 @@
 <style>
   .navbar {
-    font-family: 'Comic Sans MS', serif !important;
+    font-family: 'sans-serif', serif !important;
   }
   .navbar-nav .nav-item .nav-link {
     color: darkgreen;
@@ -77,7 +77,7 @@
             <li class="nav-item dropdown me-2">
               <a
                 class="nav-link dropdown-toggle fw-bold"
-                href="#"
+                href="{% url 'homepage:news' %}"
                 id="navbarDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -98,7 +98,7 @@
             <li class="nav-item dropdown me-2">
               <a
                 class="nav-link dropdown-toggle fw-bold"
-                href="#"
+                href="{% url 'homepage:volunteering' %}"
                 id="navbarDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -116,7 +116,7 @@
             <li class="nav-item dropdown me-2">
               <a
                 class="nav-link dropdown-toggle fw-bold"
-                href="#"
+                href="{% url 'homepage:projects' %}"
                 id="navbarDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -134,7 +134,7 @@
             <li class="nav-item dropdown me-2">
               <a
                 class="nav-link dropdown-toggle fw-bold"
-                href="#"
+                href="{% url 'homepage:tesda' %}"
                 id="navbarDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
