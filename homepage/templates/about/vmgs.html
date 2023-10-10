@@ -11,27 +11,65 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-
+    <style>
+      .green-card-header {
+        background-color: green;
+        color: green; /* Add white text color for better visibility */
+      }
+    </style>
     <title>VMGs - Kalimudan Sa Ranao</title>
   </head>
   <body>
     {% include 'static/navbar.html' %}
     <!--"https://raw.githubusercontent.com/oweeengk/Kalimudan/main/photos/4.jpg"-->
-    
 
     <div class="container">
       <div class="mx-auto">
-        <figure>
-          <blockquote class="blockquote">
-            <h1 class="display-1" style="color: green;">Vision-Mission-Goals page boilerplate
-            </p>
-          </blockquote>
-          <figcaption class="blockquote-footer">
-            Company motto in <cite title="Source Title">Kalimudan</cite>
-          </figcaption>
-        </figure>
-
-        <br />{% lorem 4 p random %}<br><br>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card bg-light mb-4" style="width: 90%; height: 380px;">
+              <div class="card-header green-card-header">.</div>
+                <div class="card-body">
+                  <h2 class="card-title">Vision</h5>
+                  <p class="card-text fs-4">
+                    Kalimudan envisions an empowered community living in peace
+                    with sustainable livelihood and a healthy environment.
+                  </p>
+                </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card bg-light mb-4" style="width: 90%; height: 380px;">
+              <div class="card-header green-card-header">.</div>
+              <div class="card-body">
+                <h2 class="card-title">Mission</h5>
+                <p class="card-text fs-4">Kalimudan commits itself to enhance the capacities of its partners in development as they strive to build peace while securing their livelihood. Improving health standards and nurturing the environment to uplive the well-being of the people of Lanao.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card bg-light mb-4" style="width: 90%; height: 380px;">
+              <div class="card-header green-card-header">.</div>
+              <div class="card-body">
+                <h2 class="card-title">Goals</h5>
+                <p class="card-text fs-4">
+                  Kalimudan will be known as a center for dialogue and Maranao organizing. Be a center bridge between the academe and the communities as a source of technology, have developed and discussed a maranao consciousness and control of its own organizational development and management system.         
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card bg-light mb-4" style="width: 90%; height: 380px;">
+              <div class="card-header green-card-header">.</div>
+              <div class="card-body">
+                <h2 class="card-title">Taglines</h5>
+                <p class="card-text fs-4">
+                  #NoChildLeftBehind        
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
