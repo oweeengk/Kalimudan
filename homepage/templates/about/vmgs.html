@@ -1,27 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    {% load static %}
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+{% extends 'base.html' %}
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
+{% block title %}
+<title> VMGs - Kalimudan Sa Ranao </title>
+{% endblock %}
+
+{% block content %}
     <style>
       .green-card-header {
         background-color: green;
         color: green; /* Add white text color for better visibility */
       }
     </style>
-    <title>VMGs - Kalimudan Sa Ranao</title>
-  </head>
-  <body>
-    {% include 'static/navbar.html' %}
-    <!--"https://raw.githubusercontent.com/oweeengk/Kalimudan/main/photos/4.jpg"-->
 
     <div class="container">
       <div class="mx-auto">
@@ -72,13 +61,4 @@
         </div>
       </div>
     </div>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
-
-    {% include 'static/footer.html' %}
-  </body>
-</html>
+{% endblock %}
