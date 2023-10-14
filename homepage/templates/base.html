@@ -1,7 +1,7 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {% load static %}
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
@@ -32,11 +32,11 @@
 
   <body>
     <!-- This is to add the navbar html in every template -->
-    {% include 'static/navbar.html' %} {% block content %} {% endblock %}
+    {% include 'navbar.html' %} {% block content %} {% endblock %}
 
     <br />
     <br />
 
-    {% include 'static/footer.html' %}
+    {% include 'footer.html' %}
   </body>
 </html>
