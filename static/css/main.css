@@ -14,3 +14,28 @@
 .list-group-item {
   border: none;
 }
+
+.navbar {
+  font-family: "sans-serif", serif !important;
+}
+.navbar-nav .nav-item .nav-link {
+  color: darkgreen;
+  text-decoration: none;
+}
+.navbar-nav .nav-item .nav-link.active {
+  color: darkgreen;
+  text-decoration: underline;
+}
+.search-btn-wide {
+  min-width: 120px;
+}
+footer a {
+  text-decoration: none;
+}
+a.text-reset:hover {
+  color: green !important;
+}
+
+.green-card-header {
+        background-color: green;
+        color: green; /* Add white text color for better visibility */
