@@ -1,10 +1,11 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% load static %}
 
 {% block title %}
 <title> About - Kalimudan Sa Ranao </title>
 {% endblock %}
 
 {% block content %}
+
 <div class="container">
   <div class="mx-auto">
     <figure>
@@ -22,55 +23,55 @@
       <p class="fs-5"> Kalimudan's current work covers 4 clusters of activities, including <span class="fst-italic">(major programs, special projects, contracted programs, and relief to internally displaced people)</span>. Under major programs are peace building, sustainable resource management, education, health, and enhancing local governance.</p>
     </p>
     <br><br>
+    <h2 style="color: green;">Core Competencies</h1>
+    <img
+      src="{% static 'images/corecompetencies.png' %}"
+      class="card-img-top border border-dark rounded mx-auto"
+      alt="..."
+    />
+    <br><br>
     <div style="display: flex; align-items-baseline;">
       <p class="fs-5 fw-bold" style="color: green; margin-right: 10px;">Organizational Chart:</p>
       <p class="fs-5" style="color: inherit; margin: 0;">The organizational chart visualizes an organization's hierarchy and reporting relationships.</p>
       <div style="flex: 1; text-align: right;">
-        <a href="#" class="btn btn-success">See Organizational Chart</a>
+        <a href="{% url 'homepage:orgchart' %}" class="btn btn-success">See Organizational Chart</a>
       </div>
     </div>
     <div style="display: flex; align-items-baseline;">
       <p class="fs-5 fw-bold" style="color: green; margin-right: 10px;">Visit KFI:</p>
       <p class="fs-5" style="color: inherit; margin: 0;">Visit KFI offers an opportunity to explore and engage with the Kalimudan Foundation Inc. </p>
       <div style="flex: 1; text-align: right;">
-        <a href="#" class="btn btn-success">See Visit KFI</a>
+        <a href="{% url 'homepage:visitkfi' %}" class="btn btn-success">See Visit KFI</a>
       </div>
     </div>
     <div style="display: flex; align-items-baseline;">
-      <p class="fs-5 fw-bold" style="color: green; margin-right: 10px;">Facts and Figures</p>
+      <p class="fs-5 fw-bold" style="color: green; margin-right: 10px;">Facts and Figures:</p>
       <p class="fs-5" style="color: inherit; margin: 0;">Facts and figures at KFI offers information about KFI's interesting data and impacts</p>
       <div style="flex: 1; text-align: right;">
-        <a href="#" class="btn btn-success">See Facts and Figures</a>
+        <a href="{% url 'homepage:factsandfigures' %}" class="btn btn-success">See Facts and Figures</a>
       </div>
     </div>
     <div style="display: flex; align-items-baseline;">
-      <p class="fs-5 fw-bold" style="color: green; margin-right: 10px;">Administration</p>
+      <p class="fs-5 fw-bold" style="color: green; margin-right: 10px;">Administration:</p>
       <p class="fs-5" style="color: inherit; margin: 0;">Administration at KFI showcases the leadership and management that drives the foundation's operations.</p>
       <div style="flex: 1; text-align: right;">
-        <a href="#" class="btn btn-success">See Administration</a>
+        <a href="{% url 'homepage:administration' %}" class="btn btn-success">See Administration</a>
       </div>
     </div>
     <div style="display: flex; align-items-baseline;">
-      <p class="fs-5 fw-bold" style="color: green; margin-right: 10px;">Vision-Mission-Goals (VMGs)</p>
+      <p class="fs-5 fw-bold" style="color: green; margin-right: 10px;">Vision-Mission-Goals (VMGs):</p>
       <p class="fs-5" style="color: inherit; margin: 0;">VMGs show the Vision, Mission, and Goals of KFI</p>
       <div style="flex: 1; text-align: right;">
-        <a href="#" class="btn btn-success">See VMGs</a>
+        <a href="{% url 'homepage:vmgs' %}" class="btn btn-success">See VMGs</a>
       </div>
     </div>
     <div style="display: flex; align-items-baseline;">
-      <p class="fs-5 fw-bold" style="color: green; margin-right: 10px;">Administration</p>
+      <p class="fs-5 fw-bold" style="color: green; margin-right: 10px;">Administration:</p>
       <p class="fs-5" style="color: inherit; margin: 0;">Accreditations at KFI showcases the foundation's official recognitions and certifications.</p>
       <div style="flex: 1; text-align: right;">
-        <a href="#" class="btn btn-success">See Accreditations</a>
+        <a href="{% url 'homepage:accreditations' %}" class="btn btn-success">See Accreditations</a>
       </div>
     </div>
-
-
-
-
-
-
-
   </div>
 </div>
 {% endblock %}

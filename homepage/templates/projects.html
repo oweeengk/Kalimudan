@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% load static %}
 
 {% block title %}
 <title> Projects - Kalimudan Sa Ranao </title>
@@ -7,15 +7,30 @@
 {% block content %}
 <div class="container">
   <div class="mx-auto">
-    <figure>
-      <blockquote class="blockquote">
-        <h1 class="display-1" style="color: green;">Projects page boilerplate
-      </blockquote>
-        <figcaption class="blockquote-footer">
-          Company motto in <cite title="Source Title">Kalimudan</cite>
-        </figcaption>
-      </figure>
-    <br />{% lorem 4 p random %}<br><br>
+    <h1 class="display-1" style="color: green;">Projects
+    <br>
+    <img
+    src="{% static 'images/projectsdiagram.png' %}"
+    class="card-img-top border border-dark rounded mx-auto"
+    alt="..."
+    style="max-width: 100%; height: 700px;"
+    />
+    </div>
+    <br><br>
+    <div style="display: flex; align-items-baseline;">
+      <p class="fs-5 fw-bold" style="color: green; margin-right: 10px;">Partners:</p>
+      <p class="fs-5" style="color: inherit; margin: 0;">The Partner's page displays the partners of KFI throughout the years and counting.</p>
+      <div style="flex: 1; text-align: right;">
+        <a href="{% url 'homepage:partners' %}" class="btn btn-success">See Partners</a>
+      </div>
+    </div>
+    <div style="display: flex; align-items-baseline;">
+      <p class="fs-5 fw-bold" style="color: green; margin-right: 10px;">Information:</p>
+      <p class="fs-5" style="color: inherit; margin: 0;">Information displays the data about Kalimudan about their projects, coverage, and partners throughout the years. </p>
+      <div style="flex: 1; text-align: right;">
+        <a href="{% url 'homepage:projinformation' %}" class="btn btn-success">See Information</a>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock %}

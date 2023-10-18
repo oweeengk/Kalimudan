@@ -1,21 +1,16 @@
-{% extends 'base.html' %}
-
-{% block title %}
-<title> Organizational Chart - Kalimudan Sa Ranao </title>
-{% endblock %}
-
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block title %}
+<title>Organizational Chart - Kalimudan Sa Ranao</title>
+{% endblock %} {% block content %}
 <div class="container">
   <div class="mx-auto">
-    <figure>
-      <blockquote class="blockquote">
-        <h1 class="display-1" style="color: green;">Organizational Chart page boilerplate
-      </blockquote>
-        <figcaption class="blockquote-footer">
-          Company motto in <cite title="Source Title">Kalimudan</cite>
-        </figcaption>
-      </figure>
-    <br />{% lorem 4 p random %}<br><br>
+    <h1 class="display-1" style="color: green">Organizational Chart</h1>
+
+    <br />
+    <img
+      src="{% static 'images/orgchart.png' %}"
+      class="card-img-top border border-dark rounded mx-auto"
+      alt="..."
+    />
   </div>
 </div>
 {% endblock %}
