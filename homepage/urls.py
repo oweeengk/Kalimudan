@@ -15,4 +15,6 @@ urlpatterns = [
   path("about/administration", views.administration, name="administration"),
   path("about/factsandfigures", views.factsandfigures, name="factsandfigures"),
   path("about/vmgs", views.vmgs, name="vmgs"),
+  path("projects/information", views.projinformation, name="projinformation"),
+  path("projects/partners", views.partners, name="partners"),
 ]

@@ -1,21 +1,163 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% load static %}
 
 {% block title %}
-<title> Information - Kalimudan Sa Ranao </title>
+<title> Projects - Kalimudan Sa Ranao </title>
 {% endblock %}
 
 {% block content %}
+<style>
+  body {
+    background-image: url("{% static 'images/test1.jpg' %}");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+</style>
 <div class="container">
   <div class="mx-auto">
-    <figure>
-      <blockquote class="blockquote">
-        <h1 class="display-1" style="color: green;">Information page boilerplate
-      </blockquote>
-        <figcaption class="blockquote-footer">
-          Company motto in <cite title="Source Title">Kalimudan</cite>
-        </figcaption>
-      </figure>
-    <br />{% lorem 4 p random %}<br><br>
+    <h2 style="color: green;">Projects & Partners (2018-2023)</h1>
+    <table class="table table-hover table-borderless">
+      <caption>Updated as of October 18, 2023</caption>
+        <thead class="table-dark">
+        <tr>
+          <th scope="col">Programs/Projects</th>
+          <th scope="col">Partners</th>
+          <th scope="col">Coverage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fw-bold">Youth Empowerment thru Inclusive Participation on Local Government</td>
+          <td>USAID-ENGAGE (Enhancing Governance Accountability and Engagement)</td>
+          <td>2 Municipalities and 1 City of Lanao del Sur</td>
+        </tr>
+        <tr>
+          <td class="fw-bold">Citizens Report Card</td>
+          <td>USAID-ENGAGE (Enhancing Governance Accountability and Engagement)</td>
+          <td>Wao</td>
+        </tr>
+        <tr>
+          <td class="fw-bold">LGU and NGO Stakeholders Traffic Management Partnership</td>
+          <td>USAID-ENGAGE (Enhancing Governance Accountability and Engagement)</td>
+          <td>Marawi City</td>
+        </tr>
+        <tr>
+          <td class="fw-bold">CSIPP and PSIP</td>
+          <td>USAID-ENGAGE (Enhancing Governance Accountability and Engagement)</td>
+          <td>Balo-I</td>
+        </tr>
+        <tr>
+          <td class="fw-bold">Third Party Monitoring and Emergency Food Security Assessment</td>
+          <td>WFP Philippines (World Food Programme)</td>
+          <td>20 Municipalities and 1 City of LDS, 3 Municipalities and 1 City of LDS</td>
+        </tr>
+        <tr>
+          <td class="fw-bold">MASHWARA</td>
+          <td>Development and Peace</td>
+          <td>Brgy. Basak Malutlut, Matampay and Cadayunan 2</td>
+        </tr>
+        <tr>
+          <td class="fw-bold">PAMANA Projects Cycle IV</td>
+          <td>International Organization for Migration (IOM)</td>
+          <td>6 Municipalities of Lanao del Sur and Lanao del Norte</td>
+        </tr>
+        <tr>
+          <td class="fw-bold">ECHO Forgotten Crisis in Mindanao</td>
+          <td>Care Philippines</td>
+          <td>Marawi City, Saguiaran, Pantar, and Balo-i</td>
+        </tr>
+        <tr>
+          <td class="fw-bold">Decreasing Human Rights Violation by Improving Public Services Delivery in IDPs or Returned Communities in Marawi City</td>
+          <td>UNCHR</td>
+          <td>Area Coverage: Banco, Dulay West, Marawi City and Bacayawan Proper, Kialdan, Municipality of Marantao</td>
+        </tr>
+        <tr>
+          <td class="fw-bold">TUKLAS Projects (Action Against Hunger)</td>
+          <td>Philippine TUKLAS Innovation Labs</td>
+          <td>1 City of Lanao del Sur</td>
+        </tr>
+        <tr>
+          <td class="fw-bold">Family Conversation</td>
+          <td>MinCoDe (Mindanao Coalition Development)</td>
+          <td>5 Municipalities and 1 City of Lanao del Sur, 1 City of Lanao del Norte</td>
+        </tr>
+        <tr>
+          <td class="fw-bold">Multi-Focal Campaign Platforms and Support Activities for the BOL Plebiscite and Transition Period</td>
+          <td>UNDP</td>
+          <td>Sagonsongan, Cabingan, Marawi City, Marantao, and Balindong</td>
+        </tr>
+        <tr>
+          <td class="fw-bold">Sustaining Transformation Resilient Initiatives</td>
+          <td>Islamic Relief (IR)</td>
+          <td>6 Barangays Lumbatan, Linamon, Bago a Ingud, Buadi Alao, Maindig, Barimbingan in Ditsaan-Ramain</td>
+        </tr>
+        <tr>
+          <td class="fw-bold">Peacebuilding and Transitional Justice in Transforming Conflict and Preventing Extremist Violence</td>
+          <td>Initiative for International Dialogue (IID)/Global Community Emergency Resiliency Fund (GCERF)</td>
+          <td>4 Municipalities Butig, Kapai, Piagapo, and Tagoloan, Lanao del Sur, and Lanao del Norte</td>
+        </tr>
+        <tr>
+          <td class="fw-bold">Feeding in Lanao del Sur (Cash Grant IDPs)</td>
+          <td>CRS</td>
+          <td>Cash grant (30,000 in every family) with a total cash grant (P42,000,000.00). 1400 Beneficiaries in 5 Municipalities: Kapai, Tagoloan, Piagapo, Bubong, and Ditsaan-Ramain, and 1 city in Lanao del Sur</td>
+        </tr>
+        <tr>
+          <td class="fw-bold">Inclusive and Democratic BERMM through Transitional Justice, Conflict Transformation, and Preventing Violent Extremist "(INCLUDE BARMM)"</td>
+          <td>Initiative for International Dialogue (IID) / Global Community Emergency Resiliency Fund (GCERF)</td>
+          <td>Marawi City</td>
+        </tr>
+        <tr>
+          <td class="fw-bold">Family Planning/Maternal & Neonatal Health Innovations and Capacity Building Platforms (ReachHealth)</td>
+          <td>Research Triangle Institute (RTI) partnered with City Health Office</td>
+          <td>Marawi City</td>
+        </tr>
+
+
+      </tbody>
+    </table>
+    <br><br>
+    <h2 style="color: green;">Projects in Partnership with Government</h1>
+    <table class="table table-hover table-borderless">
+      <caption>Updated as of October 18, 2023</caption>
+        <thead class="table-dark">
+        <tr>
+          <th scope="col">Programs/Projects</th>
+          <th scope="col">Partners</th>
+          <th scope="col">Coverage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fw-bold">Alternative Delivery Model</td>
+          <td>BRAC-Philippines (Bangladesh Rural Advance Committee) and Department of Education (DepEd)</td>
+          <td>10 Municipalities and 97 barangays of Lanao del Sur</td>
+        </tr>
+        <tr>
+          <td class="fw-bold">Early Recovery and Rehabilitation for Central Mindanao</td>
+          <td>UNDP - MINDA ERRCM</td>
+          <td>Bualan and Talob Balindong</td>
+        </tr>
+        <tr>
+          <td class="fw-bold">Modified Conditional Cash Transfer for Family Need of Special Protection (MCCT-FNSP) ARMM DSWD Regional Office</td>
+          <td>DSWD ARMM Regional Office</td>
+          <td>15 Municipalities of Lanao del Sur</td>
+        </tr>
+        <tr>
+          <td class="fw-bold">Bottoms -Up - Budgeting</td>
+          <td>NAPC - DILG</td>
+          <td>Madamba, Tugaya, and Taraka</td>
+        </tr>
+        <tr>
+          <td class="fw-bold">Support to Peace Building & Normalization (SPAN)</td>
+          <td>UNDP - OPAPP</td>
+          <td>8 Barangays: Banga, Cabingan, Dimalna, Lomidong, Rapasun, Amito, Pindolunan, and Sagonsongan temporary shelter</td>
+        </tr>
+        <tr>
+          <td class="fw-bold">No Children Left Behind for Education in Bangsamoro</td>
+          <td>Kaped Ka CSO for AKAP Bangsamoro; MBHTE BARMM</td>
+          <td>4 Municipalities: Kapai, Tagoloan, Piagapo, and Bubong. 22 Barangays.</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 {% endblock %}

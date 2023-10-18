@@ -39,4 +39,8 @@ def factsandfigures(request):
 def vmgs(request):
   return render(request, "about/vmgs.html")
 
+def projinformation(request):
+  return render(request, "projects/information.html")
 
+def partners(request):
+  return render(request, "projects/partners.html")

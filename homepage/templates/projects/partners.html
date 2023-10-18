@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% load static %} {% block title %}
+<title>Visit KFI - Kalimudan Sa Ranao</title>
+{% endblock %} {% block content %}
+<style>
+  body {
+    background-image: url("{% static 'images/test1.jpg' %}");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+</style>
+<div class="container">
+  <div class="mx-auto">
+    <h2 style="color: green;">Network/Affiliations</h1>
+    <img
+    src="{% static 'images/network-or-affiliations.png' %}"
+    class="card-img-top border border-dark rounded mx-auto"
+    alt="..."
+    style="max-width: 100%; height: 700px;"
+    />
+    <br><br>
+    <h2 style="color: green;">Mentoring and Coaching Organizations</h1>
+    <ul>
+      <li><p class="fs-5">Kalilintad Peace and Development Advocates Network Inc. (KPDANI) <span class="fst-italic">2006-2008</span></p></li>
+      <li><p class="fs-5">Bangsamoro Youth Coalition for Peace and Development (BYCPD) <span class="fst-italic">2014-PRESENT</span></p></li>
+      <li><p class="fs-5">CoRe Ranaw <span class="fst-italic">2012-PRESENT</span></p></li>
+      <li><p class="fs-5">Network of Organization Reform(NOR) <span class="fst-italic">2014-PRESENT</span></p></li>
+      <li><p class="fs-5">Consortium On Bangsamoro Civil Society (CBCS)</p></li>
+      <li><p class="fs-5">Mindanao Emergency Response Network (MERN)</p></li>
+      <li><p class="fs-5">Philippine Social Enterprise Network (Philsen)</p></li>
+      <li><p class="fs-5">Kapamagogopa Inc. (KI)</p></li>
+      <li><p class="fs-5">Marawi CSO Platform</p></li>
+      <li><p class="fs-5">Saving Lives Movement (SLM)</p></li>
+      <li><p class="fs-5">Ranaw Rescue Team (RRT)</p></li>
+      <li><p class="fs-5">Bangsamoro Human Rights Network (BHRN)</p></li>
+      <li><p class="fs-5">Foundation for Philippine Environment</p></li>
+    </ul>
+  </div>
+</div>
+{% endblock %}
