@@ -36,6 +36,10 @@ a.text-reset:hover {
   color: green !important;
 }
 
+.text-justify {
+  text-align: justify;
+}
+
 .green-card-header {
   background-color: green;
   color: green;
