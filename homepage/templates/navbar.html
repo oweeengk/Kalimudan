@@ -27,97 +27,88 @@
         <li class="nav-item me-2">
           <a class="nav-link fw-bold {% is_active request 'homepage:index' %}" aria-current="page" href="{% url 'homepage:index'%}">Home</a>
         </li>
-        <li class="nav-item dropdown me-2">
+        <li class="nav-item dropdown me-2 {% is_active request 'homepage:about' %}">
+          <a class="nav-link dropdown-toggle fw-bold" href="{% url 'homepage:about' %}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item {% is_active request 'homepage:orgchart' %}" href="{% url 'homepage:orgchart' %}">Organizational Chart</a>
+            </li>
+            <li><a class="dropdown-item {% is_active request 'homepage:visitkfi' %}" href="{% url 'homepage:visitkfi' %}">Visit KFI</a></li>
+            <li><a class="dropdown-item {% is_active request 'homepage:factsandfigures' %}" href="{% url 'homepage:factsandfigures' %}">Facts and Figures</a></li>
+            <li><a class="dropdown-item {% is_active request 'homepage:administration' %}" href="{% url 'homepage:administration' %}">Administration</a></li>
+            <li><a class="dropdown-item {% is_active request 'homepage:vmgs' %}" href="{% url 'homepage:vmgs' %}">VMGs</a></li>
+            <li><a class="dropdown-item {% is_active request 'homepage:accreditations' %}" href="{% url 'homepage:accreditations' %}">Accreditations</a></li>
+          </ul>
+        </li>
+        
+        
+        <li class="nav-item dropdown me-2 {% is_active request 'homepage:news' %}">
           <a
-          class="nav-link dropdown-toggle fw-bold {% is_active request 'homepage:about' %}"
-          href="{% url 'homepage:about' %}"
+          class="nav-link dropdown-toggle fw-bold {% is_active request 'homepage:news' %}"
+          href="{% url 'homepage:news' %}"
           id="navbarDropdown"
           role="button"
           data-bs-toggle="dropdown"
           aria-expanded="false"
           >
-          About
+          News
         </a>
-        <ul class="dropdown-menu dropdown-menu-columns" aria-labelledby="navbarDropdown">
-          <li>
-            <a class="dropdown-item {% is_active request 'homepage:orgchart' %}" href="{% url 'homepage:orgchart' %}">Organizational Chart</a>
-          </li>
-          <li><a class="dropdown-item {% is_active request 'homepage:visitkfi' %}" href="{% url 'homepage:visitkfi' %}">Visit KFI</a></li>
-          <li><a class="dropdown-item {% is_active request 'homepage:factsandfigures' %}" href="{% url 'homepage:factsandfigures' %}">Facts and Figures</a></li>
-          <li><a class="dropdown-item {% is_active request 'homepage:administration' %}" href="{% url 'homepage:administration' %}">Administration</a></li>
-          <li><a class="dropdown-item {% is_active request 'homepage:vmgs' %}" href="{% url 'homepage:vmgs' %}">VMGs</a></li>
-          <li><a class="dropdown-item {% is_active request 'homepage:accreditations' %}" href="{% url 'homepage:accreditations' %}">Accreditations</a></li>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="#">Projects</a></li>
+          <li><a class="dropdown-item" href="#">Notices</a></li>
+          <li><a class="dropdown-item" href="#">Statements</a></li>
         </ul>
       </li>
-      
-      
-      <li class="nav-item dropdown me-2">
+      <li class="nav-item dropdown me-2 {% is_active request 'homepage:volunteering' %}">
         <a
-        class="nav-link dropdown-toggle fw-bold {% is_active request 'homepage:news' %}"
-        href="{% url 'homepage:news' %}"
+        class="nav-link dropdown-toggle fw-bold"
+        href="{% url 'homepage:volunteering' %}"
         id="navbarDropdown"
         role="button"
         data-bs-toggle="dropdown"
         aria-expanded="false"
         >
-        News
+        Volunteering
       </a>
       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <li><a class="dropdown-item" href="#">Projects</a></li>
-        <li><a class="dropdown-item" href="#">Notices</a></li>
-        <li><a class="dropdown-item" href="#">Statements</a></li>
+        <li><a class="dropdown-item {% is_active request 'homepage:volunteeringapply' %}" href="{% url 'homepage:volunteeringapply' %}">Apply</a></li>
+        <li><a class="dropdown-item {% is_active request 'homepage:volunteeringnotices' %}" href="{% url 'homepage:volunteeringnotices' %}">Notices</a></li>
       </ul>
     </li>
     <li class="nav-item dropdown me-2">
       <a
       class="nav-link dropdown-toggle fw-bold"
-      href="{% url 'homepage:volunteering' %}"
+      href="{% url 'homepage:projects' %}"
       id="navbarDropdown"
       role="button"
       data-bs-toggle="dropdown"
       aria-expanded="false"
       >
-      Volunteering
+      Projects
     </a>
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <li><a class="dropdown-item" href="{% url 'homepage:volunteeringapply' %}">Apply</a></li>
-      <li><a class="dropdown-item" href="{% url 'homepage:volunteering' %}">Notices</a></li>
+      <li><a class="dropdown-item" href="{% url 'homepage:partners' %}">Partners</a></li>
+      <li><a class="dropdown-item" href="{% url 'homepage:projinformation' %}">Information</a></li>
     </ul>
   </li>
-  <li class="nav-item dropdown me-2">
+  <li class="nav-item dropdown me-2 {% is_active request 'homepage:tesda' %}">
     <a
     class="nav-link dropdown-toggle fw-bold"
-    href="{% url 'homepage:projects' %}"
+    href="{% url 'homepage:tesda' %}"
     id="navbarDropdown"
     role="button"
     data-bs-toggle="dropdown"
     aria-expanded="false"
     >
-    Projects
+    TESDA
   </a>
   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-    <li><a class="dropdown-item" href="{% url 'homepage:partners' %}">Partners</a></li>
-    <li><a class="dropdown-item" href="{% url 'homepage:projinformation' %}">Information</a></li>
+    <li>
+      <a class="dropdown-item" href="#">Courses Offered</a>
+    </li>
+    <li><a class="dropdown-item" href="#">Information</a></li>
+    <li><a class="dropdown-item" href="#">Facts and Figures</a></li>
   </ul>
-</li>
-<li class="nav-item dropdown me-2 {% is_active request 'homepage:tesda' %}">
-  <a
-  class="nav-link dropdown-toggle fw-bold"
-  href="{% url 'homepage:tesda' %}"
-  id="navbarDropdown"
-  role="button"
-  data-bs-toggle="dropdown"
-  aria-expanded="false"
-  >
-  TESDA
-</a>
-<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-  <li>
-    <a class="dropdown-item" href="#">Courses Offered</a>
-  </li>
-  <li><a class="dropdown-item" href="#">Information</a></li>
-  <li><a class="dropdown-item" href="#">Facts and Figures</a></li>
-</ul>
 </li>
 
 </div>

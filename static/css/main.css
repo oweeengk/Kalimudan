@@ -6,21 +6,19 @@
   font-weight: 350 !important;
 }
 
-/* Apply the green underline to active main navigation links and dropdown links */
-.navbar-nav .nav-item .nav-link.active::after,
-.navbar-nav .nav-item.show .nav-link::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 3px;
-  background-color: green;
+/* Apply the green underline effect with increased thickness and lower positioning */
+/* Apply the green underline effect with increased thickness and lower positioning */
+.active {
+  position: relative;
 }
 
-/* Reset the styles for the specific dropdown with the "About" link */
-.navbar-nav .nav-item .show .nav-link::after {
-  content: none !important;
-  background-color: transparent !important;
-  border-bottom: none !important;
+.active::before {
+  content: "";
+  position: absolute;
+  width: 80%; /* Adjust the width (80%) */
+  border-bottom: 4px solid green; /* Adjust the thickness (2px) and color */
+  bottom: 5px; /* Adjust the vertical positioning (-5px) */
+  left: 10%; /* Adjust the left positioning to center the line */
 }
 
 .card:hover {
@@ -117,12 +115,22 @@ a.text-reset:hover {
   right: 0;
 }
 
-.dropdown-menu-columns {
-  column-count: 2;
-  column-gap: 20px;
+/* Apply two columns to the dropdown menu when more than 3 items */
+.dropdown-menu {
+  column-count: 2; /* Split the items into two columns */
+  column-gap: 20px; /* Adjust the gap between columns as needed */
+  max-height: 200px; /* Set a max height to limit the menu's height (adjust as needed) */
+  overflow-y: auto; /* Add vertical scrolling for overflow */
 }
 
 .navbar-brand {
   margin: 0;
   padding: 0;
+}
+/* Remove the blue background on Bootstrap 5 dropdown menu items */
+/* Remove the blue background on Bootstrap 5 dropdown menu items */
+.navbar .nav-item .dropdown-menu .dropdown-item:focus {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
