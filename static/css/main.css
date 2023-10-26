@@ -19,7 +19,6 @@
   font-family: "sans-serif", serif !important;
 }
 .navbar-nav .nav-item .nav-link {
-  color: darkgreen;
   text-decoration: none;
 }
 .navbar-nav .nav-item .nav-link.active {
@@ -98,7 +97,8 @@ a.text-reset:hover {
     outline: 0px !important;
   }
 }
-.navbar-divider {
-  border-top: 1px solid #000; /* 1px solid black border */
-  margin: 0;
+.navbar-nav-wrapper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
