@@ -1,4 +1,5 @@
 {% load static %}
+{% load custom_tags %}
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white pt-0">
   <div class="container-fluid">
@@ -24,11 +25,11 @@
     <div class="navbar-nav-wrapper mt-auto me-5">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-5">
         <li class="nav-item me-2">
-          <a class="nav-link fw-bold" aria-current="page" href="{% url 'homepage:index'%}">Home</a>
+          <a class="nav-link fw-bold {% is_active request 'homepage:index' %}" aria-current="page" href="{% url 'homepage:index'%}">Home</a>
         </li>
         <li class="nav-item dropdown me-2">
           <a
-          class="nav-link dropdown-toggle fw-bold"
+          class="nav-link dropdown-toggle fw-bold {% is_active request 'homepage:about' %}"
           href="{% url 'homepage:about' %}"
           id="navbarDropdown"
           role="button"
@@ -39,18 +40,18 @@
         </a>
         <ul class="dropdown-menu dropdown-menu-columns" aria-labelledby="navbarDropdown">
           <li>
-            <a class="dropdown-item" href="{% url 'homepage:orgchart' %}">Organizational Chart</a>
+            <a class="dropdown-item {% is_active request 'homepage:orgchart' %}" href="{% url 'homepage:orgchart' %}">Organizational Chart</a>
           </li>
-          <li><a class="dropdown-item" href="{% url 'homepage:visitkfi' %}">Visit KFI</a></li>
-          <li><a class="dropdown-item" href="{% url 'homepage:factsandfigures' %}">Facts and Figures</a></li>
-          <li><a class="dropdown-item" href="{% url 'homepage:administration' %}">Administration</a></li>
-          <li><a class="dropdown-item" href="{% url 'homepage:vmgs' %}">VMGs</a></li>
-          <li><a class="dropdown-item" href="{% url 'homepage:accreditations' %}">Accreditations</a></li>
+          <li><a class="dropdown-item {% is_active request 'homepage:visitkfi' %}" href="{% url 'homepage:visitkfi' %}">Visit KFI</a></li>
+          <li><a class="dropdown-item {% is_active request 'homepage:factsandfigures' %}" href="{% url 'homepage:factsandfigures' %}">Facts and Figures</a></li>
+          <li><a class="dropdown-item {% is_active request 'homepage:administration' %}" href="{% url 'homepage:administration' %}">Administration</a></li>
+          <li><a class="dropdown-item {% is_active request 'homepage:vmgs' %}" href="{% url 'homepage:vmgs' %}">VMGs</a></li>
+          <li><a class="dropdown-item {% is_active request 'homepage:accreditations' %}" href="{% url 'homepage:accreditations' %}">Accreditations</a></li>
         </ul>
       </li>
       <li class="nav-item dropdown me-2">
         <a
-        class="nav-link dropdown-toggle fw-bold"
+        class="nav-link dropdown-toggle fw-bold {% is_active request 'homepage:news' %}"
         href="{% url 'homepage:news' %}"
         id="navbarDropdown"
         role="button"
@@ -97,7 +98,7 @@
     <li><a class="dropdown-item" href="{% url 'homepage:projinformation' %}">Information</a></li>
   </ul>
 </li>
-<li class="nav-item dropdown me-2">
+<li class="nav-item dropdown me-2 {% is_active request 'homepage:tesda' %}">
   <a
   class="nav-link dropdown-toggle fw-bold"
   href="{% url 'homepage:tesda' %}"

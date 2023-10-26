@@ -1,6 +1,14 @@
-{% extends 'base.html' %} {% load static %} {% block title %}
-<title>About - Kalimudan Sa Ranao</title>
-{% endblock %} {% block content %}
+{% extends 'base.html' %}
+<!--TEST-->
+{% load static %}
+<!--TEST-->
+{% load custom_tags %}
+<!--TEST-->
+{% block title %}
+<title>About - Kalimudan Sa Ranao Inc.</title>
+{% endblock %}
+<!--TEST-->
+{% block content %}
 
 <div class="container">
   <div class="mx-auto">
@@ -20,7 +28,7 @@
       initiatives, peacebuilding, and micro-finance projects.
     </p>
     <br />
-    
+
     <h2 style="color: green">Kalimudan History</h2>
     <p class="text-justify fs-5">
       In 1988, a group of young professional volunteers, including individuals
@@ -69,7 +77,7 @@
       and peace within the communities it serves.
     </p>
     <br />
-    
+
     <h2 style="color: green">What do we do?</h2>
     <p class="text-decoration-underline fs-5 text-justify">
       Sustainable Resource Management
@@ -125,9 +133,9 @@
     <br />
     <h1 style="color: green">Core Competencies</h1>
     <img
-    src="{% static 'images/corecompetencies.png' %}"
-    class="card-img-top border border-dark rounded mx-auto"
-    alt="..."
+      src="{% static 'images/corecompetencies.png' %}"
+      class="card-img-top border border-dark rounded mx-auto"
+      alt="..."
     />
     <br /><br />
     <div style="display: flex; align-items-baseline;">
@@ -140,7 +148,7 @@
       </p>
       <div style="flex: 1; text-align: right">
         <a href="{% url 'homepage:orgchart' %}" class="btn btn-success"
-        >See Organizational Chart</a
+          >See Organizational Chart</a
         >
       </div>
     </div>
@@ -154,7 +162,7 @@
       </p>
       <div style="flex: 1; text-align: right">
         <a href="{% url 'homepage:visitkfi' %}" class="btn btn-success"
-        >See Visit KFI</a
+          >See Visit KFI</a
         >
       </div>
     </div>
@@ -168,7 +176,7 @@
       </p>
       <div style="flex: 1; text-align: right">
         <a href="{% url 'homepage:factsandfigures' %}" class="btn btn-success"
-        >See Facts and Figures</a
+          >See Facts and Figures</a
         >
       </div>
     </div>
@@ -182,7 +190,7 @@
       </p>
       <div style="flex: 1; text-align: right">
         <a href="{% url 'homepage:administration' %}" class="btn btn-success"
-        >See Administration</a
+          >See Administration</a
         >
       </div>
     </div>
@@ -207,7 +215,7 @@
       </p>
       <div style="flex: 1; text-align: right">
         <a href="{% url 'homepage:accreditations' %}" class="btn btn-success"
-        >See Accreditations</a
+          >See Accreditations</a
         >
       </div>
     </div>

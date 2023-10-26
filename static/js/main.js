@@ -1,9 +1,12 @@
-// Add event listener for dropdown menu items
+// JavaScript code for dropdown menus
+/*
 document.querySelectorAll(".nav-item.dropdown").forEach(function (element) {
+  // Mouseover event to show the dropdown menu
   element.addEventListener("mouseover", function () {
     element.querySelector(".dropdown-menu").classList.add("show")
   })
 
+  // Mouseout event to hide the dropdown menu
   element.addEventListener("mouseout", function () {
     element.querySelector(".dropdown-menu").classList.remove("show")
   })
@@ -15,4 +18,6 @@ document.querySelectorAll(".nav-item.dropdown").forEach(function (element) {
       e.preventDefault() // Prevent the link from navigating immediately
       window.location.href = this.getAttribute("href") // Navigate to the specified URL
     })
+    
 })
+*/

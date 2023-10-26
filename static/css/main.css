@@ -1,3 +1,49 @@
+/* Target the main navigation links */
+/* Target the active state of the "About" link and remove the underline */
+/* Increase specificity and remove underline */
+.navbar-nav .nav-item.dropdown.active .nav-link {
+  text-decoration: none !important;
+  border-bottom: none !important; /* If needed */
+}
+
+.navbar-nav .nav-item .nav-link {
+  font-size: 18px !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+    Arial, sans-serif;
+  font-weight: 350 !important;
+}
+
+/* Target active links in the main navigation */
+.navbar-nav .nav-item .nav-link.active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: green;
+}
+
+/* Target active links in dropdown menus */
+.navbar-nav .nav-item.dropdown.show .nav-link::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: green;
+}
+
+/* Target the dropdown links within .nav-item.dropdown and apply the green theme */
+.navbar-nav .nav-item.dropdown .nav-link.dropdown-toggle {
+  font-size: 18px !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+    Arial, sans-serif;
+  font-weight: 350 !important;
+}
+
+/* Target the active state of the dropdown links and add green underline */
+.navbar-nav .nav-item.dropdown .nav-link.dropdown-toggle.nav-link.active {
+  border-bottom: 3px solid green;
+}
+
 .card:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transform: scale(1.05);
@@ -13,13 +59,6 @@
 }
 .list-group-item {
   border: none;
-}
-
-.navbar {
-  font-family: "sans-serif", serif !important;
-}
-.navbar-nav .nav-item .nav-link {
-  text-decoration: none;
 }
 .search-btn-wide {
   min-width: 120px;
@@ -107,19 +146,4 @@ a.text-reset:hover {
 .navbar-brand {
   margin: 0;
   padding: 0;
-}
-
-.navbar-nav .nav-item .nav-link {
-  font-size: 18px !important;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
-    Arial, sans-serif;
-  font-weight: 350 !important;
-}
-
-.navbar-nav .nav-item .nav-link.active::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 3px;
-  background-color: green;
 }
