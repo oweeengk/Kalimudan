@@ -17,4 +17,6 @@ urlpatterns = [
   path("about/vmgs", views.vmgs, name="vmgs"),
   path("projects/information", views.projinformation, name="projinformation"),
   path("projects/partners", views.partners, name="partners"),
+  path("volunteering/apply", views.volunteeringapply, name="volunteeringapply"),
+  path("volunteering/notices", views.volunteeringnotices, name="volunteeringnotices"),
 ]

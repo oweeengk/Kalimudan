@@ -49,6 +49,8 @@
           <li><a class="dropdown-item {% is_active request 'homepage:accreditations' %}" href="{% url 'homepage:accreditations' %}">Accreditations</a></li>
         </ul>
       </li>
+      
+      
       <li class="nav-item dropdown me-2">
         <a
         class="nav-link dropdown-toggle fw-bold {% is_active request 'homepage:news' %}"
@@ -78,8 +80,8 @@
       Volunteering
     </a>
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <li><a class="dropdown-item" href="#">Apply</a></li>
-      <li><a class="dropdown-item" href="#">Notices</a></li>
+      <li><a class="dropdown-item" href="{% url 'homepage:volunteeringapply' %}">Apply</a></li>
+      <li><a class="dropdown-item" href="{% url 'homepage:volunteering' %}">Notices</a></li>
     </ul>
   </li>
   <li class="nav-item dropdown me-2">

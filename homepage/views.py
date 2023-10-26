@@ -44,3 +44,10 @@ def projinformation(request):
 
 def partners(request):
   return render(request, "projects/partners.html")
+
+def volunteeringapply(request):
+  return render(request, "volunteering/apply.html")
+
+def volunteeringnotices(request):
+  return render(request, "volunteering/notices.html")
+  
