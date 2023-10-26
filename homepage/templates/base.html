@@ -21,14 +21,14 @@
       crossorigin="anonymous"
     ></script>
     <link
-      rel="icon"
-      href="{% static 'images/favicon real.png' %}"
-      type="image/x-icon"
-    />
-    <link
       rel="stylesheet"
       type="text/css"
       href="{% static '/css/main.css' %}"
+    />
+    <link
+      rel="icon"
+      href="{% static 'images/favicon real.png' %}"
+      type="image/x-icon"
     />
 
     {% block title %}
@@ -40,7 +40,6 @@
     <!-- This is to add the navbar html in every template -->
     {% include 'navbar.html' %} {% block content %} {% endblock %}
     <script src="{% static 'js/main.js' %}"></script>
-
     <br />
     <br />
 

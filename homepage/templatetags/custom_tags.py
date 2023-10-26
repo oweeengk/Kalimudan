@@ -1,7 +1,5 @@
-# custom_tags.py
-
 from django import template
-from django.urls import reverse  # Import reverse function
+from django.urls import reverse
 
 register = template.Library()
 

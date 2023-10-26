@@ -1,11 +1,4 @@
 /* Target the main navigation links */
-/* Target the active state of the "About" link and remove the underline */
-/* Increase specificity and remove underline */
-.navbar-nav .nav-item.dropdown.active .nav-link {
-  text-decoration: none !important;
-  border-bottom: none !important; /* If needed */
-}
-
 .navbar-nav .nav-item .nav-link {
   font-size: 18px !important;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
@@ -13,8 +6,9 @@
   font-weight: 350 !important;
 }
 
-/* Target active links in the main navigation */
-.navbar-nav .nav-item .nav-link.active::after {
+/* Apply the green underline to active main navigation links and dropdown links */
+.navbar-nav .nav-item .nav-link.active::after,
+.navbar-nav .nav-item.show .nav-link::after {
   content: "";
   display: block;
   width: 100%;
@@ -22,26 +16,11 @@
   background-color: green;
 }
 
-/* Target active links in dropdown menus */
-.navbar-nav .nav-item.dropdown.show .nav-link::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 3px;
-  background-color: green;
-}
-
-/* Target the dropdown links within .nav-item.dropdown and apply the green theme */
-.navbar-nav .nav-item.dropdown .nav-link.dropdown-toggle {
-  font-size: 18px !important;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
-    Arial, sans-serif;
-  font-weight: 350 !important;
-}
-
-/* Target the active state of the dropdown links and add green underline */
-.navbar-nav .nav-item.dropdown .nav-link.dropdown-toggle.nav-link.active {
-  border-bottom: 3px solid green;
+/* Reset the styles for the specific dropdown with the "About" link */
+.navbar-nav .nav-item .show .nav-link::after {
+  content: none !important;
+  background-color: transparent !important;
+  border-bottom: none !important;
 }
 
 .card:hover {
@@ -83,13 +62,13 @@ a.text-reset:hover {
     margin: 0;
     padding: 0;
     height: 100%;
-    background: #4caf50; /* Pretty green background color */
+    background: #4caf50;
   }
   .user_card {
     width: 350px;
     margin-top: auto;
     margin-bottom: auto;
-    background: #8bc34a; /* Light green card background */
+    background: #8bc34a;
     position: relative;
     display: flex;
     justify-content: center;
@@ -110,7 +89,7 @@ a.text-reset:hover {
   }
   .login_btn {
     width: 100%;
-    background: #43a047 !important; /* Darker green button background */
+    background: #43a047 !important;
     color: white !important;
   }
   .login_btn:focus {
@@ -121,7 +100,7 @@ a.text-reset:hover {
     padding: 0 2rem;
   }
   .input-group-text {
-    background: #689f38 !important; /* Another green for input group text */
+    background: #689f38 !important;
     color: white !important;
     border: 0 !important;
     border-radius: 0.25rem 0 0 0.25rem !important;
