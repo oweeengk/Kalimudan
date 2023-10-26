@@ -1,6 +1,5 @@
 {% load static %}
 
-
 <nav class="navbar navbar-expand-lg navbar-light bg-white pt-0">
   <div class="container-fluid">
     <a class="navbar-brand" href="{% url 'homepage:index'%}">
@@ -22,80 +21,81 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-5">
-      <li class="nav-item me-2">
-        <a class="nav-link fw-bold" aria-current="page" href="{% url 'homepage:index'%}">Home</a>
+    <div class="navbar-nav-wrapper mt-auto me-5">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-5">
+        <li class="nav-item me-2">
+          <a class="nav-link fw-bold" aria-current="page" href="{% url 'homepage:index'%}">Home</a>
+        </li>
+        <li class="nav-item dropdown me-2">
+          <a
+          class="nav-link dropdown-toggle fw-bold"
+          href="{% url 'homepage:about' %}"
+          id="navbarDropdown"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          >
+          About
+        </a>
+        <ul class="dropdown-menu dropdown-menu-columns" aria-labelledby="navbarDropdown">
+          <li>
+            <a class="dropdown-item" href="{% url 'homepage:orgchart' %}">Organizational Chart</a>
+          </li>
+          <li><a class="dropdown-item" href="{% url 'homepage:visitkfi' %}">Visit KFI</a></li>
+          <li><a class="dropdown-item" href="{% url 'homepage:factsandfigures' %}">Facts and Figures</a></li>
+          <li><a class="dropdown-item" href="{% url 'homepage:administration' %}">Administration</a></li>
+          <li><a class="dropdown-item" href="{% url 'homepage:vmgs' %}">VMGs</a></li>
+          <li><a class="dropdown-item" href="{% url 'homepage:accreditations' %}">Accreditations</a></li>
+        </ul>
       </li>
       <li class="nav-item dropdown me-2">
         <a
         class="nav-link dropdown-toggle fw-bold"
-        href="{% url 'homepage:about' %}"
+        href="{% url 'homepage:news' %}"
         id="navbarDropdown"
         role="button"
         data-bs-toggle="dropdown"
         aria-expanded="false"
         >
-        About
+        News
       </a>
       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <li>
-          <a class="dropdown-item" href="{% url 'homepage:orgchart' %}">Organizational Chart</a>
-        </li>
-        <li><a class="dropdown-item" href="{% url 'homepage:visitkfi' %}">Visit KFI</a></li>
-        <li><a class="dropdown-item" href="{% url 'homepage:factsandfigures' %}">Facts and Figures</a></li>
-        <li><a class="dropdown-item" href="{% url 'homepage:administration' %}">Administration</a></li>
-        <li><a class="dropdown-item" href="{% url 'homepage:vmgs' %}">VMGs</a></li>
-        <li><a class="dropdown-item" href="{% url 'homepage:accreditations' %}">Accreditations</a></li>
+        <li><a class="dropdown-item" href="#">Projects</a></li>
+        <li><a class="dropdown-item" href="#">Notices</a></li>
+        <li><a class="dropdown-item" href="#">Statements</a></li>
       </ul>
     </li>
     <li class="nav-item dropdown me-2">
       <a
       class="nav-link dropdown-toggle fw-bold"
-      href="{% url 'homepage:news' %}"
+      href="{% url 'homepage:volunteering' %}"
       id="navbarDropdown"
       role="button"
       data-bs-toggle="dropdown"
       aria-expanded="false"
       >
-      News
+      Volunteering
     </a>
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <li><a class="dropdown-item" href="#">Projects</a></li>
+      <li><a class="dropdown-item" href="#">Apply</a></li>
       <li><a class="dropdown-item" href="#">Notices</a></li>
-      <li><a class="dropdown-item" href="#">Statements</a></li>
     </ul>
   </li>
   <li class="nav-item dropdown me-2">
     <a
     class="nav-link dropdown-toggle fw-bold"
-    href="{% url 'homepage:volunteering' %}"
+    href="{% url 'homepage:projects' %}"
     id="navbarDropdown"
     role="button"
     data-bs-toggle="dropdown"
     aria-expanded="false"
     >
-    Volunteering
+    Projects
   </a>
   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-    <li><a class="dropdown-item" href="#">Apply</a></li>
-    <li><a class="dropdown-item" href="#">Notices</a></li>
+    <li><a class="dropdown-item" href="{% url 'homepage:partners' %}">Partners</a></li>
+    <li><a class="dropdown-item" href="{% url 'homepage:projinformation' %}">Information</a></li>
   </ul>
-</li>
-<li class="nav-item dropdown me-2">
-  <a
-  class="nav-link dropdown-toggle fw-bold"
-  href="{% url 'homepage:projects' %}"
-  id="navbarDropdown"
-  role="button"
-  data-bs-toggle="dropdown"
-  aria-expanded="false"
-  >
-  Projects
-</a>
-<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-  <li><a class="dropdown-item" href="{% url 'homepage:partners' %}">Partners</a></li>
-  <li><a class="dropdown-item" href="{% url 'homepage:projinformation' %}">Information</a></li>
-</ul>
 </li>
 <li class="nav-item dropdown me-2">
   <a
@@ -117,6 +117,7 @@
 </ul>
 </li>
 
+</div>
 </div>
 </div>
 </nav>
