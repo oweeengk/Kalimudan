@@ -6,19 +6,8 @@
   font-weight: 350 !important;
 }
 
-/* Apply the green underline effect with increased thickness and lower positioning */
-/* Apply the green underline effect with increased thickness and lower positioning */
-.active {
+.custom-active {
   position: relative;
-}
-
-.active::before {
-  content: "";
-  position: absolute;
-  width: 80%; /* Adjust the width (80%) */
-  border-bottom: 4px solid green; /* Adjust the thickness (2px) and color */
-  bottom: 5px; /* Adjust the vertical positioning (-5px) */
-  left: 10%; /* Adjust the left positioning to center the line */
 }
 
 .card:hover {
@@ -115,33 +104,102 @@ a.text-reset:hover {
   right: 0;
 }
 
-/* Apply two columns to the dropdown menu when more than 3 items */
 .dropdown-menu {
-  column-count: 2; /* Split the items into two columns */
-  column-gap: 20px; /* Adjust the gap between columns as needed */
-  max-height: 200px; /* Set a max height to limit the menu's height (adjust as needed) */
-  overflow-y: auto; /* Add vertical scrolling for overflow */
+  column-count: 2;
+  column-gap: 20px;
+  max-height: 200px;
+  overflow-y: auto;
 }
 
 .navbar-brand {
   margin: 0;
   padding: 0;
 }
-/* Remove the blue background on Bootstrap 5 dropdown menu items */
-/* Remove the blue background on Bootstrap 5 dropdown menu items */
 .navbar .nav-item .dropdown-menu .dropdown-item:focus {
-  background-color: transparent !important;
-  box-shadow: none !important;
-  outline: none !important;
-}
-
-.dropdown-item.active,
-.dropdown-item:active {
-  color: black;
-  text-decoration: none;
-  background-color: white;
+  background-color: transparent;
+  box-shadow: none;
+  outline: none;
 }
 
 .navbar-with-shadow {
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.custom-active::before {
+  content: "";
+  position: absolute;
+  width: 80%; /* Adjust the width (80%) */
+  border-bottom: 4px solid green; /* Adjust the thickness (2px) and color */
+  bottom: 5px; /* Adjust the vertical positioning (-5px) */
+  left: 10%;
+}
+
+.black-divider {
+  border: none;
+  opacity: 1;
+  height: 4px;
+  background-color: black;
+  margin: 0 15%;
+}
+
+.custom-divider {
+  display: flex;
+  align-items: center;
+  margin: 0 15%;
+}
+
+.line {
+  border: none; /* Remove the default border */
+  opacity: 1;
+  height: 4px; /* Set the height of the line */
+  background-color: black; /* Set the line color to black */
+  flex-grow: 1; /* Allow the line to expand and fill available space */
+}
+
+.text {
+  margin: 0 10px; /* Adjust the spacing between the line and text */
+  align-self: center; /* Vertically center the text within the flex container */
+}
+
+.clamp-lines-four {
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Number of lines you want to display */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.clamp-lines-three {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Number of lines you want to display */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.col-md-8.border-end {
+  border-right: 2px solid #000 !important; /* 4px thick black border */
+}
+
+p {
+  font-family: "Quicksand", sans-serif;
+}
+
+.video-container {
+  width: 50%;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio (360 / 640 * 100%) */
+  overflow: hidden;
+  margin: 0 auto; /* Center horizontally */
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
