@@ -6,5 +6,5 @@ register = template.Library()
 @register.simple_tag
 def is_active(request, url_name):
     if request.path == reverse(url_name):
-        return 'active'
+        return 'custom-active'
     return ''

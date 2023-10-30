@@ -42,9 +42,9 @@
         </li>
         
         
-        <li class="nav-item dropdown me-2 {% is_active request 'homepage:news' %}">
+        <li class="nav-item dropdown me-2 {% is_active request 'homepage:news' %}{% is_active request 'homepage:newsprojects' %}{% is_active request 'homepage:newsnotices' %}{% is_active request 'homepage:newsstatements' %}">
           <a
-          class="nav-link dropdown-toggle fw-bold {% is_active request 'homepage:news' %}"
+          class="nav-link dropdown-toggle fw-bold"
           href="{% url 'homepage:news' %}"
           id="navbarDropdown"
           role="button"
@@ -54,9 +54,9 @@
           News
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="#">Projects</a></li>
-          <li><a class="dropdown-item" href="#">Notices</a></li>
-          <li><a class="dropdown-item" href="#">Statements</a></li>
+          <li><a class="dropdown-item" href="{% url 'homepage:newsprojects' %}">Projects</a></li>
+          <li><a class="dropdown-item" href="{% url 'homepage:newsnotices' %}">Notices</a></li>
+          <li><a class="dropdown-item" href="{% url 'homepage:newsstatements' %}">Statements</a></li>
         </ul>
       </li>
       <li class="nav-item dropdown me-2 {% is_active request 'homepage:volunteering' %}{% is_active request 'homepage:volunteeringnotices' %}{% is_active request 'homepage:volunteeringapply' %}">
@@ -75,7 +75,7 @@
         <li><a class="dropdown-item {% is_active request 'homepage:volunteeringnotices' %}" href="{% url 'homepage:volunteeringnotices' %}">Notices</a></li>
       </ul>
     </li>
-    <li class="nav-item dropdown me-2 {% is_active request 'homepage:projects' %}{% is_active request 'homepage:partners' %}{% is_active request 'homepage:projinformation' %}">
+    <li class="nav-item dropdown me-2 {% is_active request 'homepage:projects' %}{% is_active request 'homepage:projectspartners' %}{% is_active request 'homepage:projectsinformation' %}">
       <a
       class="nav-link dropdown-toggle fw-bold"
       href="{% url 'homepage:projects' %}"
@@ -87,11 +87,11 @@
       Projects
     </a>
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <li><a class="dropdown-item {% is_active request 'homepage:partners' %}" href="{% url 'homepage:partners' %}">Partners</a></li>
-      <li><a class="dropdown-item {% is_active request 'homepage:projinformation' %}" href="{% url 'homepage:projinformation' %}">Information</a></li>
+      <li><a class="dropdown-item {% is_active request 'homepage:projectspartners' %}" href="{% url 'homepage:projectspartners' %}">Partners</a></li>
+      <li><a class="dropdown-item {% is_active request 'homepage:projectsinformation' %}" href="{% url 'homepage:projectsinformation' %}">Information</a></li>
     </ul>
   </li>
-  <li class="nav-item dropdown me-2 {% is_active request 'homepage:tesda' %}">
+  <li class="nav-item dropdown me-2 {% is_active request 'homepage:tesda' %}{% is_active request 'homepage:tesdacoursesoffered' %}{% is_active request 'homepage:tesdainformation' %}">
     <a
     class="nav-link dropdown-toggle fw-bold"
     href="{% url 'homepage:tesda' %}"
@@ -104,10 +104,9 @@
   </a>
   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
     <li>
-      <a class="dropdown-item" href="#">Courses Offered</a>
+      <a class="dropdown-item" href="{% url 'homepage:tesdacoursesoffered' %}">Courses Offered</a>
     </li>
-    <li><a class="dropdown-item" href="#">Information</a></li>
-    <li><a class="dropdown-item" href="#">Facts and Figures</a></li>
+    <li><a class="dropdown-item" href="{% url 'homepage:tesdainformation' %}">Information</a></li>
   </ul>
 </li>
 

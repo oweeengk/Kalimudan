@@ -21,6 +21,7 @@ def projects(request):
 def tesda(request):
   return render(request, "tesda.html")
 
+
 def orgchart(request):
   return render(request, "about/orgchart.html")
 
@@ -39,15 +40,33 @@ def factsandfigures(request):
 def vmgs(request):
   return render(request, "about/vmgs.html")
 
-def projinformation(request):
-  return render(request, "projects/information.html")
 
-def partners(request):
-  return render(request, "projects/partners.html")
+def newsnotices(request):
+  return render(request, "news/notices.html")
+
+def newsprojects(request):
+  return render(request, "news/projects.html")
+
+def newsstatements(request):
+  return render(request, "news/statements.html")
+
 
 def volunteeringapply(request):
   return render(request, "volunteering/apply.html")
 
 def volunteeringnotices(request):
   return render(request, "volunteering/notices.html")
-  
+
+
+def projectsinformation(request):
+  return render(request, "projects/information.html")
+
+def projectspartners(request):
+  return render(request, "projects/partners.html")
+
+
+def tesdacoursesoffered(request):
+  return render(request, "tesda/coursesoffered.html")
+
+def tesdainformation(request):
+  return render(request, "tesda/information.html")
