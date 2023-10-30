@@ -1,5 +1,4 @@
 {% load static %}
-
 <footer class="text-center text-lg-start bg-dark text-white">
   <br />
   <section class="">
@@ -17,22 +16,6 @@
         </div>
 
         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-          <h6 class="text-uppercase fw-bold mb-4">PARTNERS</h6>
-          <p>
-            <a href="#!" class="text-reset">WFD Bangsamoro</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">AKAP-BM</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">GCERF</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Islamic Relief PH.</a>
-          </p>
-        </div>
-
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
           <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
           <p>
             <a href="{% url 'homepage:about' %}" class="text-reset">About</a>
@@ -52,12 +35,49 @@
           </p>
         </div>
 
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
           <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-          <p>Biaba Damag, Marawi City</p>
-          <p>kalimudanmarawi@yahoo.com</p>
-          <p>Facebook@kfimarawi</p>
-          <p>+639068356989</p>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> Biaba Damag<br />
+            <i class="fas fa-map-marker-alt"></i> Marawi City<br />
+            <i class="fas fa-envelope"></i> kalimudanmarawi<br />
+            <i class="fab fa-facebook"></i> kfimarawi<br />
+            <i class="fas fa-phone"></i> +639068356989
+          </p>
+        </div>
+
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">Join Us</h6>
+
+          <a
+            href="{% url 'login:register' %}"
+            class="btn btn-light d-block mx-auto"
+            >Join Now</a
+          ><br />
+
+          <h6 class="text-uppercase fw-bold mb-4">Follow Us</h6>
+
+          <a
+            href="https://www.instagram.com/"
+            class="text-light me-3 d-inline-block"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://www.google.com/"
+            class="text-light me-3 d-inline-block"
+          >
+            <i class="fab fa-google"></i>
+          </a>
+          <a
+            href="https://www.facebook.com/kfimarawi"
+            class="text-light me-3 d-inline-block"
+          >
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://www.twitter.com/" class="text-light d-inline-block">
+            <i class="fab fa-twitter"></i>
+          </a>
         </div>
       </div>
     </div>
@@ -66,7 +86,7 @@
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">
     © 2023 Copyright:
     <a class="text-reset fw-bold" href="{% url 'homepage:index' %}"
-      >Kalimudan Foundation Inc.</a
-    >
+      >Kalimudan Foundation Inc.
+    </a>
   </div>
 </footer>
