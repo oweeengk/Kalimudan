@@ -25,7 +25,7 @@
     <div class="navbar-nav-wrapper mt-auto me-5">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-5">
         <li class="nav-item me-2">
-          <a class="nav-link fw-bold {% is_active request 'homepage:index' %}" aria-current="page" href="{% url 'homepage:index'%}">Home</a>
+          <a class="nav-link fw-bold {% is_active request 'homepage:index' %}" aria-current="page" href="{% url 'homepage:index' %}">Home</a>
         </li>
         <li class="nav-item dropdown me-2 {% is_active request 'homepage:about' %}{% is_active request 'homepage:orgchart' %}{% is_active request 'homepage:visitkfi' %}{% is_active request 'homepage:factsandfigures' %}{% is_active request 'homepage:administration' %}{% is_active request 'homepage:accreditations' %}">
           <a class="nav-link dropdown-toggle fw-bold" href="{% url 'homepage:about' %}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
