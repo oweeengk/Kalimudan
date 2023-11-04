@@ -1,38 +1,70 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block title %}
-<title> TESDA - Kalimudan Sa Ranao </title>
-{% endblock %}
-
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block title %}
+<title>TESDA - Kalimudan Sa Ranao</title>
+{% endblock %} {% block content %}
 <div class="container">
-  <div class="mx-auto">
-    <figure>
-      <blockquote class="blockquote">
-        <h1 class="display-1" style="color: green;">
-          TESDA page boilerplate
-        </blockquote>
-        <figcaption class="blockquote-footer">
-          Company motto in <cite title="Source Title">Kalimudan</cite>
+  <div class="row justify-content-center">
+    <div class="col-11 mt-4 mb-4">
+      <br />
+      <h1 class="fw-bold">TESDA</h1>
+      <figure class="figure col-12" style="position: relative">
+        <img
+          src="{% static 'images/tesdafront.jpg' %}"
+          class="card-img-top border rounded mx-auto img-fluid"
+          alt="..."
+        />
+        <figcaption
+          class="figure-caption fs-6"
+          style="
+            position: absolute;
+            bottom: 0;
+            background-color: darkgreen;
+            width: 100%;
+            padding: 20px;
+            color: white;
+          "
+        >
+          Among these participants was Kalimudan sa Ranao Foundation, Inc. Thank
+          you TESDA for accommodating us. May all good wishes be upon us and our
+          faith with us as we continue venturing on new experiences together and
+          further enhance our knowledge and skills for the future.
+          Alhamdulillah!
         </figcaption>
       </figure>
-      <br />{% lorem 4 p random %}<br><br>
-      <!-- Example split danger button -->
-      <div class="btn-group">
-        <button type="button" class="btn btn-danger">Action</button>
-        <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-          <span class="visually-hidden">Toggle Dropdown</span>
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-          <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" href="#">Separated link</a></li>
-        </ul>
+      <br />
+      <hr class="content-divider" />
+      <br />
+      <div style="display: flex; align-items-baseline;">
+        <a
+          href="{% url 'homepage:tesdacoursesoffered' %}"
+          style="text-decoration: none"
+        >
+          <p class="fs-6 fw-bold" style="color: green; margin-right: 10px">
+            Courses Offered:
+          </p></a
+        >
+        <p class="fs-6" style="color: inherit; margin: 0">
+          This webpage showcases the various TESDA courses available through
+          KFI, providing comprehensive information on their offerings.
+        </p>
       </div>
+      <div style="display: flex; align-items-baseline;">
+        <a
+          href="{% url 'homepage:tesdainformation' %}"
+          style="text-decoration: none"
+        >
+          <p class="fs-6 fw-bold" style="color: green; margin-right: 10px">
+            Information:
+          </p></a
+        >
+        <p class="fs-6" style="color: inherit; margin: 0">
+          The information page provides comprehensive details about the courses
+          offered by KFI, including pertinent information related to each
+          course.
+        </p>
+      </div>
+
+      <p style="font-size: 12px">Last Updated: November 3, 2023</p>
     </div>
   </div>
-  {% endblock %}
-  
+</div>
+{% endblock %}
