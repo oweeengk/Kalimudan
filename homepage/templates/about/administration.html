@@ -1,22 +1,13 @@
-{% extends 'base.html' %}
-
-{% block title %}
-<title> Administration - Kalimudan Sa Ranao </title>
-{% endblock %}
-
-{% block content %}
+{% extends 'base.html' %} {% block title %} {% load static %}
+<title>Administration - Kalimudan Sa Ranao</title>
+{% endblock %} {% block content %}
 <div class="container">
-  <div class="mx-auto">
-    <figure>
-      <blockquote class="blockquote">
-        <h1 class="display-1" style="color: green;">Administration page boilerplate
-        </blockquote>
-        <figcaption class="blockquote-footer">
-          Company motto in <cite title="Source Title">Kalimudan</cite>
-        </figcaption>
-      </figure>
-      <br />{% lorem 4 p random %}<br><br>
+  <div class="row justify-content-center">
+    <div class="col-11 mt-4 mb-4">
+      <h1 class="fw-bold">Administration</h1>
+      <br />
+      <br />{% lorem 4 p random %}<br /><br />
     </div>
   </div>
-  {% endblock %}
-  
+</div>
+{% endblock %}
