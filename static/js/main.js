@@ -1,18 +1,66 @@
-// Add event listener for dropdown menu items
+function setActiveLink() {
+  const currentURL = window.location.href
+  const dropdownLinks = document.querySelectorAll(".nav-item.dropdown")
+
+  dropdownLinks.forEach(function (element) {
+    const dropdownLink = element.querySelector(".nav-link.dropdown-toggle")
+    const linkURL = dropdownLink.getAttribute("href")
+
+    if (currentURL === linkURL) {
+      dropdownLink.classList.add("active")
+    } else {
+      dropdownLink.classList.remove("active")
+    }
+  })
+}
+
+setActiveLink()
+
 document.querySelectorAll(".nav-item.dropdown").forEach(function (element) {
+  const dropdownLink = element.querySelector(".nav-link.dropdown-toggle")
+  const dropdownMenu = element.querySelector(".dropdown-menu")
+
   element.addEventListener("mouseover", function () {
-    element.querySelector(".dropdown-menu").classList.add("show")
+    dropdownLink.classList.add("active")
+    dropdownMenu.classList.add("show")
   })
 
   element.addEventListener("mouseout", function () {
-    element.querySelector(".dropdown-menu").classList.remove("show")
+    dropdownLink.classList.remove("active")
+    dropdownMenu.classList.remove("show")
   })
 
-  // Handle click event on the dropdown link
-  element
-    .querySelector(".nav-link.dropdown-toggle")
-    .addEventListener("click", function (e) {
-      e.preventDefault() // Prevent the link from navigating immediately
-      window.location.href = this.getAttribute("href") // Navigate to the specified URL
-    })
+  dropdownLink.addEventListener("click", function (e) {
+    e.preventDefault()
+    window.location.href = this.getAttribute("href")
+    this.classList.add("pressed")
+  })
 })
+
+const startDateComputer = new Date("2019-08-06")
+const startDateDressmaking = new Date("2022-09-27")
+const startDateBreadAndPastry = new Date("2022-09-27")
+const currentDate = new Date()
+
+const timeDiffComputer = currentDate.getTime() - startDateComputer.getTime()
+const daysAgoComputer = Math.floor(timeDiffComputer / (1000 * 3600 * 24))
+
+const timeDiffDressmaking =
+  currentDate.getTime() - startDateDressmaking.getTime()
+const daysAgoDressmaking = Math.floor(timeDiffDressmaking / (1000 * 3600 * 24))
+
+const timeDiffBreadAndPastry =
+  currentDate.getTime() - startDateBreadAndPastry.getTime()
+const daysAgoBreadAndPastry = Math.floor(
+  timeDiffBreadAndPastry / (1000 * 3600 * 24)
+)
+
+document.getElementById(
+  "computerDaysAgo"
+).textContent = `${daysAgoComputer} days ago`
+document.getElementById(
+  "dressmakingDaysAgo"
+).textContent = `${daysAgoDressmaking} days ago`
+document.getElementById(
+  "breadandpastryDaysAgo"
+).textContent = `${daysAgoBreadAndPastry} days ago`

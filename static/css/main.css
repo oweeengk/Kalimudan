@@ -1,3 +1,15 @@
+/* Target the main navigation links */
+.navbar-nav .nav-item .nav-link {
+  font-size: 18px !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+    Arial, sans-serif;
+  font-weight: 350 !important;
+}
+
+.custom-active {
+  position: relative;
+}
+
 .card:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transform: scale(1.05);
@@ -11,20 +23,36 @@
 .card-link:hover {
   color: #000;
 }
+
+.card-body {
+  overflow: hidden;
+  max-height: 250px;
+}
+p.card-title {
+  color: green;
+
+  font-weight: bold;
+  font-size: 17px;
+}
+h6.card-title {
+  color: black;
+}
+.card-div {
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+}
+.card-text {
+  text-align: justify;
+  font-size: 15px;
+}
+.card-subtitle {
+  font-size: 12px;
+  font-weight: 3px;
+}
 .list-group-item {
   border: none;
-}
-
-.navbar {
-  font-family: "sans-serif", serif !important;
-}
-.navbar-nav .nav-item .nav-link {
-  color: darkgreen;
-  text-decoration: none;
-}
-.navbar-nav .nav-item .nav-link.active {
-  color: darkgreen;
-  text-decoration: underline;
 }
 .search-btn-wide {
   min-width: 120px;
@@ -36,6 +64,10 @@ a.text-reset:hover {
   color: green !important;
 }
 
+.text-justify {
+  text-align: justify;
+}
+
 .green-card-header {
   background-color: green;
   color: green;
@@ -45,13 +77,13 @@ a.text-reset:hover {
     margin: 0;
     padding: 0;
     height: 100%;
-    background: #4caf50; /* Pretty green background color */
+    background: #4caf50;
   }
   .user_card {
     width: 350px;
     margin-top: auto;
     margin-bottom: auto;
-    background: #8bc34a; /* Light green card background */
+    background: #8bc34a;
     position: relative;
     display: flex;
     justify-content: center;
@@ -72,7 +104,7 @@ a.text-reset:hover {
   }
   .login_btn {
     width: 100%;
-    background: #43a047 !important; /* Darker green button background */
+    background: #43a047 !important;
     color: white !important;
   }
   .login_btn:focus {
@@ -83,7 +115,7 @@ a.text-reset:hover {
     padding: 0 2rem;
   }
   .input-group-text {
-    background: #689f38 !important; /* Another green for input group text */
+    background: #689f38 !important;
     color: white !important;
     border: 0 !important;
     border-radius: 0.25rem 0 0 0.25rem !important;
@@ -94,7 +126,116 @@ a.text-reset:hover {
     outline: 0px !important;
   }
 }
-.navbar-divider {
-  border-top: 1px solid #000; /* 1px solid black border */
+.navbar-nav-wrapper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.dropdown-menu {
+  column-count: 2;
+  column-gap: 20px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.navbar-brand {
   margin: 0;
+  padding: 0;
+}
+.navbar .nav-item .dropdown-menu .dropdown-item:focus {
+  background-color: transparent;
+  box-shadow: none;
+  outline: none;
+}
+
+.navbar-with-shadow {
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.custom-active::before {
+  content: "";
+  position: absolute;
+  width: 80%;
+  border-bottom: 3px solid green;
+  bottom: 5px;
+  left: 10%;
+}
+
+.black-divider {
+  border: none;
+  opacity: 1;
+  height: 4px;
+  background-color: black;
+  margin: 0 15%;
+}
+
+.content-divider {
+  border: none;
+  opacity: 1;
+  height: 2px;
+  background-color: black;
+}
+
+.custom-divider {
+  display: flex;
+  align-items: center;
+  margin: 0 15%;
+}
+
+.line {
+  border: none; /* Remove the default border */
+  opacity: 1;
+  height: 4px; /* Set the height of the line */
+  background-color: black; /* Set the line color to black */
+  flex-grow: 1; /* Allow the line to expand and fill available space */
+}
+
+.text {
+  margin: 0 10px; /* Adjust the spacing between the line and text */
+  align-self: center; /* Vertically center the text within the flex container */
+}
+
+.clamp-lines-four {
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Number of lines you want to display */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.clamp-lines-three {
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Number of lines you want to display */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.col-md-8.border-end {
+  border-right: 2px solid #000 !important; /* 4px thick black border */
+}
+
+p {
+  font-family: "Quicksand", sans-serif;
+  text-align: justify;
+}
+
+.video-container {
+  width: 100%;
+  position: relative;
+  padding-bottom: 65%; /* 16:9 aspect ratio (360 / 640 * 100%) */
+  overflow: hidden;
+  margin: 0 auto; /* Center horizontally */
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }

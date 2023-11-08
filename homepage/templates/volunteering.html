@@ -1,21 +1,72 @@
-{% extends 'base.html' %}
-
-{% block title %}
-<title> Volunteering - Kalimudan Sa Ranao </title>
-{% endblock %}
-
-{% block content %}
+{% extends 'base.html' %} {% block title %} {% load static %}
+<title>Volunteering - Kalimudan Sa Ranao</title>
+{% endblock %} {% block content %}
 <div class="container">
-  <div class="mx-auto">
-    <figure>
-      <blockquote class="blockquote">
-        <h1 class="display-1" style="color: green;">Volunteering page boilerplate
-      </blockquote>
-        <figcaption class="blockquote-footer">
-          Company motto in <cite title="Source Title">Kalimudan</cite>
+  <div class="row justify-content-center">
+    <div class="col-11 mt-4 mb-4">
+      <br />
+      <h1 class="fw-bold">Volunteering</h1>
+      <figure class="figure col-12" style="position: relative">
+        <img
+          src="{% static 'images/volunteeringfront.jpg' %}"
+          class="card-img-top border rounded mx-auto img-fluid"
+          alt="..."
+        />
+        <figcaption
+          class="figure-caption fs-6"
+          style="
+            position: absolute;
+            bottom: 0;
+            background-color: darkgreen;
+            width: 100%;
+            padding: 20px;
+            color: white;
+          "
+        >
+          For six months of internship and volunteering, it was one spontaneous
+          ride with these LCCI interns. From “Feeding Peace in Lanao” project
+          with Catholic Relief Service (CRS), “Prepare, Protect, Prevent”
+          project with International Organization for Migrgation (IOM) to
+          “Peacebuilding and Transitional Justice in Transforming Conflicts and
+          Preventing Extremist Violence” project with Initiatives for
+          International Dialogue (IID)...
         </figcaption>
       </figure>
-    <br />{% lorem 4 p random %}<br><br>
+      <br />
+      <hr class="content-divider" />
+      <br />
+      <div style="display: flex; align-items-baseline;">
+        <a
+          href="{% url 'homepage:newsprojects' %}"
+          style="text-decoration: none"
+        >
+          <p class="fs-6 fw-bold" style="color: green; margin-right: 10px">
+            Apply:
+          </p></a
+        >
+        <p class="fs-6" style="color: inherit; margin: 0">
+          Elevate your impact on the community by applying and volunteering with
+          KFI, fostering meaningful change.
+        </p>
+      </div>
+      <div style="display: flex; align-items-baseline;">
+        <a
+          href="{% url 'homepage:newsnotices' %}"
+          style="text-decoration: none"
+        >
+          <p class="fs-6 fw-bold" style="color: green; margin-right: 10px">
+            Notices:
+          </p></a
+        >
+        <p class="fs-6" style="color: inherit; margin: 0">
+          Keep yourself well-informed by regularly checking for notices and
+          announcements related to the enriching volunteering opportunities
+          available at KFI.
+        </p>
+      </div>
+
+      <p style="font-size: 12px">Last Updated: November 3, 2023</p>
+    </div>
   </div>
 </div>
 {% endblock %}

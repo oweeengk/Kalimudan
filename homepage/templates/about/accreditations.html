@@ -1,21 +1,88 @@
-{% extends 'base.html' %}
-
-{% block title %}
-<title> Accreditations - Kalimudan Sa Ranao </title>
-{% endblock %}
-
-{% block content %}
+{% extends 'base.html' %} {% block title %} {% load static %}
+<title>Accreditations - Kalimudan Sa Ranao</title>
+{% endblock %} {% block content %}
 <div class="container">
-  <div class="mx-auto">
-    <figure>
-      <blockquote class="blockquote">
-        <h1 class="display-1" style="color: green;">Accreditations page boilerplate
-      </blockquote>
-        <figcaption class="blockquote-footer">
-          Company motto in <cite title="Source Title">Kalimudan</cite>
-        </figcaption>
-      </figure>
-    <br />{% lorem 4 p random %}<br><br>
+  <div class="row justify-content-center">
+    <div class="col-11 mt-4 mb-4">
+      <h1 class="fw-bold">Accreditations</h1>
+      <br />
+      <div style="display: flex; align-items: center">
+        <img
+          src="{% static 'images/accreditations.png' %}"
+          style="width: 250px; height: 250px; margin-right: 20px"
+        />
+        <p>
+          Company Profile: Kalimudan Sa Ranao Foundation Inc. is an organization
+          located in Biaba-Damag, Marawi City, established in 1988. The
+          organization can be reached at 0906 835 6989 or 0956 481 0641. It was
+          officially registered and accredited by an agency on September 26,
+          2005, reflecting its commitment to its mission and goals.
+        </p>
+      </div>
+        <div>
+          <h2 style="color: green">Company Profile</h2>
+          <div class="profile-info">
+            <p class="fs-5 fw-bold" style="color: green">
+              Name of Organization:
+            </p>
+            <p class="fs-5" style="color: inherit">
+              Kalimudan Sa Ranao Foundation Inc.
+            </p>
+          </div>
+          <div class="profile-info">
+            <p class="fs-5 fw-bold" style="color: green">Registered Address:</p>
+            <p class="fs-5" style="color: inherit">Biaba-Damag, Marawi City</p>
+          </div>
+          <div class="profile-info">
+            <p class="fs-5 fw-bold" style="color: green">Contact No:</p>
+            <p class="fs-5" style="color: inherit">
+              0906 835 6989 / 0956 481 0641
+            </p>
+          </div>
+          <div class="profile-info">
+            <p class="fs-5 fw-bold" style="color: green">Date Organized:</p>
+            <p class="fs-5" style="color: inherit">1988</p>
+          </div>
+          <div class="profile-info">
+            <p class="fs-5 fw-bold" style="color: green">
+              Registering/Accrediting Agency Check:
+            </p>
+            <p class="fs-5" style="color: inherit">September 26, 2005</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <h2 style="color: green">
+      Permits, Government Accreditations, and Licenses
+    </h2>
+    <ul>
+      <li><p class="fs-5">SEC Certificate</p></li>
+      <li><p class="fs-5">Kalimudan Financial Statement</p></li>
+      <li><p class="fs-5">General Information Sheet (GIS)</p></li>
+      <li><p class="fs-5">Kalimudan Profile and Programme</p></li>
+      <li>
+        <p class="fs-5">
+          Ministry of Labor and Employment (BARMM02-0815-1020-006)
+        </p>
+      </li>
+      <li>
+        <p class="fs-5">
+          Certificate of Accreditation (Province of Lanao del Sangguniang
+          Panlalawigan)
+        </p>
+      </li>
+      <li>
+        <p class="fs-5">
+          Certificate of Accreditation (Islamic City of Marawi)
+        </p>
+      </li>
+      <li><p class="fs-5">BIR TIN</p></li>
+      <li><p class="fs-5">City Business Permit</p></li>
+      <li><p class="fs-5">Sanitary Permit to Operate</p></li>
+      <li><p class="fs-5">Fire Safety Inspection Certificate</p></li>
+      <li><p class="fs-5">Barangay Business Clearance</p></li>
+    </ul>
   </div>
 </div>
 {% endblock %}

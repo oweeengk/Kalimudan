@@ -1,21 +1,66 @@
-{% extends 'base.html' %}
-
-{% block title %}
-<title> Projects - Kalimudan Sa Ranao </title>
-{% endblock %}
-
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block title %}
+<title>Projects - Kalimudan Sa Ranao</title>
+{% endblock %} {% block content %}
 <div class="container">
-  <div class="mx-auto">
-    <figure>
-      <blockquote class="blockquote">
-        <h1 class="display-1" style="color: green;">Projects page boilerplate
-      </blockquote>
-        <figcaption class="blockquote-footer">
-          Company motto in <cite title="Source Title">Kalimudan</cite>
+  <div class="row justify-content-center">
+    <div class="col-11 mt-4 mb-4">
+      <br />
+      <h1 class="fw-bold">Projects</h1>
+      <figure class="figure col-12" style="position: relative">
+        <img
+          src="{% static 'images/projectsdiagram.png' %}"
+          class="card-img-top border rounded mx-auto img-fluid"
+          alt="..."
+        />
+        <figcaption
+          class="figure-caption fs-6"
+          style="
+            position: absolute;
+            bottom: 0;
+            background-color: darkgreen;
+            width: 100%;
+            padding: 10px;
+            color: white;
+          "
+        >
+          Coverage/Scope Areas: Iligan City, Marawi City, Province of Lanao del
+          Sur & Lanao del Norte
         </figcaption>
       </figure>
-    <br />{% lorem 4 p random %}<br><br>
+      <br />
+      <hr class="content-divider" />
+      <br />
+      <div style="display: flex; align-items-baseline;">
+        <a
+          href="{% url 'homepage:projectspartners' %}"
+          style="text-decoration: none"
+        >
+          <p class="fs-6 fw-bold" style="color: green; margin-right: 10px">
+            Partners:
+          </p></a
+        >
+        <p class="fs-6" style="color: inherit; margin: 0">
+          The Partner's page displays the partners of KFI throughout the years
+          and counting.
+        </p>
+      </div>
+      <div style="display: flex; align-items-baseline;">
+        <a
+          href="{% url 'homepage:projectsinformation' %}"
+          style="text-decoration: none"
+        >
+          <p class="fs-6 fw-bold" style="color: green; margin-right: 10px">
+            Information:
+          </p></a
+        >
+        <p class="fs-6" style="color: inherit; margin: 0">
+          Information displays the data about Kalimudan about their projects,
+          coverage, and partners throughout the years.
+        </p>
+      </div>
+
+      <p style="font-size: 12px">Last Updated: November 3, 2023</p>
+    </div>
   </div>
 </div>
 {% endblock %}

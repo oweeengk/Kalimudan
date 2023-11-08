@@ -1,76 +1,126 @@
 {% extends 'base.html' %}
-
+<!--TEST-->
+{% load static %}
+<!--TEST-->
+{% load custom_tags %}
+<!--TEST-->
 {% block title %}
-<title> About - Kalimudan Sa Ranao </title>
+<title>About - Kalimudan Sa Ranao Inc.</title>
 {% endblock %}
-
+<!--TEST-->
 {% block content %}
 <div class="container">
-  <div class="mx-auto">
-    <figure>
-
-        <h1 class="display-1" style="color: green;">About Kalimudan </h1>
+  <div class="row justify-content-center">
+    <div class="col-11 mt-4 mb-4">
+      <br />
+      <h1 class="fw-bold">About</h1>
+      <figure class="figure col-12" style="position: relative">
+        <img
+          src="{% static 'images/kalimudanfront.jpg' %}"
+          class="card-img-top border rounded mx-auto img-fluid"
+          alt="..."
+        />
+        <figcaption
+          class="figure-caption fs-6"
+          style="
+            position: absolute;
+            bottom: 0;
+            background-color: darkgreen;
+            width: 100%;
+            padding: 20px;
+            color: white;
+          "
+        >
+          Kalimudan sa Ranao Foundation, Inc. is a non-governmental organization
+          (NGO) located in Marawi City. It was founded in 1988 with a primary
+          mission to empower and uplift the marginalized Meranao Society. The
+          organization achieves this mission through various programs and
+          initiatives that promote education and raise awareness among the
+          Meranao community.
+        </figcaption>
       </figure>
-    <br /><p class="text-justify fs-5">Kalimudan is a Non-Government Organization (NGO) based in Marawi City, Lanao Del Sur. In its almost 35 years of existence, Kalimudan has developed into a well-established organization working with lean and mean staffing patterns, a backstopped by external experts - consultants, allies or members of the Board who are from the academe.</p><br>
-
-    <h2 style="color: green;">Kalimudan History </h1>
-    <p class="text-justify">
-      <p class="fs-5"> In the year 1988, Kalimudan was established and set up by young professional volunteers, members from academe, religious groups, and bonded themselves in order to voluntarily share their acquired skills, talents, and expertise to benefit poor and marginalized sectors of the society. In its succeeding years, it evolved into a well-developed, systematic, and institutionalized NGO.
-      </p>
-      <p class="fs-5"> Believing that political stability, inter-cultural harmony, quality education and healthy population are keys to peace and development, it has consistenyl worked in promoting solidarity and harmonious relations between and among citizens. Civil Society Organizations and Local Government working together for peace and development.
-      </p>
-      <p class="fs-5"> Kalimudan's current work covers 4 clusters of activities, including <span class="fst-italic">(major programs, special projects, contracted programs, and relief to internally displaced people)</span>. Under major programs are peace building, sustainable resource management, education, health, and enhancing local governance.</p>
-    </p>
-    <br><br>
-    <div style="display: flex; align-items-baseline;">
-      <p class="fs-5 fw-bold" style="color: green; margin-right: 10px;">Organizational Chart:</p>
-      <p class="fs-5" style="color: inherit; margin: 0;">The organizational chart visualizes an organization's hierarchy and reporting relationships.</p>
-      <div style="flex: 1; text-align: right;">
-        <a href="#" class="btn btn-success">See Organizational Chart</a>
+      <br />
+      <hr class="content-divider" />
+      <br />
+      <div style="display: flex; align-items-baseline;">
+        <a href="{% url 'homepage:orgchart' %}" style="text-decoration: none">
+          <p class="fs-6 fw-bold" style="color: green; margin-right: 10px">
+            Organizational Chart:
+          </p></a
+        >
+        <p class="fs-6" style="color: inherit; margin: 0">
+          The organizational chart visually displays an organization's hierarchy
+          and reporting relationships for better understanding.
+        </p>
       </div>
-    </div>
-    <div style="display: flex; align-items-baseline;">
-      <p class="fs-5 fw-bold" style="color: green; margin-right: 10px;">Visit KFI:</p>
-      <p class="fs-5" style="color: inherit; margin: 0;">Visit KFI offers an opportunity to explore and engage with the Kalimudan Foundation Inc. </p>
-      <div style="flex: 1; text-align: right;">
-        <a href="#" class="btn btn-success">See Visit KFI</a>
+      <div style="display: flex; align-items-baseline;">
+        <a href="{% url 'homepage:visitkfi' %}" style="text-decoration: none">
+          <p class="fs-6 fw-bold" style="color: green; margin-right: 10px">
+            Visit KFI:
+          </p></a
+        >
+        <p class="fs-6" style="color: inherit; margin: 0">
+          Visit KFI offers an exciting opportunity to explore, engage, and gain
+          insights into the Kalimudan Foundation Inc.'s impactful work and
+          mission.
+        </p>
       </div>
-    </div>
-    <div style="display: flex; align-items-baseline;">
-      <p class="fs-5 fw-bold" style="color: green; margin-right: 10px;">Facts and Figures</p>
-      <p class="fs-5" style="color: inherit; margin: 0;">Facts and figures at KFI offers information about KFI's interesting data and impacts</p>
-      <div style="flex: 1; text-align: right;">
-        <a href="#" class="btn btn-success">See Facts and Figures</a>
+      <div style="display: flex; align-items-baseline;">
+        <a
+          href="{% url 'homepage:factsandfigures' %}"
+          style="text-decoration: none"
+        >
+          <p class="fs-6 fw-bold" style="color: green; margin-right: 10px">
+            Facts and Figures:
+          </p></a
+        >
+        <p class="fs-6" style="color: inherit; margin: 0">
+          Facts and figures at KFI provide valuable information about KFI's
+          compelling data, achievements, history, and impacts.
+        </p>
       </div>
-    </div>
-    <div style="display: flex; align-items-baseline;">
-      <p class="fs-5 fw-bold" style="color: green; margin-right: 10px;">Administration</p>
-      <p class="fs-5" style="color: inherit; margin: 0;">Administration at KFI showcases the leadership and management that drives the foundation's operations.</p>
-      <div style="flex: 1; text-align: right;">
-        <a href="#" class="btn btn-success">See Administration</a>
+      <div style="display: flex; align-items-baseline;">
+        <a
+          href="{% url 'homepage:administration' %}"
+          style="text-decoration: none"
+        >
+          <p class="fs-6 fw-bold" style="color: green; margin-right: 10px">
+            Administration:
+          </p></a
+        >
+        <p class="fs-6" style="color: inherit; margin: 0">
+          Administration at KFI showcases the leadership and management behind
+          the foundation's successful operations, ensuring its growth and
+          impact.
+        </p>
       </div>
-    </div>
-    <div style="display: flex; align-items-baseline;">
-      <p class="fs-5 fw-bold" style="color: green; margin-right: 10px;">Vision-Mission-Goals (VMGs)</p>
-      <p class="fs-5" style="color: inherit; margin: 0;">VMGs show the Vision, Mission, and Goals of KFI</p>
-      <div style="flex: 1; text-align: right;">
-        <a href="#" class="btn btn-success">See VMGs</a>
+      <div style="display: flex; align-items-baseline;">
+        <a href="{% url 'homepage:vmgs' %}" style="text-decoration: none">
+          <p class="fs-6 fw-bold" style="color: green; margin-right: 10px">
+            Vision-Mission-Goals (VMGs):
+          </p></a
+        >
+        <p class="fs-6" style="color: inherit; margin: 0">
+          VMGs reveal the Vision, Mission, and Goals of KFI, guiding our actions
+          and aspirations for a brighter future.
+        </p>
       </div>
-    </div>
-    <div style="display: flex; align-items-baseline;">
-      <p class="fs-5 fw-bold" style="color: green; margin-right: 10px;">Administration</p>
-      <p class="fs-5" style="color: inherit; margin: 0;">Accreditations at KFI showcases the foundation's official recognitions and certifications.</p>
-      <div style="flex: 1; text-align: right;">
-        <a href="#" class="btn btn-success">See Accreditations</a>
+      <div style="display: flex; align-items-baseline;">
+        <a
+          href="{% url 'homepage:accreditations' %}"
+          style="text-decoration: none"
+        >
+          <p class="fs-6 fw-bold" style="color: green; margin-right: 10px">
+            Accreditations:
+          </p></a
+        >
+        <p class="fs-6" style="color: inherit; margin: 0">
+          Accreditations at KFI showcase the foundation's official recognitions
+          and certifications, validating its commitment to excellence.
+        </p>
       </div>
+      <p style="font-size: 12px">Last Updated: November 3, 2023</p>
     </div>
-
-
-
-
-
-
-
   </div>
 </div>
 {% endblock %}

@@ -1,68 +1,128 @@
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  background: #7abecc !important;
+#messages {
+  color: red;
 }
-
-.user_card {
-  width: 350px;
-  margin-top: auto;
-  margin-bottom: auto;
-  background: #74cfbf;
-  position: relative;
+.login-container {
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  padding: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 5px;
+  align-items: center;
+  height: 100vh;
+  padding: 0 1rem;
 }
 
-.form_container {
-  margin-top: 20px;
+.welcome {
+  text-align: center;
+  margin-bottom: 50px;
 }
 
-#form-title {
-  color: #fff;
+.welcome h1 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 60px;
+}
+
+.circular-photo {
+  width: 150px;
+  height: 150px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 20px auto;
+  background-image: url("/static/images/4.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .login_btn {
-  width: 100%;
-  background: #33ccff !important;
-  color: white !important;
-}
-
-.login_btn:focus {
-  box-shadow: none !important;
-  outline: 0px !important;
-}
-
-.login_container {
-  padding: 0 2rem;
+  width: 300px;
+  background: rgb(112, 237, 112);
+  color: white;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add box shadow */
+  font-weight: 600; /* Increase font weight */
 }
 
 .input-group-text {
-  background: #f7ba5b !important;
-  color: white !important;
-  border: 0 !important;
-  border-radius: 0.25rem 0 0 0.25rem !important;
+  background: black;
+  color: white;
+  border: 0;
+  border-radius: 0.25rem 0 0 0.25rem;
 }
 
 .input_user,
 .input_pass:focus {
-  box-shadow: none !important;
-  outline: 0px !important;
+  box-shadow: none;
+  outline: none;
 }
 
-#messages {
-  background-color: grey;
-  color: #fff;
+.no-outline:focus,
+.no-outline:active {
+  outline: none;
+  box-shadow: none;
+  border: 1px solid transparent;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.form-control {
+  width: 125%;
+  border: none;
+  border-bottom: 2px solid gray;
+  outline: none;
+  font-size: 20px;
   padding: 10px;
-  margin-top: 10px;
+  transition: border-bottom 0.5s ease;
+  position: relative;
+}
+
+.form-control:focus {
+  border-bottom: 3px solid green;
+}
+
+label {
+  margin: 20px 0;
+  position: relative;
+  display: inline-block;
+}
+
+span {
+  padding: 10px;
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 0.2s;
+  transition-timing-function: ease;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  opacity: 0.5;
+}
+
+input:focus + span,
+input:not(:placeholder-shown) + span {
+  opacity: 0.5;
+  transform: scale(0.9) translateY(-100%);
+}
+
+input:focus + span,
+input:not(:-ms-input-placeholder) + span {
+  opacity: 1;
+  transform: scale(0.9) translateY(-100%);
+}
+
+.input-name {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.login_btn:hover {
+  background: #212529;
+  color: white;
+}
+
+.error-text {
+  color: red;
 }
