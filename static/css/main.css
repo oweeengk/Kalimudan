@@ -40,6 +40,10 @@ h5.card-title {
 .card-text {
   text-align: justify;
 }
+.card-subtitle {
+  font-size: 12px;
+  font-weight: 3px;
+}
 .list-group-item {
   border: none;
 }

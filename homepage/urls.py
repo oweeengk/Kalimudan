@@ -9,6 +9,7 @@ urlpatterns = [
   path("volunteering/", views.volunteering, name="volunteering"),
   path("projects/", views.projects, name="projects"),
   path("tesda/", views.tesda, name="tesda"),
+  path("donate/", views.donate, name="donate"),
 
   path("about/orgchart", views.orgchart, name="orgchart"),
   path("about/visitkfi", views.visitkfi, name="visitkfi"),

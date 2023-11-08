@@ -91,7 +91,7 @@
       <li><a class="dropdown-item {% is_active request 'homepage:projectsinformation' %}" href="{% url 'homepage:projectsinformation' %}">Information</a></li>
     </ul>
   </li>
-  <li class="nav-item dropdown me-2 {% is_active request 'homepage:tesda' %}{% is_active request 'homepage:tesdacoursesoffered' %}{% is_active request 'homepage:tesdainformation' %}">
+  <li class="nav-item dropdown me-2 {% is_active request 'homepage:tesda' %}{% is_active request 'homepage:tesdacoursesoffered' %}">
     <a
     class="nav-link dropdown-toggle fw-bold"
     href="{% url 'homepage:tesda' %}"
@@ -104,17 +104,22 @@
   </a>
   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
     <li>
-      <a class="dropdown-item" href="{% url 'homepage:tesdacoursesoffered' %}">Courses Offered</a>
+      <a class="dropdown-item" href="{% url 'homepage:tesdacoursesoffered' %}">Courses</a>
     </li>
     <li><a class="dropdown-item" href="{% url 'homepage:tesdainformation' %}">Information</a></li>
   </ul>
+  
+  <li class="nav-item me-2">
+    <a class="nav-link fw-bold {% is_active request 'homepage:donate' %}" aria-current="page" href="{% url 'homepage:donate' %}">Donate</a>
+  </li>
+  {% if request.user.is_authenticated %}
+  <li class="nav-item me-2">
+    <a class="nav-link fw-bold" aria-current="page" href="{% url 'login:logout' %}">({{ request.user }}) Logout</a>
+  </li>
+  {% endif %}
 </li>
 
 </div>
 </div>
 </div>
-{% if request.user.is_authenticated %}
-    <span class="hello-msg"> Hello, {{ request.user }}</span>
-    <span><a href="{% url 'login:logout' %}">Logout</a></span>
-{% endif %}
 </nav>

@@ -21,6 +21,9 @@ def projects(request):
 def tesda(request):
   return render(request, "tesda.html")
 
+def donate(request):
+  return render(request, "donate.html")
+
 
 def orgchart(request):
   return render(request, "about/orgchart.html")
