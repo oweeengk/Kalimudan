@@ -28,8 +28,14 @@
   overflow: hidden;
   max-height: 250px;
 }
-h5.card-title {
+p.card-title {
   color: green;
+
+  font-weight: bold;
+  font-size: 17px;
+}
+h6.card-title {
+  color: black;
 }
 .card-div {
   line-height: 1.4;
@@ -39,6 +45,7 @@ h5.card-title {
 }
 .card-text {
   text-align: justify;
+  font-size: 15px;
 }
 .card-subtitle {
   font-size: 12px;
