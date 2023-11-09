@@ -40,8 +40,8 @@ def administration(request):
 def factsandfigures(request):
   return render(request, "about/factsandfigures.html")
 
-def vmgs(request):
-  return render(request, "about/vmgs.html")
+def manualofoperations(request):
+  return render(request, "about/manualofoperations.html")
 
 
 def newsnotices(request):

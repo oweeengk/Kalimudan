@@ -16,7 +16,7 @@ urlpatterns = [
   path("about/accreditations", views.accreditations, name="accreditations"),
   path("about/administration", views.administration, name="administration"),
   path("about/factsandfigures", views.factsandfigures, name="factsandfigures"),
-  path("about/vmgs", views.vmgs, name="vmgs"),
+  path("about/manualofoperations", views.manualofoperations, name="manualofoperations"),
 
   path("news/projects", views.newsprojects, name="newsprojects"),
   path("news/notices", views.newsnotices, name="newsnotices"),

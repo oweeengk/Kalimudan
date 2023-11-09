@@ -27,7 +27,7 @@
         <li class="nav-item me-2">
           <a class="nav-link fw-bold {% is_active request 'homepage:index' %}" aria-current="page" href="{% url 'homepage:index' %}">Home</a>
         </li>
-        <li class="nav-item dropdown me-2 {% is_active request 'homepage:about' %}{% is_active request 'homepage:orgchart' %}{% is_active request 'homepage:vmgs' %}{% is_active request 'homepage:visitkfi' %}{% is_active request 'homepage:factsandfigures' %}{% is_active request 'homepage:administration' %}{% is_active request 'homepage:accreditations' %}">
+        <li class="nav-item dropdown me-2 {% is_active request 'homepage:about' %}{% is_active request 'homepage:orgchart' %}{% is_active request 'homepage:manualofoperations' %}{% is_active request 'homepage:visitkfi' %}{% is_active request 'homepage:factsandfigures' %}{% is_active request 'homepage:administration' %}{% is_active request 'homepage:accreditations' %}">
           <a class="nav-link dropdown-toggle fw-bold" href="{% url 'homepage:about' %}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li>
@@ -36,7 +36,7 @@
             <li><a class="dropdown-item {% is_active request 'homepage:visitkfi' %}" href="{% url 'homepage:visitkfi' %}">Visit KFI</a></li>
             <li><a class="dropdown-item {% is_active request 'homepage:factsandfigures' %}" href="{% url 'homepage:factsandfigures' %}">Facts and Figures</a></li>
             <li><a class="dropdown-item {% is_active request 'homepage:administration' %}" href="{% url 'homepage:administration' %}">Administration</a></li>
-            <li><a class="dropdown-item {% is_active request 'homepage:vmgs' %}" href="{% url 'homepage:vmgs' %}">VMGs</a></li>
+            <li><a class="dropdown-item {% is_active request 'homepage:manualofoperations' %}" href="{% url 'homepage:manualofoperations' %}">Manual of Operations</a></li>
             <li><a class="dropdown-item {% is_active request 'homepage:accreditations' %}" href="{% url 'homepage:accreditations' %}">Accreditations</a></li>
           </ul>
         </li>
