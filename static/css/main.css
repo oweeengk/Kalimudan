@@ -43,7 +43,7 @@ h6.card-title {
 .card-div {
   line-height: 1.4;
   display: -webkit-box;
-  -webkit-line-clamp: 8;
+
   -webkit-box-orient: vertical;
 }
 .card-text {
@@ -188,21 +188,21 @@ a.text-reset:hover {
 }
 
 .line {
-  border: none; /* Remove the default border */
+  border: none;
   opacity: 1;
-  height: 4px; /* Set the height of the line */
-  background-color: black; /* Set the line color to black */
-  flex-grow: 1; /* Allow the line to expand and fill available space */
+  height: 4px;
+  background-color: black;
+  flex-grow: 1;
 }
 
 .text {
-  margin: 0 10px; /* Adjust the spacing between the line and text */
-  align-self: center; /* Vertically center the text within the flex container */
+  margin: 0 10px;
+  align-self: center;
 }
 
 .clamp-lines-four {
   display: -webkit-box;
-  -webkit-line-clamp: 4; /* Number of lines you want to display */
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -210,14 +210,14 @@ a.text-reset:hover {
 
 .clamp-lines-three {
   display: -webkit-box;
-  -webkit-line-clamp: 3; /* Number of lines you want to display */
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .col-md-8.border-end {
-  border-right: 2px solid #000 !important; /* 4px thick black border */
+  border-right: 2px solid #000 !important;
 }
 
 p {
@@ -229,12 +229,12 @@ p {
 .video-container {
   width: 100%;
   position: relative;
-  padding-bottom: 65%; /* 16:9 aspect ratio (360 / 640 * 100%) */
+  padding-bottom: 65%;
   overflow: hidden;
-  margin: 0 auto; /* Center horizontally */
+  margin: 0 auto;
   display: flex;
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
+  align-items: center;
+  justify-content: center;
 }
 
 .video-container iframe {
