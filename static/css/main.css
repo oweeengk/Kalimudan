@@ -1,9 +1,12 @@
 /* Target the main navigation links */
 .navbar-nav .nav-item .nav-link {
-  font-size: 18px !important;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
-    Arial, sans-serif;
-  font-weight: 350 !important;
+  font-size: 17px !important;
+  font-family: "Calibri", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 450 !important;
+}
+
+.navbar-nav a {
+  font-size: 14px;
 }
 
 .custom-active {
@@ -74,6 +77,7 @@ a.text-reset:hover {
 
   body,
   html {
+    font-family: "Calibri", sans-serif;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -217,7 +221,8 @@ a.text-reset:hover {
 }
 
 p {
-  font-family: "Quicksand", sans-serif;
+  font-family: "Calibri", sans-serif;
+
   text-align: justify;
 }
 
