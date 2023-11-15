@@ -41,6 +41,7 @@
   </head>
 
   <body>
+    {% if request.path == '/' %}
     <div class="loading-screen">
       <!-- Replace 'path/to/loading-image.png' with the path to your loading image -->
       <img
@@ -58,6 +59,7 @@
         <div class="loading-dot"></div>
       </div>
     </div>
+    {% endif %}
 
     <!-- This is to add the navbar html in every template -->
     {% include 'navbar.html' %} {% block content %} {% endblock %}

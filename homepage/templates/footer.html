@@ -1,7 +1,18 @@
 {% load static %}
-<footer class="text-center text-lg-start bg-black text-white">
+<footer class="text-center text-lg-start bg-black text-white position-relative">
+  <div
+    class="position-absolute top-0 left-0 w-100 h-100"
+    style="
+      background: url('{% static 'images/kfifront2.jpg' %}') center center/cover;
+      background-size: cover;
+      opacity: 0.5;
+    "
+  ></div>
   <br />
-  <section class="">
+  <section
+    class="container text-center text-md-start mt-5 position-relative"
+    style="z-index: 1"
+  >
     <div class="container text-center text-md-start mt-5">
       <div class="row mt-3">
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
@@ -81,12 +92,11 @@
         </div>
       </div>
     </div>
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">
+      © 2023 Copyright:
+      <a class="text-reset fw-bold" href="{% url 'homepage:index' %}">
+        Kalimudan Foundation Inc.
+      </a>
+    </div>
   </section>
-
-  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">
-    © 2023 Copyright:
-    <a class="text-reset fw-bold" href="{% url 'homepage:index' %}"
-      >Kalimudan Foundation Inc.
-    </a>
-  </div>
 </footer>
