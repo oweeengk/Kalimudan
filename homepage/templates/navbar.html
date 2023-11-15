@@ -1,126 +1,260 @@
-{% load static %}
-{% load custom_tags %}
+{% load static %} {% load custom_tags %}
 
-<nav class="navbar navbar-expand-lg navbar-light bg-white pt-0 navbar-with-shadow">
+<script>
+  // Check if the user agent indicates a mobile device
+  var isMobile =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    )
+
+  console.log("isMobile:", isMobile)
+
+  // Load your script only if it's not a mobile device
+  if (!isMobile) {
+    var script = document.createElement("script")
+    script.src = "{% static 'js/main.js' %}"
+    document.head.appendChild(script)
+  }
+</script>
+
+<nav
+  class="navbar navbar-expand-lg navbar-light bg-white pt-0 navbar-with-shadow"
+>
   <div class="container-fluid">
     <a class="navbar-brand" href="{% url 'homepage:index'%}">
       <img
-      src="{% static 'images/Kalimudan sa ranao inc.png' %}"
-      alt="KFI LOGO"
-      class="img-fluid navbar-brand-img"
-      style="height: 80px"
+        src="{% static 'images/Kalimudan sa ranao inc.png' %}"
+        alt="KFI LOGO"
+        class="img-fluid navbar-brand-img"
+        style="height: 80px"
       />
     </a>
     <button
-    class="navbar-toggler"
-    type="button"
-    data-bs-toggle="collapse"
-    data-bs-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-    >
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <div class="navbar-nav-wrapper mt-auto me-5">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-5">
-        <li class="nav-item me-2">
-          <a class="nav-link fw-bold {% is_active request 'homepage:index' %}" aria-current="page" href="{% url 'homepage:index' %}">Home</a>
-        </li>
-        <li class="nav-item dropdown me-2 {% is_active request 'homepage:about' %}{% is_active request 'homepage:orgchart' %}{% is_active request 'homepage:manualofoperations' %}{% is_active request 'homepage:visitkfi' %}{% is_active request 'homepage:factsandfigures' %}{% is_active request 'homepage:administration' %}{% is_active request 'homepage:accreditations' %}">
-          <a class="nav-link dropdown-toggle fw-bold" href="{% url 'homepage:about' %}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li>
-              <a class="dropdown-item {% is_active request 'homepage:orgchart' %}" href="{% url 'homepage:orgchart' %}">Organizational Chart</a>
-            </li>
-            <li><a class="dropdown-item {% is_active request 'homepage:visitkfi' %}" href="{% url 'homepage:visitkfi' %}">Visit KFI</a></li>
-            <li><a class="dropdown-item {% is_active request 'homepage:factsandfigures' %}" href="{% url 'homepage:factsandfigures' %}">Facts and Figures</a></li>
-            <li><a class="dropdown-item {% is_active request 'homepage:administration' %}" href="{% url 'homepage:administration' %}">Administration</a></li>
-            <li><a class="dropdown-item {% is_active request 'homepage:manualofoperations' %}" href="{% url 'homepage:manualofoperations' %}">Manual of Operations</a></li>
-            <li><a class="dropdown-item {% is_active request 'homepage:accreditations' %}" href="{% url 'homepage:accreditations' %}">Accreditations</a></li>
-          </ul>
-        </li>
-        
-        
-        <li class="nav-item dropdown me-2 {% is_active request 'homepage:news' %}{% is_active request 'homepage:newsprojects' %}{% is_active request 'homepage:newsnotices' %}{% is_active request 'homepage:newsstatements' %}">
-          <a
-          class="nav-link dropdown-toggle fw-bold"
-          href="{% url 'homepage:news' %}"
-          id="navbarDropdown"
-          role="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-          >
-          News
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="{% url 'homepage:newsprojects' %}">Projects</a></li>
-          <li><a class="dropdown-item" href="{% url 'homepage:newsnotices' %}">Notices</a></li>
-          <li><a class="dropdown-item" href="{% url 'homepage:newsstatements' %}">Statements</a></li>
-        </ul>
-      </li>
-      <li class="nav-item dropdown me-2 {% is_active request 'homepage:volunteering' %}{% is_active request 'homepage:volunteeringnotices' %}{% is_active request 'homepage:volunteeringapply' %}">
-        <a
-        class="nav-link dropdown-toggle fw-bold"
-        href="{% url 'homepage:volunteering' %}"
-        id="navbarDropdown"
-        role="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-        >
-        Volunteering
-      </a>
-      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <li><a class="dropdown-item {% is_active request 'homepage:volunteeringapply' %}" href="{% url 'homepage:volunteeringapply' %}">Apply</a></li>
-        <li><a class="dropdown-item {% is_active request 'homepage:volunteeringnotices' %}" href="{% url 'homepage:volunteeringnotices' %}">Notices</a></li>
-      </ul>
-    </li>
-    <li class="nav-item dropdown me-2 {% is_active request 'homepage:projects' %}{% is_active request 'homepage:projectspartners' %}{% is_active request 'homepage:projectsinformation' %}">
-      <a
-      class="nav-link dropdown-toggle fw-bold"
-      href="{% url 'homepage:projects' %}"
-      id="navbarDropdown"
-      role="button"
-      data-bs-toggle="dropdown"
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
       aria-expanded="false"
-      >
-      Projects
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <li><a class="dropdown-item {% is_active request 'homepage:projectspartners' %}" href="{% url 'homepage:projectspartners' %}">Partners</a></li>
-      <li><a class="dropdown-item {% is_active request 'homepage:projectsinformation' %}" href="{% url 'homepage:projectsinformation' %}">Information</a></li>
-    </ul>
-  </li>
-  <li class="nav-item dropdown me-2 {% is_active request 'homepage:tesda' %}{% is_active request 'homepage:tesdacoursesoffered' %}">
-    <a
-    class="nav-link dropdown-toggle fw-bold"
-    href="{% url 'homepage:tesda' %}"
-    id="navbarDropdown"
-    role="button"
-    data-bs-toggle="dropdown"
-    aria-expanded="false"
+      aria-label="Toggle navigation"
     >
-    TESDA
-  </a>
-  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-    <li>
-      <a class="dropdown-item" href="{% url 'homepage:tesdacoursesoffered' %}">Courses</a>
-    </li>
-    <li><a class="dropdown-item" href="{% url 'homepage:tesdainformation' %}">Information</a></li>
-  </ul>
-  
-  <li class="nav-item me-2">
-    <a class="nav-link fw-bold {% is_active request 'homepage:donate' %}" aria-current="page" href="{% url 'homepage:donate' %}">Donate</a>
-  </li>
-  {% if request.user.is_authenticated %}
-  <li class="nav-item me-2">
-    <a class="nav-link fw-bold" aria-current="page" href="{% url 'login:logout' %}">({{ request.user }}) Logout</a>
-  </li>
-  {% endif %}
-</li>
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="navbar-nav-wrapper mt-auto me-5">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-5">
+          <li class="nav-item me-2">
+            <a
+              class="nav-link fw-bold {% is_active request 'homepage:index' %}"
+              aria-current="page"
+              href="{% url 'homepage:index' %}"
+              >Home</a
+            >
+          </li>
+          <li
+            class="nav-item dropdown me-2 {% is_active request 'homepage:about' %}{% is_active request 'homepage:orgchart' %}{% is_active request 'homepage:manualofoperations' %}{% is_active request 'homepage:visitkfi' %}{% is_active request 'homepage:factsandfigures' %}{% is_active request 'homepage:administration' %}{% is_active request 'homepage:accreditations' %}"
+          >
+            <a
+              class="nav-link dropdown-toggle fw-bold"
+              href="{% url 'homepage:about' %}"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              >About</a
+            >
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <a
+                  class="dropdown-item {% is_active request 'homepage:orgchart' %}"
+                  href="{% url 'homepage:orgchart' %}"
+                  >Organizational Chart</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item {% is_active request 'homepage:visitkfi' %}"
+                  href="{% url 'homepage:visitkfi' %}"
+                  >Visit KFI</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item {% is_active request 'homepage:factsandfigures' %}"
+                  href="{% url 'homepage:factsandfigures' %}"
+                  >Facts and Figures</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item {% is_active request 'homepage:administration' %}"
+                  href="{% url 'homepage:administration' %}"
+                  >Administration</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item {% is_active request 'homepage:manualofoperations' %}"
+                  href="{% url 'homepage:manualofoperations' %}"
+                  >Manual of Operations</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item {% is_active request 'homepage:accreditations' %}"
+                  href="{% url 'homepage:accreditations' %}"
+                  >Accreditations</a
+                >
+              </li>
+            </ul>
+          </li>
 
-</div>
-</div>
-</div>
+          <li
+            class="nav-item dropdown me-2 {% is_active request 'homepage:news' %}{% is_active request 'homepage:newsprojects' %}{% is_active request 'homepage:newsnotices' %}{% is_active request 'homepage:newsstatements' %}"
+          >
+            <a
+              class="nav-link dropdown-toggle fw-bold"
+              href="{% url 'homepage:news' %}"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              News
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="{% url 'homepage:newsprojects' %}"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="{% url 'homepage:newsnotices' %}"
+                  >Notices</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="{% url 'homepage:newsstatements' %}"
+                  >Statements</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li
+            class="nav-item dropdown me-2 {% is_active request 'homepage:volunteering' %}{% is_active request 'homepage:volunteeringnotices' %}{% is_active request 'homepage:volunteeringapply' %}"
+          >
+            <a
+              class="nav-link dropdown-toggle fw-bold"
+              href="{% url 'homepage:volunteering' %}"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Volunteering
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <a
+                  class="dropdown-item {% is_active request 'homepage:volunteeringapply' %}"
+                  href="{% url 'homepage:volunteeringapply' %}"
+                  >Apply</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item {% is_active request 'homepage:volunteeringnotices' %}"
+                  href="{% url 'homepage:volunteeringnotices' %}"
+                  >Notices</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li
+            class="nav-item dropdown me-2 {% is_active request 'homepage:projects' %}{% is_active request 'homepage:projectspartners' %}{% is_active request 'homepage:projectsinformation' %}"
+          >
+            <a
+              class="nav-link dropdown-toggle fw-bold"
+              href="{% url 'homepage:projects' %}"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Projects
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <a
+                  class="dropdown-item {% is_active request 'homepage:projectspartners' %}"
+                  href="{% url 'homepage:projectspartners' %}"
+                  >Partners</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item {% is_active request 'homepage:projectsinformation' %}"
+                  href="{% url 'homepage:projectsinformation' %}"
+                  >Information</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li
+            class="nav-item dropdown me-2 {% is_active request 'homepage:tesda' %}{% is_active request 'homepage:tesdacoursesoffered' %}"
+          >
+            <a
+              class="nav-link dropdown-toggle fw-bold"
+              href="{% url 'homepage:tesda' %}"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              TESDA
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="{% url 'homepage:tesdacoursesoffered' %}"
+                  >Courses</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="{% url 'homepage:tesdainformation' %}"
+                  >Information</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item me-2">
+            <a
+              class="nav-link fw-bold {% is_active request 'homepage:donate' %}"
+              aria-current="page"
+              href="{% url 'homepage:donate' %}"
+              >Donate</a
+            >
+          </li>
+          {% if request.user.is_authenticated %}
+          <li class="nav-item me-2">
+            <a
+              class="nav-link fw-bold"
+              aria-current="page"
+              href="{% url 'login:logout' %}"
+              >({{ request.user }}) Logout</a
+            >
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
 </nav>
