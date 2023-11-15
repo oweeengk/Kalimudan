@@ -64,3 +64,14 @@ document.getElementById(
 document.getElementById(
   "breadandpastryDaysAgo"
 ).textContent = `${daysAgoBreadAndPastry} days ago`
+
+window.addEventListener("load", function () {
+  // Hide the loading screen
+  var loadingScreen = document.querySelector(".loading-screen")
+  loadingScreen.style.opacity = 0
+
+  // Optionally, remove the loading screen from the DOM
+  setTimeout(function () {
+    loadingScreen.style.display = "none"
+  }, 500) // Adjust the delay if needed
+})

@@ -41,6 +41,24 @@
   </head>
 
   <body>
+    <div class="loading-screen">
+      <!-- Replace 'path/to/loading-image.png' with the path to your loading image -->
+      <img
+        src="{% static 'images/loading.png' %}"
+        alt="Loading"
+        class="loading-image"
+        style="height: 200px; width: 300px"
+      />
+
+      <div class="loading-dots">
+        <div class="loading-dot"></div>
+        &nbsp;&nbsp;
+        <div class="loading-dot"></div>
+        &nbsp;&nbsp;
+        <div class="loading-dot"></div>
+      </div>
+    </div>
+
     <!-- This is to add the navbar html in every template -->
     {% include 'navbar.html' %} {% block content %} {% endblock %}
 
