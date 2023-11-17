@@ -14,8 +14,6 @@ function setActiveLink() {
   })
 }
 
-setActiveLink()
-
 document.querySelectorAll(".nav-item.dropdown").forEach(function (element) {
   const dropdownLink = element.querySelector(".nav-link.dropdown-toggle")
   const dropdownMenu = element.querySelector(".dropdown-menu")

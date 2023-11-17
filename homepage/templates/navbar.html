@@ -51,6 +51,7 @@
               >Home</a
             >
           </li>
+
           <li
             class="nav-item dropdown me-2 {% is_active request 'homepage:about' %}{% is_active request 'homepage:orgchart' %}{% is_active request 'homepage:manualofoperations' %}{% is_active request 'homepage:visitkfi' %}{% is_active request 'homepage:factsandfigures' %}{% is_active request 'homepage:administration' %}{% is_active request 'homepage:accreditations' %}"
           >
@@ -92,6 +93,8 @@
                   >Administration</a
                 >
               </li>
+
+              {% if request.user.is_authenticated %}
               <li>
                 <a
                   class="dropdown-item {% is_active request 'homepage:manualofoperations' %}"
@@ -99,6 +102,7 @@
                   >Manual of Operations</a
                 >
               </li>
+              {% endif %}
               <li>
                 <a
                   class="dropdown-item {% is_active request 'homepage:accreditations' %}"
@@ -244,14 +248,21 @@
             >
           </li>
           {% if request.user.is_authenticated %}
-          <li class="nav-item me-2">
-            <a
-              class="nav-link fw-bold"
-              aria-current="page"
-              href="{% url 'login:logout' %}"
-              >({{ request.user }}) Logout</a
+          <li class="nav-item me-2 fst-italic fs-1">
+            <a class="nav-link fw-bold" aria-current="page" href="#"
+              >{{ request.user }}</a
             >
           </li>
+          <!--
+          <li>
+            <a
+              class="dropdown-item"
+              aria-current="page"
+              href="{% url 'login:logout' %}"
+              >Logout</a
+            >
+          </li>
+          -->
           {% endif %}
         </ul>
       </div>

@@ -216,9 +216,9 @@ This is to divide the mobile phones vs non-phones styling
     font-size: 14px;
   }
   .navbar-nav .nav-item .nav-link {
-    font-size: 19px !important;
+    font-size: 17px !important;
     font-family: "Calibri", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 450 !important;
+    font-weight: 400 !important;
   }
   .dropdown-menu {
     column-count: 2;
