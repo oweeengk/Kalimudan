@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 from django.template import loader
 from django.http import Http404
 
@@ -40,6 +41,7 @@ def administration(request):
 def factsandfigures(request):
   return render(request, "about/factsandfigures.html")
 
+@login_required
 def manualofoperations(request):
   return render(request, "about/manualofoperations.html")
 
