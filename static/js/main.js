@@ -14,8 +14,6 @@ function setActiveLink() {
   })
 }
 
-setActiveLink()
-
 document.querySelectorAll(".nav-item.dropdown").forEach(function (element) {
   const dropdownLink = element.querySelector(".nav-link.dropdown-toggle")
   const dropdownMenu = element.querySelector(".dropdown-menu")
@@ -64,3 +62,14 @@ document.getElementById(
 document.getElementById(
   "breadandpastryDaysAgo"
 ).textContent = `${daysAgoBreadAndPastry} days ago`
+
+window.addEventListener("load", function () {
+  // Hide the loading screen
+  var loadingScreen = document.querySelector(".loading-screen")
+  loadingScreen.style.opacity = 0
+
+  // Optionally, remove the loading screen from the DOM
+  setTimeout(function () {
+    loadingScreen.style.display = "none"
+  }, 500) // Adjust the delay if needed
+})
