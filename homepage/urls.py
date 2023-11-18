@@ -1,5 +1,7 @@
 from django.urls import path, include
 from . import views
+from .views import file_list, file_upload
+
 
 app_name = "homepage"
 urlpatterns = [
@@ -30,4 +32,7 @@ urlpatterns = [
 
   path("tesda/coursesoffered", views.tesdacoursesoffered, name="tesdacoursesoffered"),
   path("tesda/information", views.tesdainformation, name="tesdainformation"),
+
+  path('upload/', file_upload, name='file_upload'),
+  path('files/', file_list, name='file_list'),
 ]
