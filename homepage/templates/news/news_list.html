@@ -1,13 +1,63 @@
-{% for news in news_list %}
-<div>
-  <h1>{{ category }}</h1>
-  <h3>
-    <a
-      href="{% url 'homepage:news_detail' category=news.category slug=news.slug %}"
-    >
-      {{ news.title }}
-    </a>
-  </h3>
-  <p>{{ news.content }}</p>
+{% extends 'base.html' %}
+<!--TEST-->
+{% load static %}
+<!--TEST-->
+{% load custom_tags %}
+<!--TEST-->
+{% block title %}
+<title>News - Kalimudan Sa Ranao Foundation Inc.</title>
+{% endblock %}
+<!--<h1>{{ news.category }}</h1>-->
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-11 mt-4 mb-4">
+      <br />
+      <h1>Statements</h1>
+      {% for news in news_list %} {% if news.category == 'statements' %}
+      <div>
+        <h3>
+          <a
+            href="{% url 'homepage:news_detail' category=news.category slug=news.slug %}"
+          >
+            {{ news.title }}
+          </a>
+        </h3>
+        <p>{{ news.content }}</p>
+      </div>
+      {% endif %} {% endfor %}
+      <hr class="black-divider" />
+      <br />
+      <h1>Notices</h1>
+      {% for news in news_list %} {% if news.category == 'notices' %}
+      <div>
+        <h3>
+          <a
+            href="{% url 'homepage:news_detail' category=news.category slug=news.slug %}"
+          >
+            {{ news.title }}
+          </a>
+        </h3>
+        <p>{{ news.content }}</p>
+      </div>
+      {% endif %} {% endfor %}
+      <hr class="black-divider" />
+      <br />
+      <h1>Projects</h1>
+      {% for news in news_list %}{% if news.category == 'projects' %}
+      <div>
+        <h3>
+          <a
+            href="{% url 'homepage:news_detail' category=news.category slug=news.slug %}"
+          >
+            {{ news.title }}
+          </a>
+        </h3>
+        <p>{{ news.content }}</p>
+      </div>
+      {% endif %} {% endfor %}
+    </div>
+  </div>
 </div>
-{% endfor %}
+
+{% endblock %}
