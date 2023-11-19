@@ -2,20 +2,17 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, Http404
 from django.contrib.auth.decorators import login_required
 from django.template import loader
-from .forms import FileUploadForm
-from .models import UploadedFile
-from django.urls import reverse
+from .forms import FileUploadForm, NewsForm
+from .models import UploadedFile, News
+from django.urls import reverse, reverse_lazy
 from django.urls.exceptions import NoReverseMatch
-
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 
 def index(request):
   return render(request, "homepage.html")
 
 def about(request):
   return render(request, "about.html")
-
-def news(request):
-  return render(request, "news.html")
 
 def volunteering(request):
   return render(request, "volunteering.html")
@@ -80,7 +77,9 @@ def tesdacoursesoffered(request):
 def tesdainformation(request):
   return render(request, "tesda/information.html")
 
-
+def file_list(request):
+    files = UploadedFile.objects.all()
+    return render(request, 'db/file_list.html', {'files': files})
 def file_upload(request):
     if request.method == 'POST':
         form = FileUploadForm(request.POST, request.FILES)
@@ -93,6 +92,34 @@ def file_upload(request):
     else:
         form = FileUploadForm()
     return render(request, 'db/file_upload.html', {'form': form})
-def file_list(request):
-    files = UploadedFile.objects.all()
-    return render(request, 'db/file_list.html', {'files': files})
+
+class NewsListView(ListView):
+    model = News
+    template_name = 'news/news_list.html'
+    context_object_name = 'news_list'
+
+    def get_queryset(self):
+        category = self.kwargs.get('category')
+        if category:
+            return News.objects.filter(category=category)
+        else:
+            return News.objects.all()
+
+class NewsCreateView(CreateView):
+    model = News
+    form_class = NewsForm
+    template_name = 'news/news_form.html'
+
+class NewsUpdateView(UpdateView):
+    model = News
+    form_class = NewsForm
+    template_name = 'news/news_form.html'
+
+class NewsDeleteView(DeleteView):
+    model = News
+    success_url = reverse_lazy('homepage:news_list')
+    template_name = 'news/news_confirm_delete.html'
+
+def news_detail(request, category, slug):
+    news = get_object_or_404(News, category=category, slug=slug)
+    return render(request, 'news/news_detail.html', {'news': news})
