@@ -1,0 +1,12 @@
+{% for news in news_list %}
+<div>
+  <h3>
+    <a
+      href="{% url 'homepage:news_detail' category=news.category slug=news.slug %}"
+    >
+      {{ news.title }}
+    </a>
+  </h3>
+  <p>{{ news.content }}</p>
+</div>
+{% endfor %}

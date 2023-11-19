@@ -1,5 +1,16 @@
-{% for file in files %}
+{% extends 'base.html' %}
+<!--TEST-->
+{% load static %}
+<!--TEST-->
+{% load custom_tags %}
+<!--TEST-->
+{% block title %}
+<title>About - Kalimudan Sa Ranao Foundation Inc.</title>
+{% endblock %}
+<!--TEST-->
+{% block content %} {% for file in files %}
+
 <h3>{{ file.title }}</h3>
 <a href="{{ file.file.url }}" download>Download</a>
 <br />
-{% endfor %}
+{% endfor %} {% endblock %}

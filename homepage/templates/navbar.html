@@ -112,7 +112,7 @@
               </li>
             </ul>
           </li>
-
+          {% comment %}
           <li
             class="nav-item dropdown me-2 {% is_active request 'homepage:news' %}{% is_active request 'homepage:newsprojects' %}{% is_active request 'homepage:newsnotices' %}{% is_active request 'homepage:newsstatements' %}"
           >
@@ -148,6 +148,8 @@
               </li>
             </ul>
           </li>
+          {% endcomment %}
+
           <li
             class="nav-item dropdown me-2 {% is_active request 'homepage:volunteering' %}{% is_active request 'homepage:volunteeringnotices' %}{% is_active request 'homepage:volunteeringapply' %}"
           >
@@ -264,7 +266,14 @@
           </li>
           -->
           {% else %}
-          <button type="button" class="btn btn-light">Login</button>
+          <li class="nav-item me-2 fst-italic fs-1">
+            <a
+              class="nav-link fw-bold"
+              aria-current="page"
+              href="{% url 'login:login' %}"
+              >Login</a
+            >
+          </li>
           {% endif %}
         </ul>
       </div>

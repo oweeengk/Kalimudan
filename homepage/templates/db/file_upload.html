@@ -1,4 +1,18 @@
+{% extends 'base.html' %}
+<!--TEST-->
+{% load static %}
+<!--TEST-->
+{% load custom_tags %}
+<!--TEST-->
+{% block title %}
+<title>About - Kalimudan Sa Ranao Foundation Inc.</title>
+{% endblock %}
+<!--TEST-->
+{% block content %}
+
 <form method="post" enctype="multipart/form-data">
   {% csrf_token %} {{ form.as_p }}
   <button type="submit">Upload File</button>
 </form>
+
+{% endblock %}
