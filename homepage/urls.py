@@ -22,6 +22,8 @@ urlpatterns = [
   path("about/manualofoperations", views.manualofoperations, name="manualofoperations"),
 
   path('news/', NewsListView.as_view(), name='news_list'),
+  path('news/<str:category>/', NewsListView.as_view(), name='news_list'),
+
   path('news/create/', NewsCreateView.as_view(), name='news_create'),
     
   path('news/<str:category>/<slug:slug>/', news_detail, name='news_detail'),

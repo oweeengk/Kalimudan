@@ -1,6 +1,9 @@
 <h1>Delete News</h1>
 <p>Are you sure you want to delete "{{ news.title }}"?</p>
-<form method="post" action="{% url 'homepage:news_delete' slug=news.slug %}">
+<form
+  method="post"
+  action="{% url 'homepage:news_delete' category=news.category slug=news.slug %}"
+>
   {% csrf_token %}
   <button type="submit">Yes, delete</button>
 </form>
