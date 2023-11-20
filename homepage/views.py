@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, Http404
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from django.template import loader
 from .forms import FileUploadForm, NewsForm
 from .models import UploadedFile, News
@@ -78,13 +79,15 @@ def tesdainformation(request):
   return render(request, "tesda/information.html")
 
 def file_list(request):
-    files = UploadedFile.objects.all()
+    files = UploadedFile.objects.all().order_by('-date')
     return render(request, 'db/file_list.html', {'files': files})
 def file_upload(request):
     if request.method == 'POST':
+        messages.success(request, 'Document uploaded successfully!')
         form = FileUploadForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
+            
             try:
                 return redirect(reverse('file_list'))
             except NoReverseMatch as e:

@@ -10,6 +10,10 @@ from django.urls import reverse
 class UploadedFile(models.Model):
     title = models.CharField(max_length=255)
     file = models.FileField(upload_to='uploads/')
+    date = models.DateField(default=timezone.now)
+    
+    def __str__(self):
+        return self.title
 
 class News(models.Model):
     CATEGORY_CHOICES = [
@@ -33,3 +37,7 @@ class News(models.Model):
 
     def get_absolute_url(self):
         return reverse('homepage:news_detail', kwargs={'slug': self.slug})
+    
+    def __str__(self):
+        formatted_string = f"[{self.category}] {self.title}"
+        return formatted_string

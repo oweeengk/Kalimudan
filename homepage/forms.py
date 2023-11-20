@@ -4,7 +4,10 @@ from .models import UploadedFile, News
 class FileUploadForm(forms.ModelForm):
     class Meta:
         model = UploadedFile
-        fields = ['title', 'file']
+        fields = ['title', 'date', 'file']
+        widgets = {
+            'date': forms.DateInput(attrs={'type': 'date'}),
+        }
 
 class NewsForm(forms.ModelForm):
     class Meta:
