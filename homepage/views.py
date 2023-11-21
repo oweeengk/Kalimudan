@@ -3,11 +3,14 @@ from django.http import HttpResponse, Http404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.template import loader
-from .forms import FileUploadForm, NewsForm
-from .models import UploadedFile, News
+from django.core.mail import send_mail
 from django.urls import reverse, reverse_lazy
 from django.urls.exceptions import NoReverseMatch
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+
+from .forms import FileUploadForm, NewsForm
+from .models import UploadedFile, News
+
 
 def index(request):
   return render(request, "homepage.html")
