@@ -1,9 +1,5 @@
 from django.urls import path, include
 from . import views
-from .views import file_list, file_upload
-from .views import NewsListView, NewsCreateView, NewsUpdateView, NewsDeleteView, news_detail
-
-
 
 app_name = "homepage"
 urlpatterns = [
@@ -21,14 +17,14 @@ urlpatterns = [
   path("about/factsandfigures", views.factsandfigures, name="factsandfigures"),
   path("about/manualofoperations", views.manualofoperations, name="manualofoperations"),
 
-  path('news/', NewsListView.as_view(), name='news_list'),
-  path('news/<str:category>/', NewsListView.as_view(), name='news_list'),
+  path('news/', views.NewsListView.as_view(), name='news_list'),
+  path('news/<str:category>/', views.NewsListView.as_view(), name='news_list'),
 
-  path('news/create/', NewsCreateView.as_view(), name='news_create'),
+  path('news/create/', views.NewsCreateView.as_view(), name='news_create'),
     
-  path('news/<str:category>/<slug:slug>/', news_detail, name='news_detail'),
-  path('news/<str:category>/<slug:slug>/update/', NewsUpdateView.as_view(), name='news_update'),
-  path('news/<str:category>/<slug:slug>/delete/', NewsDeleteView.as_view(), name='news_delete'),
+  path('news/<str:category>/<slug:slug>/', views.news_detail, name='news_detail'),
+  path('news/<str:category>/<slug:slug>/update/', views.NewsUpdateView.as_view(), name='news_update'),
+  path('news/<str:category>/<slug:slug>/delete/', views.NewsDeleteView.as_view(), name='news_delete'),
 
 #  path("news/projects", views.newsprojects, name="newsprojects"),
 #  path("news/notices", views.newsnotices, name="newsnotices"),
@@ -46,6 +42,6 @@ urlpatterns = [
   path("tesda/coursesoffered", views.tesdacoursesoffered, name="tesdacoursesoffered"),
   path("tesda/information", views.tesdainformation, name="tesdainformation"),
 
-  path('db/upload', file_upload, name='file_upload'),
-  path('db/files', file_list, name='file_list'),
+  path('db/upload', views.file_upload, name='file_upload'),
+  path('db/files', views.file_list, name='file_list'),
 ]
