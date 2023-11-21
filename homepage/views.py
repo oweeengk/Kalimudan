@@ -81,9 +81,12 @@ def tesdacoursesoffered(request):
 def tesdainformation(request):
   return render(request, "tesda/information.html")
 
+@login_required
 def file_list(request):
     files = UploadedFile.objects.all().order_by('-date')
     return render(request, 'db/file_list.html', {'files': files})
+
+@login_required
 def file_upload(request):
     if request.method == 'POST':
         messages.success(request, 'Document uploaded successfully!')
@@ -110,11 +113,12 @@ class NewsListView(ListView):
             return News.objects.filter(category=category)
         else:
             return News.objects.all()
-
+        
 class NewsCreateView(CreateView):
     model = News
     form_class = NewsForm
     template_name = 'news/news_form.html'
+
 
 class NewsUpdateView(UpdateView):
     model = News

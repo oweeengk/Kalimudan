@@ -49,9 +49,17 @@ def loginPage(request):
         
     return render(request, 'login.html', context)
 
+@login_required(login_url='login:login')
 def logoutUser(request):
   if request.user.is_authenticated:
     logout(request)
     return redirect('homepage:index')
+  else:
+    return redirect('login:login')
+  
+@login_required(login_url='login:login')
+def profile(request):
+  if request.user.is_authenticated:
+    return render(request, 'profile.html')
   else:
     return redirect('login:login')

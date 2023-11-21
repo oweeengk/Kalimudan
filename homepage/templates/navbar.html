@@ -251,7 +251,10 @@
           </li>
           {% if request.user.is_authenticated %}
           <li class="nav-item me-2 fst-italic fs-1">
-            <a class="nav-link fw-bold" aria-current="page" href="#"
+            <a
+              class="nav-link fw-bold"
+              aria-current="page"
+              href="{% url 'login:profile' %}"
               >{{ request.user }}</a
             >
           </li>
