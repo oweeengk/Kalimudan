@@ -13,21 +13,22 @@
   <div class="row justify-content-center">
     <div class="col-11 mt-4 mb-4">
       <br />
+      {% if statements_exist %}
       <h1>Statements</h1>
       {% for news in news_list %} {% if news.category == 'statements' %}
       <div>
         <h3>
           <a
             href="{% url 'homepage:news_detail' category=news.category slug=news.slug %}"
+            >{{ news.title }}</a
           >
-            {{ news.title }}
-          </a>
         </h3>
         <p>{{ news.content }}</p>
       </div>
       {% endif %} {% endfor %}
       <hr class="black-divider" />
       <br />
+      {% endif %} {% if notices_exist %}
       <h1>Notices</h1>
       {% for news in news_list %} {% if news.category == 'notices' %}
       <div>
@@ -43,6 +44,7 @@
       {% endif %} {% endfor %}
       <hr class="black-divider" />
       <br />
+      {% endif %} {% if projects_exist %}
       <h1>Projects</h1>
       {% for news in news_list %}{% if news.category == 'projects' %}
       <div>
@@ -56,6 +58,9 @@
         <p>{{ news.content }}</p>
       </div>
       {% endif %} {% endfor %}
+      <hr class="black-divider" />
+      <br />
+      {% endif %}
     </div>
 
     <!-- Card -->
@@ -233,6 +238,14 @@
         </div>
       </div>
       {% endif %} {% endfor %}
+      <!-- Add this button wherever you want in your template -->
+      <a href="{% url 'homepage:news_list' category='statements' %}">
+        <button>View Statements</button>
+      </a>
+      <!-- Add this button wherever you want in your template -->
+      <a href="{% url 'homepage:news_list' category='notices' %}">
+        <button>View Notices</button>
+      </a>
     </div>
   </div>
 </div>

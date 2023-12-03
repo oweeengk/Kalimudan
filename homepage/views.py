@@ -114,6 +114,23 @@ class NewsListView(ListView):
         else:
             return News.objects.all()
         
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        category = self.kwargs.get('category')
+        
+        # Filter news by category
+        if category:
+            context['news_list'] = self.get_queryset()
+        else:
+            context['news_list'] = News.objects.all()
+
+        # Check if there are any news articles in 'statements', 'notices', or 'projects' category
+        context['statements_exist'] = any(news.category == 'statements' for news in context['news_list'])
+        context['notices_exist'] = any(news.category == 'notices' for news in context['news_list'])
+        context['projects_exist'] = any(news.category == 'projects' for news in context['news_list'])
+
+        return context
+        
 class NewsCreateView(CreateView):
     model = News
     form_class = NewsForm
