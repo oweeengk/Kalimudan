@@ -3,3 +3,18 @@
 <p>Category: {{ news.category }}</p>
 <p>{{ news.content }}</p>
 <img src="{{ news.image.url }}" alt="{{ news.title }}" />
+<div class="list-group-item list-group-item-action d-flex justify-content-end">
+  <a
+    href="{% url 'homepage:news_update' category=news.category slug=news.slug %}"
+    class="btn btn-danger"
+    >Update</a
+  >
+
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a
+    href="{% url 'homepage:news_delete' category=news.category slug=news.slug %}"
+    class="btn btn-danger"
+  >
+    Delete
+  </a>
+</div>

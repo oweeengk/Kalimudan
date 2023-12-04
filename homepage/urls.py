@@ -17,14 +17,13 @@ urlpatterns = [
   path("about/factsandfigures", views.factsandfigures, name="factsandfigures"),
   path("about/manualofoperations", views.manualofoperations, name="manualofoperations"),
 
-  path('news/', views.NewsListView.as_view(), name='news_list'),
-  path('news/<str:category>/', views.NewsListView.as_view(), name='news_list'),
-
+  
   path('news/create/', views.NewsCreateView.as_view(), name='news_create'),
-    
+  path('news/<str:category>/', views.NewsListView.as_view(), name='news_list'),
   path('news/<str:category>/<slug:slug>/', views.news_detail, name='news_detail'),
   path('news/<str:category>/<slug:slug>/update/', views.NewsUpdateView.as_view(), name='news_update'),
   path('news/<str:category>/<slug:slug>/delete/', views.NewsDeleteView.as_view(), name='news_delete'),
+  path('news/', views.NewsListView.as_view(), name='news_list'),
 
 #  path("news/projects", views.newsprojects, name="newsprojects"),
 #  path("news/notices", views.newsnotices, name="newsnotices"),
