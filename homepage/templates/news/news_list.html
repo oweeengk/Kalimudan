@@ -1,250 +1,135 @@
 {% extends 'base.html' %}
-<!--TEST-->
 {% load static %}
-<!--TEST-->
 {% load custom_tags %}
-<!--TEST-->
 {% block title %}
 <title>News - Kalimudan Sa Ranao Foundation Inc.</title>
 {% endblock %}
-<!--<h1>{{ news.category }}</h1>-->
 {% block content %}
 <div class="container">
   <div class="row justify-content-center">
+    
+
     <div class="col-11 mt-4 mb-4">
-      <br />
-      {% if statements_exist %}
-      <h1>Statements</h1>
-      {% for news in news_list %} {% if news.category == 'statements' %}
-      <div>
-        <h3>
-          <a
-            href="{% url 'homepage:news_detail' category=news.category slug=news.slug %}"
-            >{{ news.title }}</a
-          >
-        </h3>
-        <p>{{ news.content }}</p>
-      </div>
-      {% endif %} {% endfor %}
-      <hr class="black-divider" />
-      <br />
-      {% endif %} {% if notices_exist %}
-      <h1>Notices</h1>
-      {% for news in news_list %} {% if news.category == 'notices' %}
-      <div>
-        <h3>
-          <a
-            href="{% url 'homepage:news_detail' category=news.category slug=news.slug %}"
-          >
-            {{ news.title }}
-          </a>
-        </h3>
-        <p>{{ news.content }}</p>
-      </div>
-      {% endif %} {% endfor %}
-      <hr class="black-divider" />
-      <br />
-      {% endif %} {% if projects_exist %}
-      <h1>Projects</h1>
-      {% for news in news_list %}{% if news.category == 'projects' %}
-      <div>
-        <h3>
-          <a
-            href="{% url 'homepage:news_detail' category=news.category slug=news.slug %}"
-          >
-            {{ news.title }}
-          </a>
-        </h3>
-        <p>{{ news.content }}</p>
-      </div>
-      {% endif %} {% endfor %}
-      <hr class="black-divider" />
-      <br />
-      {% endif %}
+       <br><br>
+    {% if statements_exist %}
+        <h1>Statements</h1>
+
+        <div class="row">
+            {% for news in news_list %}
+                {% if news.category == 'statements' %}
+                    <div class="col-md-4 mb-4">
+                        <div class="card bg-dark text-white">
+                            <img
+                                class="card-img"
+                                src="{{ news.image.url }}"
+                                style="opacity: 0.5; background-size: cover; height: 200px;"
+                                alt="Card image"
+                            />
+
+                            <div class="card-img-overlay">
+                                <h5 class="card-title">{{ news.title }}</h5>
+                                <p class="card-text">{{ news.content }}</p>
+                                <a href="{% url 'homepage:news_detail' category=news.category slug=news.slug %}"
+                                    class="btn btn-outline-light">Read more...</a>
+                                <p>{{ news.date }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% if forloop.counter|divisibleby:3 and not forloop.last %}
+                        </div><div class="row">
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div>
+        <hr class="black-divider" />
+    {% endif %}
     </div>
 
-    <!-- Card -->
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <div
-            class="bg-image card shadow-1-strong"
-            style="
-              background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.webp');
-            "
-          >
-            <div class="card-body text-white">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="#!" class="btn btn-outline-light">Button</a>
-            </div>
-          </div>
+
+    <div class="col-11 mt-4 mb-4">
+    {% if notices_exist %}
+        <h1>Notices</h1>
+
+        <div class="row">
+            {% for news in news_list %}
+                {% if news.category == 'notices' %}
+                    <div class="col-md-4 mb-4">
+                        <div class="card bg-dark text-white">
+                            <img
+                                class="card-img"
+                                src="{{ news.image.url }}"
+                                style="opacity: 0.5; background-size: cover; height: 200px;"
+                                alt="Card image"
+                            />
+
+                            <div class="card-img-overlay">
+                                <h5 class="card-title">{{ news.title }}</h5>
+                                <p class="card-text">{{ news.content }}</p>
+                                <a href="{% url 'homepage:news_detail' category=news.category slug=news.slug %}"
+                                    class="btn btn-outline-light">Read more...</a>
+                                <p>{{ news.date }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% if forloop.counter|divisibleby:3 and not forloop.last %}
+                        </div><div class="row">
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
         </div>
 
-        <div class="col-md-4">
-          <div
-            class="bg-image card shadow-1-strong"
-            style="
-              background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.webp');
-            "
-          >
-            <div class="card-body text-white">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="#!" class="btn btn-outline-light">Button</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div
-            class="bg-image card shadow-1-strong"
-            style="
-              background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.webp');
-            "
-          >
-            <div class="card-body text-white">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="#!" class="btn btn-outline-light">Button</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <br /><br />
-
-      <div class="row">
-        <div class="col-md-4">
-          <div
-            class="bg-image card shadow-1-strong"
-            style="
-              background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.webp');
-            "
-          >
-            <div class="card-body text-white">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="#!" class="btn btn-outline-light">Button</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <!-- Another card goes here -->
-        </div>
-
-        <div class="col-md-4">
-          <!-- Another card goes here -->
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Card -->
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">
-      <h2>Statements</h2>
-      {% for news in news_list %} {% if news.category == 'statements' %}
-      <!---->
-      {% if forloop.counter0|divisibleby:3 %}
-    </div>
-    <div class="row">
-      {% endif %}
-      <div class="col-md-4">
-        <div
-          class="bg-image card shadow-1-strong"
-          style="background-image: url('{{ news.image.url }}');"
-        >
-          <div class="card-body text-white">
-            <h5 class="card-title">
-              <a
-                href="{% url 'homepage:news_detail' category=news.category slug=news.slug %}"
-                >{{ news.title }}</a
-              >
-            </h5>
-            <p class="card-text">{{ news.content }}</p>
-            <a href="#!" class="btn btn-outline-light">Button</a>
-          </div>
-        </div>
-      </div>
-      {% endif %} {% endfor %}
+        <hr class="black-divider" />
+    {% endif %}
     </div>
 
-    <div class="col-md-4">
-      <h2>Notices</h2>
-      {% for news in news_list %} {% if news.category == 'notices' %}
-      <!---->{% if forloop.counter0|divisibleby:3 %}
-    </div>
-    <div class="row">
-      {% endif %}
-      <div class="col-md-4">
-        <div
-          class="bg-image card shadow-1-strong"
-          style="background-image: url('{{ news.image.url }}');"
-        >
-          <div class="card-body text-white">
-            <h5 class="card-title">
-              <a
-                href="{% url 'homepage:news_detail' category=news.category slug=news.slug %}"
-                >{{ news.title }}</a
-              >
-            </h5>
-            <p class="card-text">{{ news.content }}</p>
-            <a href="#!" class="btn btn-outline-light">Button</a>
-          </div>
+    <div class="col-11 mt-4 mb-4">
+    {% if projects_exist %}
+        <h1>Projects</h1>
+
+        <div class="row">
+            {% for news in news_list %}
+                {% if news.category == 'projects' %}
+                    <div class="col-md-4 mb-4">
+                        <div class="card bg-dark text-white">
+                            <img
+                                class="card-img"
+                                src="{{ news.image.url }}"
+                                style="opacity: 0.5; background-size: cover; height: 200px;"
+                                alt="Card image"
+                            />
+
+                            <div class="card-img-overlay">
+                                <h5 class="card-title">{{ news.title }}</h5>
+                                <p class="card-text">{{ news.content }}</p>
+                                <a href="{% url 'homepage:news_detail' category=news.category slug=news.slug %}"
+                                    class="btn btn-outline-light">Read more...</a>
+                                <p>{{ news.date }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% if forloop.counter|divisibleby:3 and not forloop.last %}
+                        </div><div class="row">
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
         </div>
-      </div>
-      {% endif %} {% endfor %}
+
+        <hr class="black-divider" />
+    {% endif %}
     </div>
 
-    <div class="col-md-4">
-      <h2>Projects</h2>
-      {% for news in news_list %} {% if news.category == 'projects' %}
-      <!---->
-      {% if forloop.counter0|divisibleby:3 %}
-    </div>
-    <div class="row">
-      {% endif %}
-      <div class="col-md-4">
-        <div
-          class="bg-image card shadow-1-strong"
-          style="background-image: url('{{ news.image.url }}');"
-        >
-          <div class="card-body text-white">
-            <h5 class="card-title">
-              <a
-                href="{% url 'homepage:news_detail' category=news.category slug=news.slug %}"
-                >{{ news.title }}</a
-              >
-            </h5>
-            <p class="card-text">{{ news.content }}</p>
-            <a href="#!" class="btn btn-outline-light">Button</a>
-          </div>
-        </div>
-      </div>
-      {% endif %} {% endfor %}
-      <!-- Add this button wherever you want in your template -->
+      
       <a href="{% url 'homepage:news_list' category='statements' %}">
         <button>View Statements</button>
       </a>
-      <!-- Add this button wherever you want in your template -->
       <a href="{% url 'homepage:news_list' category='notices' %}">
         <button>View Notices</button>
+      </a>
+      <a href="{% url 'homepage:news_list' category='projects' %}">
+        <button>View Projects</button>
       </a>
     </div>
   </div>
