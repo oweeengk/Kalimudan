@@ -110,8 +110,6 @@ class NewsListView(ListView):
     def get_queryset(self):
         category = self.kwargs.get('category')
         queryset = News.objects.all().order_by('-date')
-        if not category:
-            queryset = queryset[:9]
 
         if category:
             queryset = queryset.filter(category=category)
@@ -121,7 +119,6 @@ class NewsListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        # Check if there are any news articles in 'statements', 'notices', or 'projects' category
         context['statements_exist'] = any(news.category == 'statements' for news in context['news_list'])
         context['notices_exist'] = any(news.category == 'notices' for news in context['news_list'])
         context['projects_exist'] = any(news.category == 'projects' for news in context['news_list'])
