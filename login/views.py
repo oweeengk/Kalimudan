@@ -12,8 +12,6 @@ from django.contrib.auth.decorators import login_required
 
 def registerPage(request):
   if request.user.is_authenticated:
-    return redirect('homepage:index')
-  else:
     form = CreateUserForm()
 
     if request.method == 'POST':
@@ -29,6 +27,9 @@ def registerPage(request):
       'form': form
     }
     return render(request, 'register.html', context)
+    
+  else:
+    return redirect('homepage:index')
 
 def loginPage(request):
   if request.user.is_authenticated:

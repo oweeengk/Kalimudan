@@ -6,23 +6,25 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-11 mt-4 mb-4">
-      <br /><br />
-      {% if statements_exist %}
+
+      <h3 class="text-center fw-bold">N E W S</h3>
+        <br>
+      {% if projects_exist %}
       <div class="custom-divider">
         <div class="line"></div>
-        <div class="text"><h4 class="fw-bold">Statements</h4></div>
+        <div class="text"><h4 class="fw-bold">Projects</h4></div>
         <div class="line"></div>
       </div>
       <br />
 
       <div class="row">
-        {% for news in news_list %} {% if news.category == 'statements' %}
+        {% for news in news_list %} {% if news.category == 'projects' %}
         <div class="col-md-4 mb-4">
           <div class="card bg-dark text-white">
             <img
               class="card-img"
               src="{{ news.image.url }}"
-              style="opacity: 0.5; background-size: cover; height: 200px"
+              style="opacity: 0.5; background-size: cover; height: 250px"
               alt="Card image"
             />
 
@@ -42,18 +44,19 @@
         {% if forloop.counter|divisibleby:3 and not forloop.last %}
       </div>
       <div class="row">{% endif %} {% endif %} {% endfor %}</div>
+
       <a
-        href="{% url 'homepage:news_list' category='statements' %}"
+        href="{% url 'homepage:news_list' category='projects' %}"
         class="btn btn-success"
       >
-        View Statements
+        View Projects
       </a>
       {% endif %}
     </div>
 
     <div class="col-11 mt-4 mb-4">
       {% if notices_exist %}
-      <br /><br />
+      <br />
       <div class="custom-divider">
         <div class="line"></div>
         <div class="text"><h4 class="fw-bold">Notices</h4></div>
@@ -68,7 +71,7 @@
             <img
               class="card-img"
               src="{{ news.image.url }}"
-              style="opacity: 0.5; background-size: cover; height: 200px"
+              style="opacity: 0.5; background-size: cover; height: 250px"
               alt="Card image"
             />
 
@@ -98,22 +101,24 @@
     </div>
 
     <div class="col-11 mt-4 mb-4">
-      {% if projects_exist %}
+        {% if statements_exist %}
+      </p>
+
       <div class="custom-divider">
         <div class="line"></div>
-        <div class="text"><h4 class="fw-bold">Projects</h4></div>
+        <div class="text"><h4 class="fw-bold">Statements</h4></div>
         <div class="line"></div>
       </div>
       <br />
 
       <div class="row">
-        {% for news in news_list %} {% if news.category == 'projects' %}
+        {% for news in news_list %} {% if news.category == 'statements' %}
         <div class="col-md-4 mb-4">
           <div class="card bg-dark text-white">
             <img
               class="card-img"
               src="{{ news.image.url }}"
-              style="opacity: 0.5; background-size: cover; height: 200px"
+              style="opacity: 0.5; background-size: cover; height: 250px"
               alt="Card image"
             />
 
@@ -133,15 +138,16 @@
         {% if forloop.counter|divisibleby:3 and not forloop.last %}
       </div>
       <div class="row">{% endif %} {% endif %} {% endfor %}</div>
-
       <a
-        href="{% url 'homepage:news_list' category='projects' %}"
+        href="{% url 'homepage:news_list' category='statements' %}"
         class="btn btn-success"
       >
-        View Projects
+        View Statements
       </a>
       {% endif %}
     </div>
+
+    
     <div class="col-11 mt-4 mb-4">
       <hr class="content-divider" />
     </div>
