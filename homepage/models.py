@@ -36,7 +36,7 @@ class News(models.Model):
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('homepage:news_detail', kwargs={'slug': self.slug})
+        return reverse('homepage:news_update', kwargs={'category': self.category, 'slug': self.slug})
     
     def __str__(self):
         formatted_string = f"[{self.category}] {self.title}"

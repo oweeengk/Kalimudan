@@ -130,17 +130,22 @@ class NewsCreateView(CreateView):
     model = News
     form_class = NewsForm
     template_name = 'news/news_form.html'
-
+    def get_success_url(self):
+        return reverse('homepage:news_list')
 
 class NewsUpdateView(UpdateView):
     model = News
     form_class = NewsForm
     template_name = 'news/news_form.html'
+    def get_success_url(self):
+        return reverse('homepage:news_list')
 
 class NewsDeleteView(DeleteView):
     model = News
     success_url = reverse_lazy('homepage:news_list')
     template_name = 'news/news_confirm_delete.html'
+    def get_success_url(self):
+        return reverse('homepage:news_list')
 
 def news_detail(request, category, slug):
     news = get_object_or_404(News, category=category, slug=slug)
