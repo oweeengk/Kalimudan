@@ -2,7 +2,9 @@
 <p>Date: {{ news.date }}</p>
 <p>Category: {{ news.category }}</p>
 <p>{{ news.content }}</p>
+{% if news.image %}
 <img src="{{ news.image.url }}" alt="{{ news.title }}" />
+{% endif %}
 <div class="list-group-item list-group-item-action d-flex justify-content-end">
   <a
     href="{% url 'homepage:news_update' category=news.category slug=news.slug %}"

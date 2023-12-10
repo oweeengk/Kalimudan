@@ -14,3 +14,7 @@ class NewsForm(forms.ModelForm):
         model = News
         fields = ['title', 'date', 'content', 'category', 'image']
 
+        widgets = {
+            'date': forms.DateInput(attrs={'type': 'date'}),
+        }
+

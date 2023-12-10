@@ -50,6 +50,30 @@ h6.card-title {
   z-index: 1;
 }
 
+.news-title {
+  max-height: 12em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.news-text {
+  max-height: 12em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.news-img {
+  opacity: 0.3;
+  object-fit: cover;
+  height: 100%;
+}
+
+.custom-card {
+  height: 350px;
+}
+
 .list-group-item {
   border: none;
 }

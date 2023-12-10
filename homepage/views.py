@@ -7,6 +7,8 @@ from django.core.mail import send_mail
 from django.urls import reverse, reverse_lazy
 from django.urls.exceptions import NoReverseMatch
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.utils.text import slugify
+
 
 from .forms import FileUploadForm, NewsForm
 from .models import UploadedFile, News
@@ -130,6 +132,18 @@ class NewsCreateView(CreateView):
     model = News
     form_class = NewsForm
     template_name = 'news/news_form.html'
+    def form_valid(self, form):
+        print("Form is valid:", form.is_valid())
+        print("Errors:", form.errors)
+        form.instance.slug = original_slug = slugify(form.instance.title)
+        count = 1
+
+        while News.objects.filter(slug=form.instance.slug).exists():
+            form.instance.slug = f"{original_slug}-{count}"
+            count += 1
+
+        return super().form_valid(form)
+
     def get_success_url(self):
         return reverse('homepage:news_list')
 
@@ -137,8 +151,20 @@ class NewsUpdateView(UpdateView):
     model = News
     form_class = NewsForm
     template_name = 'news/news_form.html'
+    def form_valid(self, form):
+        # Generate a unique slug based on the title
+        form.instance.slug = original_slug = slugify(form.instance.title)
+        count = 1
+
+        while News.objects.filter(slug=form.instance.slug).exclude(pk=self.object.pk).exists():
+            form.instance.slug = f"{original_slug}-{count}"
+            count += 1
+
+        return super().form_valid(form)
+
     def get_success_url(self):
         return reverse('homepage:news_list')
+
 
 class NewsDeleteView(DeleteView):
     model = News
