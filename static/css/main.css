@@ -50,15 +50,15 @@ h6.card-title {
   z-index: 1;
 }
 
-.news-title {
-  max-height: 12em;
+h5.news-title {
+  max-height: 2.4em;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .news-text {
-  max-height: 12em;
+  max-height: 9em;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
