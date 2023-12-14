@@ -6,6 +6,15 @@
     <div class="col-11 mt-4 mb-4">
       <h1 class="fw-bold">Donate</h1>
       <br />
+      <button onclick="showDonatePopup()">Donate</button>
+
+      <!-- Donation popup -->
+      <div id="donatePopup">
+        <!-- Include your donation form or information here -->
+        <p>Fill out the donation form or provide necessary information here.</p>
+        <!-- Close button -->
+        <button onclick="hideDonatePopup()">Close</button>
+      </div>
       <br />{% lorem 4 p random %}<br /><br />
     </div>
   </div>
