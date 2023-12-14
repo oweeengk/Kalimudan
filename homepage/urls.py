@@ -18,12 +18,12 @@ urlpatterns = [
   path("about/manualofoperations", views.manualofoperations, name="manualofoperations"),
 
   
-  path('news/create/', views.NewsCreateView.as_view(), name='news_create'),
-  path('news/<str:category>/', views.NewsListView.as_view(), name='news_list'),
-  path('news/<str:category>/<slug:slug>/', views.news_detail, name='news_detail'),
-  path('news/<str:category>/<slug:slug>/update/', views.NewsUpdateView.as_view(), name='news_update'),
-  path('news/<str:category>/<slug:slug>/delete/', views.NewsDeleteView.as_view(), name='news_delete'),
-  path('news/', views.NewsListView.as_view(), name='news_list'),
+  path('stories/create/', views.StoriesCreateView.as_view(), name='stories_create'),
+  path('stories/<str:category>/', views.StoriesListView.as_view(), name='stories_list'),
+  path('stories/<str:category>/<slug:slug>/', views.stories_detail, name='stories_detail'),
+  path('stories/<str:category>/<slug:slug>/update/', views.StoriesUpdateView.as_view(), name='stories_update'),
+  path('stories/<str:category>/<slug:slug>/delete/', views.StoriesDeleteView.as_view(), name='stories_delete'),
+  path('stories/', views.StoriesListView.as_view(), name='stories_list'),
 
   path("volunteering/apply", views.volunteeringapply, name="volunteeringapply"),
   path("volunteering/notices", views.volunteeringnotices, name="volunteeringnotices"),

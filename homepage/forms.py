@@ -1,5 +1,5 @@
 from django import forms
-from .models import UploadedFile, News
+from .models import UploadedFile, Stories
 
 class FileUploadForm(forms.ModelForm):
     class Meta:
@@ -9,9 +9,9 @@ class FileUploadForm(forms.ModelForm):
             'date': forms.DateInput(attrs={'type': 'date'}),
         }
 
-class NewsForm(forms.ModelForm):
+class StoriesForm(forms.ModelForm):
     class Meta:
-        model = News
+        model = Stories
         fields = ['title', 'date', 'content', 'category', 'image']
 
         widgets = {

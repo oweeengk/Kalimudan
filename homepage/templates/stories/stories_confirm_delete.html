@@ -1,41 +1,41 @@
 {% extends 'base.html' %} {% load static %} {% load custom_tags %}
 <!---->
 {% block title %}
-<title>News - Kalimudan Sa Ranao Foundation Inc.</title>
+<title>Stories - Kalimudan Sa Ranao Foundation Inc.</title>
 {% endblock %} {% block content %}
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-11 mt-4 mb-4">
-      <h1>Delete News</h1>
+      <h1>Delete Stories</h1>
       <br /><br />
       <h3>
         Are you sure you want to delete "<span style="color: red"
-          >{{ news.title }}</span
-        >" under category "<span style="color: red">{{ news.category }}</span>"?
+          >{{ stories.title }}</span
+        >" under category "<span style="color: red">{{ stories.category }}</span>"?
         <br />
       </h3>
-      {% if news.image %}
+      {% if stories.image %}
       <img
-        src="{{ news.image.url }}"
-        alt="{{ news.title }}"
+        src="{{ stories.image.url }}"
+        alt="{{ stories.title }}"
         style="max-height: 500px; max-width: 500px"
       />
       {% endif %}
 
       <form
         method="post"
-        action="{% url 'homepage:news_delete' category=news.category slug=news.slug %}"
+        action="{% url 'homepage:stories_delete' category=stories.category slug=stories.slug %}"
       >
         {% csrf_token %}<br />
         <button class="btn btn-danger" type="submit">Yes, delete</button>
         <a
-          href="{% url 'homepage:news_update' category=news.category slug=news.slug %}"
+          href="{% url 'homepage:stories_update' category=stories.category slug=stories.slug %}"
           class="btn btn-dark"
           >No, update</a
         >
       </form>
       <br />
-      <a href="{% url 'homepage:news_list' %}" class="btn btn-success">
+      <a href="{% url 'homepage:stories_list' %}" class="btn btn-success">
         Cancel
       </a>
     </div>

@@ -112,44 +112,6 @@
               </li>
             </ul>
           </li>
-          {% comment %}
-          <li
-            class="nav-item dropdown me-2 {% is_active request 'homepage:news' %}{% is_active request 'homepage:newsprojects' %}{% is_active request 'homepage:newsnotices' %}{% is_active request 'homepage:newsstatements' %}"
-          >
-            <a
-              class="nav-link dropdown-toggle fw-bold"
-              href="{% url 'homepage:news' %}"
-              id="navbarDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              News
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li>
-                <a
-                  class="dropdown-item"
-                  href="{% url 'homepage:newsprojects' %}"
-                  >Projects</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="{% url 'homepage:newsnotices' %}"
-                  >Notices</a
-                >
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  href="{% url 'homepage:newsstatements' %}"
-                  >Statements</a
-                >
-              </li>
-            </ul>
-          </li>
-          {% endcomment %}
-
           <li
             class="nav-item dropdown me-2 {% is_active request 'homepage:volunteering' %}{% is_active request 'homepage:volunteeringnotices' %}{% is_active request 'homepage:volunteeringapply' %}"
           >

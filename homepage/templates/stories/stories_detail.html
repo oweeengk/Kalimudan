@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% load static %} {% load custom_tags %}
 <!---->
 {% block title %}
-<title>News - Kalimudan Sa Ranao Foundation Inc.</title>
+<title>Stories - Kalimudan Sa Ranao Foundation Inc.</title>
 {% endblock %} {% block content %}
 <div class="container">
   <div class="row justify-content-center">
@@ -9,49 +9,49 @@
       <div class="custom-divider mb-4">
         <div class="line"></div>
         <div class="text">
-          <h2 class="fw-bold" style="color: orange">{{ news.category }}</h2>
+          <h2 class="fw-bold" style="color: orange">{{ stories.category }}</h2>
         </div>
         <div class="line"></div>
       </div>
 
-      <h1 class="news-title" style="color: green">{{ news.title }}</h1>
-      <h6><i class="fa-regular fa-calendar"></i> {{ news.date }}</h6>
+      <h1 class="stories-title" style="color: green">{{ stories.title }}</h1>
+      <h6><i class="fa-regular fa-calendar"></i> {{ stories.date }}</h6>
       <h6><i class="fa-solid fa-pen"></i> Sittie Fahida Cali</h6>
-      {% if news.image %}
+      {% if stories.image %}
       <img
-        src="{{ news.image.url }}"
-        alt="{{ news.title }}"
+        src="{{ stories.image.url }}"
+        alt="{{ stories.title }}"
         style="max-height: 500px; max-width: 500px"
       />
       {% endif %}
       <!--
-        <p>#{{ news.category }}</p>
+        <p>#{{ stories.category }}</p>
       -->
 
-      <p>{{ news.content }}</p>
+      <p>{{ stories.content }}</p>
 
       {# Read Next and Read Previous Links #}
       <div class="d-flex justify-content-between mt-4">
-        {% with prev_news=news.get_previous_by_date category=news.category %}
-            {% if prev_news %}
+        {% with prev_stories=stories.get_previous_by_date category=stories.category %}
+            {% if prev_stories %}
                 <p class="d-flex flex-grow-1 flex-shrink-0 justify-content-start">
-                    <a href="{% url 'homepage:news_detail' category=prev_news.category slug=prev_news.slug %}"
+                    <a href="{% url 'homepage:stories_detail' category=prev_stories.category slug=prev_stories.slug %}"
                         class="btn text-start d-inline-block" style="white-space: normal; max-width: 75%;">
                         <i class="fa-solid fa-backward" style="color: green"></i>
-                        <span class="fw-bold" style="color:green;">Previous Story</span> <br> {{ prev_news.title }}
+                        <span class="fw-bold" style="color:green;">Previous Story</span> <br> {{ prev_stories.title }}
                     </a>
                 </p>
             {% endif %}
         {% endwith %}
 
-        {% with next_news=news.get_next_by_date category=news.category %}
-          {% if next_news %}
+        {% with next_stories=stories.get_next_by_date category=stories.category %}
+          {% if next_stories %}
               <p class="d-flex flex-grow-1 justify-content-end">
-                  <a href="{% url 'homepage:news_detail' category=next_news.category slug=next_news.slug %}"
+                  <a href="{% url 'homepage:stories_detail' category=next_stories.category slug=next_stories.slug %}"
                       class="btn text-end d-inline-block" style="white-space: normal; max-width: 100%; overflow: hidden; flex-shrink: 1;">
                       <span class="fw-bold" style="color:green;">Next Story</span>
                       <i class="fa-solid fa-forward " style="color: green"></i><br>
-                      {{ next_news.title }}
+                      {{ next_stories.title }}
                   </a>
               </p>
           {% endif %}
@@ -62,14 +62,14 @@
           class="list-group-item list-group-item-action d-flex justify-content-end"
         >
           <a
-            href="{% url 'homepage:news_update' category=news.category slug=news.slug %}"
+            href="{% url 'homepage:stories_update' category=stories.category slug=stories.slug %}"
             class="btn btn-danger"
             >Update</a
           >
 
           &nbsp;&nbsp;&nbsp;&nbsp;
           <a
-            href="{% url 'homepage:news_delete' category=news.category slug=news.slug %}"
+            href="{% url 'homepage:stories_delete' category=stories.category slug=stories.slug %}"
             class="btn btn-danger"
           >
             Delete

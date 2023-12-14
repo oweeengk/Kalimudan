@@ -50,14 +50,14 @@ h6.card-title {
   z-index: 1;
 }
 
-.news-title {
+.stories-title {
   max-height: 10.53em;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
 }
 
-.news-text {
+.stories-text {
   max-height: 9em;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -65,18 +65,18 @@ h6.card-title {
   color: lightgrey;
   font-size: 20px;
 }
-.news-date {
+.stories-date {
   max-height: 3em;
   font-size: 12px;
 }
 
-.news-img {
+.stories-img {
   opacity: 0.3;
   object-fit: cover;
   height: 100%;
 }
 
-.news-card {
+.stories-card {
   height: 500px;
 }
 

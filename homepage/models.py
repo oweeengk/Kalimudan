@@ -15,7 +15,7 @@ class UploadedFile(models.Model):
     def __str__(self):
         return self.title
 
-class News(models.Model):
+class Stories(models.Model):
     CATEGORY_CHOICES = [
         ('statements', 'Statements'),
         ('notices', 'Notices'),
@@ -26,7 +26,7 @@ class News(models.Model):
     date = models.DateField()
     content = models.TextField()
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
-    image = models.ImageField(upload_to='news_images/', blank=True, null=True)
+    image = models.ImageField(upload_to='stories_images/', blank=True, null=True)
 
     slug = models.SlugField(unique=True, blank=True)
 
@@ -36,7 +36,7 @@ class News(models.Model):
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('homepage:news_update', kwargs={'category': self.category, 'slug': self.slug})
+        return reverse('homepage:stories_update', kwargs={'category': self.category, 'slug': self.slug})
     
     def __str__(self):
         formatted_string = f"[{self.category}] {self.title}"

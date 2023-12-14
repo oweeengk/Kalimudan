@@ -10,8 +10,8 @@ from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.utils.text import slugify
 
 
-from .forms import FileUploadForm, NewsForm
-from .models import UploadedFile, News
+from .forms import FileUploadForm, StoriesForm
+from .models import UploadedFile, Stories
 
 
 def index(request):
@@ -53,14 +53,14 @@ def manualofoperations(request):
   return render(request, "about/manualofoperations.html")
 
 
-def newsnotices(request):
-  return render(request, "news/notices.html")
+def storiesnotices(request):
+  return render(request, "stories/notices.html")
 
-def newsprojects(request):
-  return render(request, "news/projects.html")
+def storiesprojects(request):
+  return render(request, "stories/projects.html")
 
-def newsstatements(request):
-  return render(request, "news/statements.html")
+def storiesstatements(request):
+  return render(request, "stories/statements.html")
 
 
 def volunteeringapply(request):
@@ -104,14 +104,14 @@ def file_upload(request):
         form = FileUploadForm()
     return render(request, 'db/file_upload.html', {'form': form})
 
-class NewsListView(ListView):
-    model = News
-    template_name = 'news/news_list.html'
-    context_object_name = 'news_list'
+class StoriesListView(ListView):
+    model = Stories
+    template_name = 'stories/stories_list.html'
+    context_object_name = 'stories_list'
 
     def get_queryset(self):
         category = self.kwargs.get('category')
-        queryset = News.objects.all().order_by('-date')
+        queryset = Stories.objects.all().order_by('-date')
 
         if category:
             queryset = queryset.filter(category=category)
@@ -121,58 +121,58 @@ class NewsListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        context['statements_exist'] = any(news.category == 'statements' for news in context['news_list'])
-        context['notices_exist'] = any(news.category == 'notices' for news in context['news_list'])
-        context['projects_exist'] = any(news.category == 'projects' for news in context['news_list'])
+        context['statements_exist'] = any(stories.category == 'statements' for stories in context['stories_list'])
+        context['notices_exist'] = any(stories.category == 'notices' for stories in context['stories_list'])
+        context['projects_exist'] = any(stories.category == 'projects' for stories in context['stories_list'])
 
         return context
 
 
-class NewsCreateView(CreateView):
-    model = News
-    form_class = NewsForm
-    template_name = 'news/news_form.html'
+class StoriesCreateView(CreateView):
+    model = Stories
+    form_class = StoriesForm
+    template_name = 'stories/stories_form.html'
     def form_valid(self, form):
         print("Form is valid:", form.is_valid())
         print("Errors:", form.errors)
         form.instance.slug = original_slug = slugify(form.instance.title)
         count = 1
 
-        while News.objects.filter(slug=form.instance.slug).exists():
+        while Stories.objects.filter(slug=form.instance.slug).exists():
             form.instance.slug = f"{original_slug}-{count}"
             count += 1
 
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse('homepage:news_list')
+        return reverse('homepage:stories_list')
 
-class NewsUpdateView(UpdateView):
-    model = News
-    form_class = NewsForm
-    template_name = 'news/news_form.html'
+class StoriesUpdateView(UpdateView):
+    model = Stories
+    form_class = StoriesForm
+    template_name = 'stories/stories_form.html'
     def form_valid(self, form):
         # Generate a unique slug based on the title
         form.instance.slug = original_slug = slugify(form.instance.title)
         count = 1
 
-        while News.objects.filter(slug=form.instance.slug).exclude(pk=self.object.pk).exists():
+        while Stories.objects.filter(slug=form.instance.slug).exclude(pk=self.object.pk).exists():
             form.instance.slug = f"{original_slug}-{count}"
             count += 1
 
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse('homepage:news_list')
+        return reverse('homepage:stories_list')
 
 
-class NewsDeleteView(DeleteView):
-    model = News
-    success_url = reverse_lazy('homepage:news_list')
-    template_name = 'news/news_confirm_delete.html'
+class StoriesDeleteView(DeleteView):
+    model = Stories
+    success_url = reverse_lazy('homepage:stories_list')
+    template_name = 'stories/stories_confirm_delete.html'
     def get_success_url(self):
-        return reverse('homepage:news_list')
+        return reverse('homepage:stories_list')
 
-def news_detail(request, category, slug):
-    news = get_object_or_404(News, category=category, slug=slug)
-    return render(request, 'news/news_detail.html', {'news': news})
+def stories_detail(request, category, slug):
+    stories = get_object_or_404(Stories, category=category, slug=slug)
+    return render(request, 'stories/stories_detail.html', {'stories': stories})
