@@ -7,8 +7,54 @@
       <h1 class="fw-bold">Profile</h1>
       <br />
       <br />
-      <h2>{{ request.user.username }}</h2>
-      <p>Email: {{ request.user.email }}</p>
+
+      <p><strong>Username:</strong> {{ user.username }}</p>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <form method="post" action="{% url 'login:profile' %}">
+        {% csrf_token %}
+        <p>
+          <strong>Last Name:</strong> {{ user.last_name }}
+          <!----><!---->{% if not user.last_name %}
+          <input type="text" name="last_name" placeholder="Enter last name" />
+          {% endif %}
+        </p>
+
+        <p>
+          <strong>First Name:</strong> {{ user.first_name }}
+          <!----><!---->{% if not user.first_name %}
+          <input type="text" name="first_name" placeholder="Enter first name" />
+          {% endif %}
+        </p>
+        {% if not user.last_name or not user.first_name %}
+        <button type="submit">Update Profile</button>
+        {% endif %}
+      </form>
+      <p><strong>Date Joined:</strong> {{ user.date_joined }}</p>
+      <p>
+        <strong>Active:</strong> {% if user.is_active %}<i
+          class="fa-solid fa-circle"
+          style="color: green"
+        ></i
+        >{% else %}<i class="fa-solid fa-circle" style="color: red"></i>
+        <!---->{% endif %}
+      </p>
+      <p>
+        <strong>Staff:</strong> {% if user.is_staff %}<i
+          class="fa-solid fa-circle"
+          style="color: green"
+        ></i
+        >{% else %}<i class="fa-solid fa-circle" style="color: red"></i>
+        <!---->{% endif %}
+      </p>
+      <p>
+        <strong>Superuser:</strong> {% if user.is_superuser %}<i
+          class="fa-solid fa-circle"
+          style="color: green"
+        ></i
+        >{% else %}<i class="fa-solid fa-circle" style="color: red"></i
+        ><!---->
+        {% endif %}
+      </p>
       <a
         href="{% url 'homepage:file_upload' %}"
         class="btn btn-outline-success"

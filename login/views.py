@@ -60,6 +60,23 @@ def logoutUser(request):
   
 @login_required(login_url='login:login')
 def profile(request):
+  user = request.user
+
+  if request.method == 'POST':
+    last_name = request.POST.get('last_name')
+    first_name = request.POST.get('first_name')
+
+    if last_name:
+      user.last_name = last_name
+    if first_name:
+      user.first_name = first_name
+
+    user.save()
+    messages.success(request, 'Profile updated successfully')
+    return redirect('login:profile')
+
+  return render(request, 'profile.html', {'user': user})
+
   if request.user.is_authenticated:
     return render(request, 'profile.html')
   else:
