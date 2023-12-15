@@ -188,14 +188,14 @@
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li>
                 <a
-                  class="dropdown-item"
+                  class="dropdown-item {% is_active request 'homepage:tesdacoursesoffered' %}"
                   href="{% url 'homepage:tesdacoursesoffered' %}"
                   >Courses</a
                 >
               </li>
               <li>
                 <a
-                  class="dropdown-item"
+                  class="dropdown-item {% is_active request 'homepage:tesdainformation' %}"
                   href="{% url 'homepage:tesdainformation' %}"
                   >Information</a
                 >
@@ -212,7 +212,9 @@
             >
           </li>
           {% if request.user.is_authenticated %}
-          <li class="nav-item me-2 fst-italic fs-1">
+          <li
+            class="nav-item me-2 fst-italic fs-1 {% is_active request 'login:profile' %}"
+          >
             <a
               class="nav-link fw-bold"
               aria-current="page"
