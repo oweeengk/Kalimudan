@@ -112,6 +112,15 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item me-2">
+            <a
+              class="nav-link fw-bold {% is_active request 'homepage:stories_list' %}{% is_active request 'homepage:stories_create' %}"
+              aria-current="page"
+              href="{% url 'homepage:stories_list' category='all' %}"
+              >Stories</a
+            >
+          </li>
+
           <li
             class="nav-item dropdown me-2 {% is_active request 'homepage:volunteering' %}{% is_active request 'homepage:volunteeringnotices' %}{% is_active request 'homepage:volunteeringapply' %}"
           >
@@ -222,16 +231,6 @@
               >{{ request.user }}</a
             >
           </li>
-          <!--
-          <li>
-            <a
-              class="dropdown-item"
-              aria-current="page"
-              href="{% url 'login:logout' %}"
-              >Logout</a
-            >
-          </li>
-          -->
           {% else %}
           <li class="nav-item me-2 fst-italic fs-1">
             <a
