@@ -52,21 +52,24 @@
         </div>
       </div>
 
-      {% if forloop.counter|divisibleby:3 and not forloop.last %}
+        {% if forloop.counter|divisibleby:3 and not forloop.last %}
     </div>
-    <div class="row">{% endif %} {% endfor %}</div>
+      <div class="row">
+        {% endif %} 
+      {% endfor %}
+      </div>
   </div>
 
-  <div class="col-11 mt-4 mb-4">
-    <hr class="content-divider" />
-  </div>
+  <hr class="content-divider" />
+
   <div
     class="list-group-item list-group-item-action d-flex justify-content-end"
   >
+    {% if user.is_authenticated and user.is_staff %}
     <a href="{% url 'homepage:stories_create' %}" class="btn btn-danger">
       Create new
     </a>
-    &nbsp;&nbsp;&nbsp;
+    {% endif %} &nbsp;&nbsp;&nbsp;
     <!--test test test test test test test-->
     {% if request.resolver_match.kwargs.category %}
     <a href="{% url 'homepage:stories_list' %}" class="btn btn-success">

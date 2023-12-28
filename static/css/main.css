@@ -126,6 +126,11 @@ a.text-reset:hover {
   align-items: center;
   margin: 0 15%;
 }
+.content-text br {
+  display: block;
+  content: "";
+  margin: 1em;
+}
 .line {
   border: none;
   opacity: 1;

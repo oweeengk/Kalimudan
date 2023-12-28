@@ -16,5 +16,6 @@ class StoriesForm(forms.ModelForm):
 
         widgets = {
             'date': forms.DateInput(attrs={'type': 'date'}),
+            'content' : forms.Textarea(),
         }
 
