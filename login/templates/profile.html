@@ -1,0 +1,110 @@
+{% extends 'base.html' %} {% block title %} {% load static %}
+<title>Profile - Kalimudan Sa Ranao</title>
+{% load custom_tags %} {% endblock %} {% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div
+      class="col-11 px-5 py-4 mt-5 mb-5 border border-gray rounded"
+      style="background-color: lightgray"
+    >
+      <div class="row mb-5">
+        <div class="col-12">
+          <h1 class="fw-bold">Profile</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <p><strong>Username: </strong>{{ user.username }}</p>
+          <p><strong>Email: </strong>{{ user.email }}</p>
+          <form method="post" action="{% url 'login:profile' %}">
+            {% csrf_token %}
+            <p>
+              <strong>Last Name:</strong> {{ user.last_name }}
+              <!---->{% if not user.last_name %}
+              <input
+                type="text"
+                name="last_name"
+                placeholder="Enter last name"
+              />
+              {% endif %}
+            </p>
+
+            <p>
+              <strong>First Name:</strong> {{ user.first_name }}
+              <!---->{% if not user.first_name %}
+              <input
+                type="text"
+                name="first_name"
+                placeholder="Enter first name"
+              />
+              {% endif %}
+            </p>
+
+            {% if not user.last_name or not user.first_name %}
+            <button type="submit">Update Profile</button>
+            {% endif %}
+          </form>
+        </div>
+
+        <div class="col-md-6">
+          <p><strong>Date Joined:</strong> {{ user.date_joined }}</p>
+          <p>
+            <strong>Active:</strong> {% if user.is_active %}
+            <i class="fa-solid fa-circle" style="color: green"></i>
+            {% else %}
+            <i class="fa-solid fa-circle" style="color: red"></i>
+            {% endif %}
+          </p>
+          <p>
+            <strong>Staff:</strong> {% if user.is_staff %}
+            <i class="fa-solid fa-circle" style="color: green"></i>
+            {% else %}
+            <i class="fa-solid fa-circle" style="color: red"></i>
+            {% endif %}
+          </p>
+          <p>
+            <strong>Superuser:</strong> {% if user.is_superuser %}
+            <i class="fa-solid fa-circle" style="color: green"></i>
+            {% else %}
+            <i class="fa-solid fa-circle" style="color: red"></i>
+            {% endif %}
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <br /><br />
+          <a class="btn btn-danger" href="{% url 'login:logout' %}">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section>
+    <div class="container">
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-md-12 col-xl-5">
+          <figure
+            class="bg-light p-4"
+            style="
+              border-left: 0.35rem solid #fcdb5e;
+              border-top: 1px solid #eee;
+              border-right: 1px solid #eee;
+              border-bottom: 1px solid #eee;
+            "
+          >
+            <blockquote class="blockquote pb-2">
+              <p>The only way to do great work is to love what you do.</p>
+            </blockquote>
+
+            <figcaption class="blockquote-footer mb-0">
+              Steve Jobs in <cite title="Source Title">Interviews</cite>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

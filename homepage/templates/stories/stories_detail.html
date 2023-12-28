@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_tags %}
+
+{% block title %}
+  <title>Stories - Kalimudan Sa Ranao Foundation Inc.</title>
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="custom-divider mb-4 col-11 mt-4">
+          <div class="line"></div>
+          <div class="text">
+            <h2 class="fw-bold" style="color: orange">Projects, Statements, Notices</h2>
+          </div>
+          <div class="line"></div>
+        </div>
+      <div class="col-11 mb-4">
+        
+
+        <h1 class="stories-title fw-bold" style="color: green">{{ stories.title }}</h1>
+        <div style="display: inline-block;">
+          <h6 style="display: inline-block;"><i class="fa-regular fa-calendar"></i> {{ stories.date }}</h6>
+          <h6 style="display: inline-block; margin-left: 4em;">tags: {{ stories.category }}</h6>
+        </div>
+        <div>
+          <h6 style="display: inline-block;"><i class="fa-solid fa-pen"></i> Sittie Fahida Cali</h6>
+          <h6 style="display: inline-block; margin-left: 3em;"><i class="fab fa-facebook-f"></i> @kfimarawi</h6>
+        </div>
+        
+        <div style="display: flex; justify-content: center;">
+          {% if stories.image %}
+            <img src="{{ stories.image.url }}" alt="{{ stories.title }}" style="max-height: 500px; max-width: 800px; min-width: 400px; margin: 0 auto;" />
+          {% endif %}
+        </div>
+
+
+        <p>{{ stories.content|linebreaks }}</p>
+
+        {# Read Next and Read Previous Links #}
+        <div class="d-flex justify-content-between mt-4">
+          {% with prev_stories=stories.get_previous_by_date category=stories.category %}
+            {% if prev_stories %}
+              <p class="d-flex flex-grow-1 flex-shrink-0 justify-content-start">
+                <a href="{% url 'homepage:stories_detail' category=prev_stories.category slug=prev_stories.slug %}" class="btn text-start d-inline-block" style="white-space: normal; max-width: 75%;">
+                  <i class="fa-solid fa-backward" style="color: green"></i>
+                  <span class="fw-bold" style="color:green;">Previous Story</span> <br /> {{ prev_stories.title }}
+                </a>
+              </p>
+            {% endif %}
+          {% endwith %}
+
+          {% with next_stories=stories.get_next_by_date category=stories.category %}
+            {% if next_stories %}
+              <p class="d-flex flex-grow-1 justify-content-end">
+                <a href="{% url 'homepage:stories_detail' category=next_stories.category slug=next_stories.slug %}" class="btn text-end d-inline-block" style="white-space: normal; max-width: 100%; overflow: hidden; flex-shrink: 1;">
+                  <span class="fw-bold" style="color:green;">Next Story</span>
+                  <i class="fa-solid fa-forward" style="color: green"></i><br />
+                  {{ next_stories.title }}
+                </a>
+              </p>
+            {% endif %}
+          {% endwith %}
+        </div>
+
+        <div class="list-group-item list-group-item-action d-flex justify-content-end">
+          <a href="{% url 'homepage:stories_update' category=stories.category slug=stories.slug %}" class="btn btn-danger">Update</a>
+
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="{% url 'homepage:stories_delete' category=stories.category slug=stories.slug %}" class="btn btn-danger">Delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

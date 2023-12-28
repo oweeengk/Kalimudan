@@ -1,4 +1,69 @@
-<form method="post" enctype="multipart/form-data">
-  {% csrf_token %} {{ form.as_p }}
-  <button type="submit">Upload File</button>
-</form>
+{% extends 'base.html' %}
+<!--TEST-->
+{% load static %}
+<!--TEST-->
+{% load custom_tags %}
+<!--TEST-->
+{% block title %}
+<title>database - Kalimudan Sa Ranao Foundation Inc.</title>
+{% endblock %}
+<!--TEST-->
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-11 mt-4 mb-4">
+      <br />
+      <h1 class="fw-bold">upload to kfi database</h1>
+      <br /><br />
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="mb-3">
+          <label
+            for="{{ form.title.id_for_label }}"
+            class="form-label fst-italic fs-5"
+            >filename</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="{{ form.title.id_for_label }}"
+            aria-describedby="{{ form.title.id_for_label }}Help"
+            name="{{ form.title.name }}"
+            value=""
+            placeholder=" "
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            for="{{ form.date.id_for_label }}"
+            class="form-label fst-italic fs-5"
+            >date: &nbsp;&nbsp;
+          </label>
+          {{ form.date }}
+        </div>
+        <div class="mb-3">
+          <label
+            for="{{ form.file.id_for_label }}"
+            class="form-label fst-italic fs-5"
+            >file: &nbsp;&nbsp;
+          </label>
+          {{ form.file }}
+        </div>
+        <div class="mb-3">
+          <button type="submit" class="btn btn-outline-success">
+            upload file
+          </button>
+          &nbsp;&nbsp;
+          <a
+            class="btn btn-outline-success"
+            href="{% url 'homepage:file_list' %}"
+            >see files</a
+          >
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

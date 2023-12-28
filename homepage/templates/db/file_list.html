@@ -1,5 +1,78 @@
-{% for file in files %}
-<h3>{{ file.title }}</h3>
-<a href="{{ file.file.url }}" download>Download</a>
-<br />
-{% endfor %}
+{% extends 'base.html' %} {% load static %} {% load custom_tags %}
+<!--title-->
+{% block title %}
+<title>database - Kalimudan Sa Ranao Foundation Inc.</title>
+{% endblock %} {% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-11 mt-4 mb-4">
+      <br />
+      <h1 class="fw-bold">list of kfi database files</h1>
+      <br /><br />
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">filename</th>
+            <th scope="col">date filed</th>
+            <th scope="col">action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for file in files %}
+          <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ file.title }}</td>
+            <td>{{ file.date|date:"M. d, Y" }}</td>
+            <td>
+              &nbsp;&nbsp;&nbsp;
+              <a href="{{ file.file.url }}" download>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-download"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"
+                  />
+                  <path
+                    d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"
+                  />
+                </svg>
+              </a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <br />
+      <a
+        href="{% url 'homepage:file_upload' %}"
+        class="btn btn-outline-success"
+      >
+        upload file
+      </a>
+      &nbsp;&nbsp;
+      <a href="{% url 'homepage:file_list' %}" class="btn btn-outline-success">
+        refresh
+      </a>
+      &nbsp;&nbsp;
+      <!--asdasfasf as fas fasou fjuioasjf ioasf -->
+      {% if request.user.is_authenticated and request.user.is_superuser %}
+      <a href="{% url 'admin:index' %}" class="btn btn-outline-danger">
+        edit (admin)
+      </a>
+      {% else %}
+      <a href="#" class="btn btn-outline-danger disabled" aria-disabled="true">
+        edit (admin)
+      </a>
+      {% endif %}
+
+      <br />
+    </div>
+  </div>
+</div>
+{% endblock %}

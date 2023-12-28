@@ -12,8 +12,6 @@ from django.contrib.auth.decorators import login_required
 
 def registerPage(request):
   if request.user.is_authenticated:
-    return redirect('homepage:index')
-  else:
     form = CreateUserForm()
 
     if request.method == 'POST':
@@ -29,6 +27,9 @@ def registerPage(request):
       'form': form
     }
     return render(request, 'register.html', context)
+    
+  else:
+    return redirect('homepage:index')
 
 def loginPage(request):
   if request.user.is_authenticated:
@@ -49,9 +50,34 @@ def loginPage(request):
         
     return render(request, 'login.html', context)
 
+@login_required(login_url='login:login')
 def logoutUser(request):
   if request.user.is_authenticated:
     logout(request)
     return redirect('homepage:index')
+  else:
+    return redirect('login:login')
+  
+@login_required(login_url='login:login')
+def profile(request):
+  user = request.user
+
+  if request.method == 'POST':
+    last_name = request.POST.get('last_name')
+    first_name = request.POST.get('first_name')
+
+    if last_name:
+      user.last_name = last_name
+    if first_name:
+      user.first_name = first_name
+
+    user.save()
+    messages.success(request, 'Profile updated successfully')
+    return redirect('login:profile')
+
+  return render(request, 'profile.html', {'user': user})
+
+  if request.user.is_authenticated:
+    return render(request, 'profile.html')
   else:
     return redirect('login:login')

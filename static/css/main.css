@@ -40,6 +40,46 @@ h6.card-title {
   font-size: 12px;
   font-weight: 3px;
 }
+.card-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.stories-title {
+  max-height: 10.53em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.stories-text {
+  max-height: 9em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  color: lightgrey;
+  font-size: 20px;
+}
+.stories-date {
+  max-height: 3em;
+  font-size: 12px;
+}
+
+.stories-img {
+  opacity: 0.3;
+  object-fit: cover;
+  height: 100%;
+}
+
+.stories-card {
+  height: 500px;
+}
+
 .list-group-item {
   border: none;
 }
@@ -85,6 +125,11 @@ a.text-reset:hover {
   display: flex;
   align-items: center;
   margin: 0 15%;
+}
+.content-text br {
+  display: block;
+  content: "";
+  margin: 1em;
 }
 .line {
   border: none;
@@ -141,7 +186,7 @@ p {
 To create loading screen
 */
 body.loading {
-  overflow: hidden; /* Hide scrollbars while loading */
+  overflow: hidden;
 }
 
 .loading-screen {
@@ -149,8 +194,8 @@ body.loading {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh; /* Set the height to cover the entire viewport */
-  background-color: #eeeeee; /* Light gray color */
+  height: 100vh;
+  background-color: #eeeeee;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -159,13 +204,13 @@ body.loading {
 }
 
 .loading-image {
-  max-width: 75%; /* Decrease the size of the logo by 25% */
-  max-height: 80vh; /* Limit the image height */
+  max-width: 75%;
+  max-height: 80vh;
 }
 
 .loading-dots {
   display: flex;
-  margin-top: 20px; /* Adjust the space between the image and dots */
+  margin-top: 20px;
   margin-bottom: 200px;
 }
 
@@ -219,6 +264,7 @@ This is to divide the mobile phones vs non-phones styling
     font-size: 17px !important;
     font-family: "Calibri", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 400 !important;
+    color: black;
   }
   .dropdown-menu {
     column-count: 2;
@@ -251,7 +297,7 @@ This is to divide the mobile phones vs non-phones styling
   .navbar-with-shadow {
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
   }
-  /* Bootstrap's default styles for navbar toggler */
+
   .navbar-toggler {
     padding: 0.25rem 0.75rem;
     font-size: 1.25rem;
@@ -262,7 +308,7 @@ This is to divide the mobile phones vs non-phones styling
   }
 
   .navbar-toggler-icon {
-    background-color: #fff; /* Customize as needed */
+    background-color: #fff;
   }
 
   .navbar-toggler:hover {
@@ -288,4 +334,28 @@ This is to divide the mobile phones vs non-phones styling
   .navbar-toggler {
     margin-right: 10px;
   }
+}
+
+#donatePopup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+#donateOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
 }

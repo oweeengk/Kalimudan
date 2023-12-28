@@ -112,42 +112,15 @@
               </li>
             </ul>
           </li>
-
-          <li
-            class="nav-item dropdown me-2 {% is_active request 'homepage:news' %}{% is_active request 'homepage:newsprojects' %}{% is_active request 'homepage:newsnotices' %}{% is_active request 'homepage:newsstatements' %}"
-          >
+          <li class="nav-item me-2">
             <a
-              class="nav-link dropdown-toggle fw-bold"
-              href="{% url 'homepage:news' %}"
-              id="navbarDropdown"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
+              class="nav-link fw-bold {% is_active request 'homepage:stories_list' %}{% is_active request 'homepage:stories_create' %}"
+              aria-current="page"
+              href="{% url 'homepage:stories_list' %}"
+              >Stories</a
             >
-              News
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li>
-                <a
-                  class="dropdown-item"
-                  href="{% url 'homepage:newsprojects' %}"
-                  >Projects</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="{% url 'homepage:newsnotices' %}"
-                  >Notices</a
-                >
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  href="{% url 'homepage:newsstatements' %}"
-                  >Statements</a
-                >
-              </li>
-            </ul>
           </li>
+
           <li
             class="nav-item dropdown me-2 {% is_active request 'homepage:volunteering' %}{% is_active request 'homepage:volunteeringnotices' %}{% is_active request 'homepage:volunteeringapply' %}"
           >
@@ -209,7 +182,7 @@
             </ul>
           </li>
           <li
-            class="nav-item dropdown me-2 {% is_active request 'homepage:tesda' %}{% is_active request 'homepage:tesdacoursesoffered' %}"
+            class="nav-item dropdown me-2 {% is_active request 'homepage:tesda' %}{% is_active request 'homepage:tesdacoursesoffered' %}{% is_active request 'homepage:tesdainformation' %}"
           >
             <a
               class="nav-link dropdown-toggle fw-bold"
@@ -224,14 +197,14 @@
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li>
                 <a
-                  class="dropdown-item"
+                  class="dropdown-item {% is_active request 'homepage:tesdacoursesoffered' %}"
                   href="{% url 'homepage:tesdacoursesoffered' %}"
                   >Courses</a
                 >
               </li>
               <li>
                 <a
-                  class="dropdown-item"
+                  class="dropdown-item {% is_active request 'homepage:tesdainformation' %}"
                   href="{% url 'homepage:tesdainformation' %}"
                   >Information</a
                 >
@@ -248,23 +221,25 @@
             >
           </li>
           {% if request.user.is_authenticated %}
-          <li class="nav-item me-2 fst-italic fs-1">
-            <a class="nav-link fw-bold" aria-current="page" href="#"
+          <li
+            class="nav-item me-2 fst-italic fs-1 {% is_active request 'login:profile' %}"
+          >
+            <a
+              class="nav-link fw-bold"
+              aria-current="page"
+              href="{% url 'login:profile' %}"
               >{{ request.user }}</a
             >
           </li>
-          <!--
-          <li>
+          {% else %}
+          <li class="nav-item me-2 fst-italic fs-1">
             <a
-              class="dropdown-item"
+              class="nav-link fw-bold"
               aria-current="page"
-              href="{% url 'login:logout' %}"
-              >Logout</a
+              href="{% url 'login:login' %}"
+              >Login</a
             >
           </li>
-          -->
-          {% else %}
-          <button type="button" class="btn btn-light">Login</button>
           {% endif %}
         </ul>
       </div>
