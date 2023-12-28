@@ -176,3 +176,8 @@ class StoriesDeleteView(DeleteView):
 def stories_detail(request, category, slug):
     stories = get_object_or_404(Stories, category=category, slug=slug)
     return render(request, 'stories/stories_detail.html', {'stories': stories})
+
+def latest_stories(request):
+    latest_stories = Stories.objects.order_by('-date')[:3]
+    context = {'latest_stories': latest_stories}
+    return render(request, 'your_template.html', context)
