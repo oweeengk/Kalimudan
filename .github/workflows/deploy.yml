@@ -9,12 +9,18 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
+    env:
+      WORKON_HOME: /home/kalimudan/.virtualenvs/myenv
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
       - name: Set PythonAnywhere API Token
         run: echo "PYTHONANYWHERE_API_TOKEN=${{ secrets.PYTHONANYWHERE_API_TOKEN }}" >> $GITHUB_ENV
+
+      - name: Set WORKON_HOME
+        run: echo "WORKON_HOME=${WORKON_HOME}" >> $GITHUB_ENV
 
       - name: Deploy to PythonAnywhere
         run: |
