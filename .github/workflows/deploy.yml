@@ -13,8 +13,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      - name: Set WORKON_HOME
+        run: echo "WORKON_HOME=$HOME/myenv" >> $GITHUB_ENV
+
       - name: Deploy to PythonAnywhere
         run: |
           pip install --upgrade pythonanywhere
           pa_autoconfigure_django.py --python=3.9 https://github.com/oweeengk/Kalimudan.git
-          
+
