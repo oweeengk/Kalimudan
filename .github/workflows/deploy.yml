@@ -11,13 +11,12 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
-      - name: Set WORKON_HOME
-        run: echo "WORKON_HOME=$HOME/myenv" >> $GITHUB_ENV
+      - name: Set PythonAnywhere API Token
+        run: echo "PYTHONANYWHERE_API_TOKEN=${{ secrets.09e1356b6b2bb09ad0fb1fba22a0ad93598128e7 }}" >> $GITHUB_ENV
 
       - name: Deploy to PythonAnywhere
         run: |
           pip install --upgrade pythonanywhere
-          pa_autoconfigure_django.py --python=3.9 https://github.com/oweeengk/Kalimudan.git
-
+          pa_autoconfigure_django.py --python=3.8 https://github.com/your-username/your-repo.git
