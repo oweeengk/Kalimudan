@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-!3wr3ete8p1mv@oz%4q&9)gpbd87zyip3$#jt+^uuz-*q&0d-1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['kalimudan.pythonanywhere.com']
+ALLOWED_HOSTS = ['kalimudan.pythonanywhere.com', '*']
 
 
 # Application definition

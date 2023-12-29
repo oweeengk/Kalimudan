@@ -1,29 +1,17 @@
 {% load static %}
 <footer class="text-center text-lg-start bg-black text-white position-relative">
-  <div
-    class="position-absolute top-0 left-0 w-100 h-100"
-    style="
+  <div class="position-absolute top-0 left-0 w-100 h-100" style="
       background: url('{% static 'images/kfifront2.jpg' %}') center center/cover;
       background-size: cover;
       opacity: 0.5;
-    "
-  ></div>
+    "></div>
   <br />
-  <section
-    class="container text-center text-md-start mt-5 position-relative"
-    style="z-index: 1"
-  >
+  <section class="container text-center text-md-start mt-5 position-relative" style="z-index: 1">
     <div class="container text-center text-md-start mt-5">
       <div class="row mt-3">
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-          <h6 class="text-uppercase fw-bold mb-4">
-            Kalimudan Foundation Incorporated
-          </h6>
-          <p>
-            Kalimudan sa Ranao Foundation, Inc. is a Marawi City-based NGO
-            established in 1988, focusing on empowering the marginalized Meranao
-            Society through education and awareness.
-          </p>
+          <h6 class="text-uppercase fw-bold mb-4">Kalimudan Foundation Incorporated</h6>
+          <p>Kalimudan sa Ranao Foundation, Inc. is a Marawi City-based NGO established in 1988, focusing on empowering the marginalized Meranao Society through education and awareness.</p>
         </div>
 
         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
@@ -32,27 +20,21 @@
             <a href="{% url 'homepage:about' %}" class="text-reset">About</a>
           </p>
           <p>
-            <a href="{% url 'homepage:stories_list' %}" class="text-reset"
-              >Stories</a
-            >
+            <a href="{% url 'homepage:stories_list' %}" class="text-reset">Stories</a>
           </p>
           <p>
-            <a href="{% url 'homepage:projects' %}" class="text-reset"
-              >Projects</a
-            >
+            <a href="{% url 'homepage:projects' %}" class="text-reset">Projects</a>
           </p>
           <p>
-            <a href="{% url 'homepage:volunteering' %}" class="text-reset"
-              >Volunteering</a
-            >
+            <a href="{% url 'homepage:volunteering' %}" class="text-reset">Volunteering</a>
           </p>
         </div>
 
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
           <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
           <p>
-            <i class="fas fa-map-marker-alt"></i> Biaba Damag<br />
-            <i class="fas fa-map-marker-alt"></i> Marawi City<br />
+            <i class="fas fa-map-marker-alt"></i> Biaba Damag, Marawi City<br />
+
             <i class="fas fa-envelope"></i> kalimudanmarawi<br />
             <i class="fab fa-facebook"></i> kfimarawi<br />
             <i class="fas fa-phone"></i> +639068356989
@@ -62,43 +44,20 @@
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
           <h6 class="text-uppercase fw-bold mb-4">Donate to Our Cause</h6>
 
-          <a
-            href="{% url 'homepage:donate' %}"
-            class="btn btn-light d-block mx-auto"
-            >Donate</a
-          ><br />
+          <a href="{% url 'homepage:donate' %}" class="btn btn-light d-block mx-auto">Donate</a><br />
 
           <h6 class="text-uppercase fw-bold mb-4">Follow Us</h6>
 
-          <a
-            href="https://www.instagram.com/"
-            class="text-light me-3 d-inline-block"
-          >
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a
-            href="https://www.google.com/"
-            class="text-light me-3 d-inline-block"
-          >
-            <i class="fab fa-google"></i>
-          </a>
-          <a
-            href="https://www.facebook.com/kfimarawi"
-            class="text-light me-3 d-inline-block"
-          >
-            <i class="fab fa-facebook"></i>
-          </a>
-          <a href="https://www.twitter.com/" class="text-light d-inline-block">
-            <i class="fab fa-twitter"></i>
-          </a>
+          <a href="https://www.instagram.com/" class="text-light me-3 d-inline-block"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.google.com/" class="text-light me-3 d-inline-block"><i class="fab fa-google"></i></a>
+          <a href="https://www.facebook.com/kfimarawi" class="text-light me-3 d-inline-block"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.twitter.com/" class="text-light d-inline-block"><i class="fab fa-twitter"></i></a>
         </div>
       </div>
     </div>
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">
       © 2023 Copyright:
-      <a class="text-reset fw-bold" href="{% url 'homepage:index' %}">
-        Kalimudan Foundation Inc.
-      </a>
+      <a class="text-reset fw-bold" href="{% url 'homepage:index' %}">Kalimudan Foundation Inc.</a>
     </div>
   </section>
 </footer>
