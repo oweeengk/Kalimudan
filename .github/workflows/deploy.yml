@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - name: Debug - Print PythonAnywhere API Token
-        run: echo "API Token: $PYTHONANYWHERE_API_TOKEN"
+        run: echo "API Token: ${{ secrets.PYTHONANYWHERE_API_TOKEN }}"
 
       - name: Checkout Repository
         uses: actions/checkout@v2
