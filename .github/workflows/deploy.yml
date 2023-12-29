@@ -10,11 +10,12 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
+      PYTHONANYWHERE_API_TOKEN: ${{ secrets.PYTHONANYWHERE_API_TOKEN }}
       WORKON_HOME: /home/kalimudan/.virtualenvs/myenv
 
     steps:
       - name: Debug - Print PythonAnywhere API Token
-        run: echo "API Token: ${{ secrets.PYTHONANYWHERE_API_TOKEN }}"
+        run: echo "API Token: $PYTHONANYWHERE_API_TOKEN"
 
       - name: Checkout Repository
         uses: actions/checkout@v2
