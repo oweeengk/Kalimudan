@@ -22,7 +22,7 @@ jobs:
           pip install -r requirements.txt
       - name: Deploy to PythonAnywhere
         run: |
-          git pull origin main  # or the branch you want to deploy
+          git pull origin main
           python manage.py migrate
           python manage.py collectstatic --noinput
           # Add any additional deployment steps here
