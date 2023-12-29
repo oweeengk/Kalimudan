@@ -13,6 +13,9 @@ jobs:
       WORKON_HOME: /home/kalimudan/.virtualenvs/myenv
 
     steps:
+      - name: Debug - Print PythonAnywhere API Token
+        run: echo "API Token: $PYTHONANYWHERE_API_TOKEN"
+
       - name: Checkout Repository
         uses: actions/checkout@v2
 
