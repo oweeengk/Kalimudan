@@ -14,7 +14,7 @@ function setActiveLink() {
   })
 }
 
-/*
+
 document.querySelectorAll(".nav-item.dropdown").forEach(function (element) {
   const dropdownLink = element.querySelector(".nav-link.dropdown-toggle")
   const dropdownMenu = element.querySelector(".dropdown-menu")
@@ -35,7 +35,7 @@ document.querySelectorAll(".nav-item.dropdown").forEach(function (element) {
     this.classList.add("pressed")
   })
 })
-
+/*
 const startDateComputer = new Date("2019-08-06")
 const startDateDressmaking = new Date("2022-09-27")
 const startDateBreadAndPastry = new Date("2022-09-27")
