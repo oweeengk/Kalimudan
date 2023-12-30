@@ -50,7 +50,7 @@
     ></button>
   </div>
   <div class="carousel-inner">
-    <div class="carousel-item active" data-bs-interval="2000">
+    <div class="carousel-item active" data-bs-interval="3500">
       <img
         src="{% static 'images/1.png' %}"
         class="d-block mx-auto w-100 h-100"
@@ -58,7 +58,7 @@
         alt="..."
       />
     </div>
-    <div class="carousel-item" data-bs-interval="2000">
+    <div class="carousel-item" data-bs-interval="3500">
       <img
         src="{% static 'images/2.png' %}"
         class="d-block mx-auto w-100 h-100"
@@ -66,7 +66,7 @@
         alt="..."
       />
     </div>
-    <div class="carousel-item" data-bs-interval="2000">
+    <div class="carousel-item" data-bs-interval="3500">
       <img
         src="{% static 'images/3.png' %}"
         class="d-block mx-auto w-100 h-100"
@@ -74,7 +74,7 @@
         alt="..."
       />
     </div>
-    <div class="carousel-item" data-bs-interval="2000">
+    <div class="carousel-item" data-bs-interval="3500">
       <img
         src="{% static 'images/4.png' %}"
         class="d-block mx-auto w-100 h-100"
@@ -82,7 +82,7 @@
         alt="..."
       />
     </div>
-    <div class="carousel-item" data-bs-interval="2000">
+    <div class="carousel-item" data-bs-interval="3500">
       <img
         src="{% static 'images/5.png' %}"
         class="d-block mx-auto w-100 h-100"
@@ -90,7 +90,7 @@
         alt="..."
       />
     </div>
-    <div class="carousel-item" data-bs-interval="2000">
+    <div class="carousel-item" data-bs-interval="3500">
       <img
         src="{% static 'images/6.png' %}"
         class="d-block mx-auto w-100 h-100"
@@ -422,7 +422,7 @@
                     <h5 class="mb-1" style="color: green">
                       Computer Systems Servicing NCII
                     </h5>
-                    <small class="text-muted" id="computerDaysAgo"></small>
+                    <small class="text-muted">08/06/2019</small>
                   </div>
                   <p class="mb-1 clamp-lines-four">
                     TESDA CSS NC2, or the Technical Education and Skills
@@ -463,8 +463,7 @@
                     </h5>
                     <small
                       class="text-muted"
-                      id="breadandpastryDaysAgo"
-                    ></small>
+                    >09/27/2022</small>
                   </div>
                   <p class="mb-1 clamp-lines-four">
                     TESDA Bread and Pastry Production NC II equips students with
@@ -500,7 +499,7 @@
                 <div class="col-md-9">
                   <div class="d-flex w-100 justify-content-between">
                     <h5 class="mb-1" style="color: green">Dressmaking NCII</h5>
-                    <small class="text-muted" id="dressmakingDaysAgo"></small>
+                    <small class="text-muted">09/27/2022</small>
                   </div>
                   <p class="mb-1 clamp-lines-four">
                     TESDA Dressmaking NC II imparts essential skills for
@@ -679,13 +678,14 @@
       <br />
 
       <div class="video-container">
-        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fkfimarawi%2Fvideos%2F241183901148402%2F&show_text=false&width=560&t=0" 
+        <iframe src="https://drive.google.com/file/d/16eVPfQxNLdT-8u74BedKJ46KFIPzd69k/preview" 
           style="border: none; overflow: hidden"
           scrolling="no"
           frameborder="0"
           allowTransparency="true"
           allowfullscreen="true"></iframe>
       </div>
+      <br>
       <p>
         <span class="fw-bold fs-5" style="color: green"
           >WATCH: How Is Marawi? </span
@@ -713,13 +713,10 @@
       <div
         class="list-group-item list-group-item-action d-flex justify-content-end"
       >
-        <a href="{% url 'homepage:donate' %}" class="btn btn-success"
-          >Become a donor</a
+        <a href="{% url 'homepage:stories_list' %}" class="btn btn-dark"
+          >See stories</a
         >
-        &nbsp&nbsp&nbsp
-        <a href="{% url 'homepage:projectsinformation' %}" class="btn btn-dark"
-          >See all projects</a
-        >
+
       </div>
     </div>
   </div>
