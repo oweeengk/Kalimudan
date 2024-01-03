@@ -134,17 +134,6 @@
             >
               Volunteering
             </a>
-            </li>
-            {% if request.user.is_authenticated and request.user.is_staff %}
-            <li class="nav-item me-2">
-              <a
-                class="nav-link fw-bold {% is_active request 'homepage:file_list' %}{% is_active request 'homepage:file_upload' %}"
-                aria-current="page"
-                href="{% url 'homepage:file_list' %}"
-                >Files</a
-              >
-            </li>
-            {% endif %}
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li>
                 <a
@@ -162,6 +151,16 @@
               </li>
             </ul>
           </li>
+          {% if request.user.is_authenticated and request.user.is_staff %}
+            <li class="nav-item me-2">
+              <a
+                class="nav-link fw-bold {% is_active request 'homepage:file_list' %}{% is_active request 'homepage:file_upload' %}"
+                aria-current="page"
+                href="{% url 'homepage:file_list' %}"
+                >Files</a
+              >
+            </li>
+          {% endif %}
           <li
             class="nav-item dropdown me-2 {% is_active request 'homepage:projects' %}{% is_active request 'homepage:projectspartners' %}{% is_active request 'homepage:projectsinformation' %}"
           >

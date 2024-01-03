@@ -1,141 +1,61 @@
 {% extends 'base.html' %}
-<!--TEST-->
+<!-- TEST -->
 {% load static %}
-<!--TEST-->
+<!-- TEST -->
 {% load custom_tags %}
-<!--TEST-->
+<!-- TEST -->
 {% block title %}
-<title>About - Kalimudan Sa Ranao Foundation Inc.</title>
+  <title>About - Kalimudan Sa Ranao Foundation Inc.</title>
 {% endblock %}
-<!--TEST-->
+<!-- TEST -->
 {% block content %}
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-11 mt-4 mb-4">
-      <br />
-      <h1 class="fw-bold">About</h1>
-      <figure class="figure col-12" style="position: relative">
-        <img
-          src="{% static 'images/kalimudanfront.jpg' %}"
-          class="card-img-top border rounded mx-auto img-fluid"
-          alt="..."
-        />
-        <figcaption
-          class="figure-caption fs-6"
-          style="
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-11 mt-4 mb-4">
+        <br />
+        <h1 class="fw-bold">About</h1>
+        <figure class="figure col-12" style="position: relative">
+          <img src="{% static 'images/kalimudanfront.jpg' %}" class="card-img-top border rounded mx-auto img-fluid" alt="..." />
+          <figcaption class="figure-caption fs-6" style="
             position: absolute;
             bottom: 0;
             background-color: darkgreen;
             width: 100%;
             padding: 20px;
             color: white;
-          "
-        >
-          Kalimudan sa Ranao Foundation, Inc. is a non-governmental organization
-          (NGO) located in Marawi City. It was founded in 1988 with a primary
-          mission to empower and uplift the marginalized Meranao Society. The
-          organization achieves this mission through various programs and
-          initiatives that promote education and raise awareness among the
-          Meranao community.
-        </figcaption>
-      </figure>
-      <br />
-      <hr class="content-divider" />
-      <br />
-      <div style="display: flex; align-items-baseline;">
-        <a href="{% url 'homepage:orgchart' %}" style="text-decoration: none">
-          <p class="fs-6 fw-bold" style="color: green; margin-right: 10px">
-            Organizational Chart:
-          </p></a
-        >
-        <p class="fs-6" style="color: inherit; margin: 0">
-          The organizational chart visually displays an organization's hierarchy
-          and reporting relationships for better understanding.
-        </p>
+          ">Kalimudan sa Ranao Foundation, Inc. is a non-governmental organization (NGO) located in Marawi City. It was founded in 1988 with a primary mission to empower and uplift the marginalized Meranao Society. The organization achieves this mission through various programs and initiatives that promote education and raise awareness among the Meranao community.</figcaption>
+        </figure>
+        <br />
+        <hr class="content-divider" />
+        <br />
+        <div style="display: flex; align-items-baseline;">
+          <a href="{% url 'homepage:orgchart' %}" style="text-decoration: none"><p class="fs-6 fw-bold" style="color: green; margin-right: 10px">Organizational Chart:</p></a>
+          <p class="fs-6" style="color: inherit; margin: 0">The organizational chart visually displays an organization's hierarchy and reporting relationships for better understanding.</p>
+        </div>
+        <div style="display: flex; align-items-baseline;">
+          <a href="{% url 'homepage:visitkfi' %}" style="text-decoration: none"><p class="fs-6 fw-bold" style="color: green; margin-right: 10px">Visit KFI:</p></a>
+          <p class="fs-6" style="color: inherit; margin: 0">Visit KFI offers an exciting opportunity to explore, engage, and gain insights into the Kalimudan Foundation Inc.'s impactful work and mission.</p>
+        </div>
+        <div style="display: flex; align-items-baseline;">
+          <a href="{% url 'homepage:factsandfigures' %}" style="text-decoration: none"><p class="fs-6 fw-bold" style="color: green; margin-right: 10px">Facts and Figures:</p></a>
+          <p class="fs-6" style="color: inherit; margin: 0">Facts and figures at KFI provide valuable information about KFI's compelling data, achievements, history, and impacts.</p>
+        </div>
+        <div style="display: flex; align-items-baseline;">
+          <a href="{% url 'homepage:administration' %}" style="text-decoration: none"><p class="fs-6 fw-bold" style="color: green; margin-right: 10px">Administration:</p></a>
+          <p class="fs-6" style="color: inherit; margin: 0">Administration at KFI showcases the leadership and management behind the foundation's successful operations, ensuring its growth and impact.</p>
+        </div>
+        <div style="display: flex; align-items-baseline;">
+          {% if request.user.is_authenticated %}
+            <a href="{% url 'homepage:manualofoperations' %}" style="text-decoration: none"><p class="fs-6 fw-bold" style="color: green; margin-right: 10px">Manual of Operations:</p></a>
+            <p class="fs-6" style="color: inherit; margin: 0">The operations manual is a concise guide for efficient task execution in a system or organization.</p>
+          {% endif %}
+        </div>
+        <div style="display: flex; align-items-baseline;">
+          <a href="{% url 'homepage:accreditations' %}" style="text-decoration: none"><p class="fs-6 fw-bold" style="color: green; margin-right: 10px">Accreditations:</p></a>
+          <p class="fs-6" style="color: inherit; margin: 0">Accreditations at KFI showcase the foundation's official recognitions and certifications, validating its commitment to excellence.</p>
+        </div>
+        <p style="font-size: 12px">Last Updated: November 3, 2023</p>
       </div>
-      <div style="display: flex; align-items-baseline;">
-        <a href="{% url 'homepage:visitkfi' %}" style="text-decoration: none">
-          <p class="fs-6 fw-bold" style="color: green; margin-right: 10px">
-            Visit KFI:
-          </p></a
-        >
-        <p class="fs-6" style="color: inherit; margin: 0">
-          Visit KFI offers an exciting opportunity to explore, engage, and gain
-          insights into the Kalimudan Foundation Inc.'s impactful work and
-          mission.
-        </p>
-      </div>
-      <div style="display: flex; align-items-baseline;">
-        <a
-          href="{% url 'homepage:factsandfigures' %}"
-          style="text-decoration: none"
-        >
-          <p class="fs-6 fw-bold" style="color: green; margin-right: 10px">
-            Facts and Figures:
-          </p></a
-        >
-        <p class="fs-6" style="color: inherit; margin: 0">
-          Facts and figures at KFI provide valuable information about KFI's
-          compelling data, achievements, history, and impacts.
-        </p>
-      </div>
-      <div style="display: flex; align-items-baseline;">
-        <a
-          href="{% url 'homepage:administration' %}"
-          style="text-decoration: none"
-        >
-          <p class="fs-6 fw-bold" style="color: green; margin-right: 10px">
-            Administration:
-          </p></a
-        >
-        <p class="fs-6" style="color: inherit; margin: 0">
-          Administration at KFI showcases the leadership and management behind
-          the foundation's successful operations, ensuring its growth and
-          impact.
-        </p>
-      </div>
-      <div style="display: flex; align-items-baseline;">
-        {% if request.user.is_authenticated %}
-        <a
-          href="{% url 'homepage:manualofoperations' %}"
-          style="text-decoration: none"
-        >
-          <p class="fs-6 fw-bold" style="color: green; margin-right: 10px">
-            Manual of Operations:
-          </p></a
-        >
-        <p class="fs-6" style="color: inherit; margin: 0">
-          The operations manual is a concise guide for efficient task execution
-          in a system or organization.
-        </p>
-        {% else %}
-        <a href="#" style="text-decoration: none">
-          <p class="fs-6 fw-bold" style="color: gray; margin-right: 10px">
-            Manual of Operations:
-          </p></a
-        >
-        <p class="fs-6" style="color: inherit; margin: 0">
-          The operations manual is a concise guide for efficient task execution
-          in a system or organization.
-        </p>
-        {% endif %}
-      </div>
-      <div style="display: flex; align-items-baseline;">
-        <a
-          href="{% url 'homepage:accreditations' %}"
-          style="text-decoration: none"
-        >
-          <p class="fs-6 fw-bold" style="color: green; margin-right: 10px">
-            Accreditations:
-          </p></a
-        >
-        <p class="fs-6" style="color: inherit; margin: 0">
-          Accreditations at KFI showcase the foundation's official recognitions
-          and certifications, validating its commitment to excellence.
-        </p>
-      </div>
-      <p style="font-size: 12px">Last Updated: November 3, 2023</p>
     </div>
   </div>
-</div>
 {% endblock %}

@@ -1,70 +1,36 @@
 {% extends 'base.html' %} {% load static %} {% block title %}
-<title>TESDA - Kalimudan Sa Ranao</title>
+  <title>TESDA - Kalimudan Sa Ranao</title>
 {% endblock %} {% block content %}
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-11 mt-4 mb-4">
-      <br />
-      <h1 class="fw-bold">TESDA</h1>
-      <figure class="figure col-12" style="position: relative">
-        <img
-          src="{% static 'images/tesdafront.jpg' %}"
-          class="card-img-top border rounded mx-auto img-fluid"
-          alt="..."
-        />
-        <figcaption
-          class="figure-caption fs-6"
-          style="
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-11 mt-4 mb-4">
+        <br />
+        <h1 class="fw-bold">TESDA</h1>
+        <figure class="figure col-12" style="position: relative">
+          <img src="{% static 'images/tesdafront.jpg' %}" class="card-img-top border rounded mx-auto img-fluid" alt="..." />
+          <figcaption class="figure-caption fs-6" style="
             position: absolute;
             bottom: 0;
             background-color: darkgreen;
             width: 100%;
             padding: 20px;
             color: white;
-          "
-        >
-          Among these participants was Kalimudan sa Ranao Foundation, Inc. Thank
-          you TESDA for accommodating us. May all good wishes be upon us and our
-          faith with us as we continue venturing on new experiences together and
-          further enhance our knowledge and skills for the future.
-          Alhamdulillah!
-        </figcaption>
-      </figure>
-      <br />
-      <hr class="content-divider" />
-      <br />
-      <div style="display: flex; align-items-baseline;">
-        <a
-          href="{% url 'homepage:tesdacoursesoffered' %}"
-          style="text-decoration: none"
-        >
-          <p class="fs-6 fw-bold" style="color: green; margin-right: 10px">
-            Courses Offered:
-          </p></a
-        >
-        <p class="fs-6" style="color: inherit; margin: 0">
-          This webpage showcases the various TESDA courses available through
-          KFI, providing comprehensive information on their offerings.
-        </p>
-      </div>
-      <div style="display: flex; align-items-baseline;">
-        <a
-          href="{% url 'homepage:tesdainformation' %}"
-          style="text-decoration: none"
-        >
-          <p class="fs-6 fw-bold" style="color: green; margin-right: 10px">
-            Information:
-          </p></a
-        >
-        <p class="fs-6" style="color: inherit; margin: 0">
-          The information page provides comprehensive details about the courses
-          offered by KFI, including pertinent information related to each
-          course.
-        </p>
-      </div>
+          ">Among these participants was Kalimudan sa Ranao Foundation, Inc. Thank you TESDA for accommodating us. May all good wishes be upon us and our faith with us as we continue venturing on new experiences together and further enhance our knowledge and skills for the future. Alhamdulillah!</figcaption>
+        </figure>
+        <br />
+        <hr class="content-divider" />
+        <br />
+        <div style="display: flex; align-items-baseline;">
+          <a href="{% url 'homepage:tesdacoursesoffered' %}" style="text-decoration: none"><p class="fs-6 fw-bold" style="color: green; margin-right: 10px">Courses Offered:</p></a>
+          <p class="fs-6" style="color: inherit; margin: 0">This webpage showcases the various TESDA courses available through KFI, providing comprehensive information on their offerings.</p>
+        </div>
+        <div style="display: flex; align-items-baseline;">
+          <a href="{% url 'homepage:tesdainformation' %}" style="text-decoration: none"><p class="fs-6 fw-bold" style="color: green; margin-right: 10px">Information:</p></a>
+          <p class="fs-6" style="color: inherit; margin: 0">The information page provides comprehensive details about the courses offered by KFI, including pertinent information related to each course.</p>
+        </div>
 
-      <p style="font-size: 12px">Last Updated: November 3, 2023</p>
+        <p style="font-size: 12px">Last Updated: November 3, 2023</p>
+      </div>
     </div>
   </div>
-</div>
 {% endblock %}

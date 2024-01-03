@@ -2,6 +2,18 @@
 
 {% block title %}
 <title> Project Information - Kalimudan Sa Ranao </title>
+<style>
+  /* Hide the "Total Amount" column and all its corresponding cells in the second table */
+  .table-total-amount td:nth-child(5),
+  .table-total-amount th:nth-child(5) {
+    display: none;
+  }
+  /* Hide the "Cost" column and all its corresponding cells in the first table */
+  .table-cost td:nth-child(2),
+  .table-cost th:nth-child(2) {
+    display: none;
+  }
+</style>
 {% endblock %}
 
 {% block content %}
@@ -11,8 +23,8 @@
       <h1 class="fw-bold">Projects: Information</h1>
       <br />
       <h4 style="color: green;">Current Year</h4>
-      <table class="table table-hover table-borderless">
-        <caption>Updated as of October 19, 2023</caption>
+      <table class="table table-hover table-borderless table-cost">
+        <caption><p style="font-size: 12px;">Table updated as of October 19, 2023</p></caption>
         <thead class="table-dark">
           <tr>
             <th scope="col">Project</th>
@@ -50,8 +62,8 @@
       </table>
       <br>
       <h4 style="color: green;">Previous Projects</h4>
-        <table class="table table-hover table-borderless">
-          <caption>Updated as of October 19, 2023</caption>
+        <table class="table table-hover table-borderless table-total-amount">
+          <caption><p style="font-size: 12px;">Table updated as of October 19, 2023</p></caption>
           <thead class="table-dark">
             <tr>
               <th scope="col">Project</th>
@@ -290,8 +302,8 @@
         </table>
         <br>
         <h4 style="color: green;">Previous Programs & Project Engagements</h4>
-        <table class="table table-hover table-borderless">
-          <caption>Updated as of October 19, 2023</caption>
+        <table class="table table-hover table-borderless table-cost">
+          <caption><p style="font-size: 12px;">Table updated as of October 19, 2023</p></caption>
           <thead class="table-dark">
             <tr>
               <th scope="col">Project</th>
@@ -305,169 +317,169 @@
               <td class="fw-bold">Education Awareness</td>
               <td>3,000,000.00</td>
               <td>Community: Urban Poor, Youth, and Women</td>
-              <td>&nbsp;&nbsp;<i class="fa-solid fa-check"></i></td>
+              <td>&nbsp;&nbsp;<i class="fas fa-check"></i></td>
             </tr>
             <tr>
               <td class="fw-bold">Maranao Organizing & Institutional Development Phase 1 MOID 1, Phase 2 MOID 2, Phase 3 MOID 3</td>
               <td>18,046,260.07</td>
               <td>Community: Farmer, Fisherman, Youth, and Women</td>
-              <td>&nbsp;&nbsp;<i class="fa-solid fa-check"></i></td>
+              <td>&nbsp;&nbsp;<i class="fas fa-check"></i></td>
             </tr>
             <tr>
               <td class="fw-bold">Staff Skills Development (Organizational Strengthening)</td>
               <td>374,782.00</td>
               <td>Kalimudan Staff</td>
-              <td>&nbsp;&nbsp;<i class="fa-solid fa-check"></i></td>
+              <td>&nbsp;&nbsp;<i class="fas fa-check"></i></td>
             </tr>
             <tr>
               <td class="fw-bold">Transformative Approach Peacebuilding (Research on Maranao Settlement of Rido/Manual Book)</td>
               <td>2,000,000.00</td>
               <td>Youth, Women, Traditional Leaders, Religious, and Academe</td>
-              <td>&nbsp;&nbsp;<i class="fa-solid fa-check"></i></td>
+              <td>&nbsp;&nbsp;<i class="fas fa-check"></i></td>
             </tr>
             <tr>
               <td class="fw-bold">Barangay Justice Service System</td>
               <td>3,200,000.00</td>
               <td>Barangay Chairman, Councilor, Kagawad, Sangguiniang Bayan, Traditional Leader, Religious group, Women, and Youth.</td>
-              <td>&nbsp;&nbsp;<i class="fa-solid fa-check"></i></td>
+              <td>&nbsp;&nbsp;<i class="fas fa-check"></i></td>
             </tr>
             <tr>
               <td class="fw-bold">STARCM (Apid Agriculture, Infrastructure, Institutional Strengthening)</td>
               <td>7,700,000.00</td>
               <td>Farmer, Cooperative</td>
-              <td>&nbsp;&nbsp;<i class="fa-solid fa-check"></i></td>
+              <td>&nbsp;&nbsp;<i class="fas fa-check"></i></td>
             </tr>
             <tr>
               <td class="fw-bold">Peacebuilding Actions for Community Empowerment (Peace in Mindanao)</td>
               <td>3,297,860.00</td>
               <td>Community: Women, Youth, Traditional Leaders, and Religious groups</td>
-              <td>&nbsp;&nbsp;<i class="fa-solid fa-check"></i></td>
+              <td>&nbsp;&nbsp;<i class="fas fa-check"></i></td>
             </tr>
             <tr>
               <td class="fw-bold">Potable Water Supply System Level II</td>
               <td>1,700,000.00</td>
               <td>Barangay Gadungan Ramain and 3 Barangays Calanogas</td>
-              <td>&nbsp;&nbsp;<i class="fa-solid fa-check"></i></td>
+              <td>&nbsp;&nbsp;<i class="fas fa-check"></i></td>
             </tr>
             <tr>
               <td class="fw-bold">Municipal Agriculture Development Program</td>
               <td>987,600.00</td>
               <td>Farmers</td>
-              <td>&nbsp;&nbsp;<i class="fa-solid fa-check"></i></td>
+              <td>&nbsp;&nbsp;<i class="fas fa-check"></i></td>
             </tr>
             <tr>
               <td class="fw-bold">Forum on Environment</td>
               <td>100,000.00</td>
               <td>Student, Women, and all sectors</td>
-              <td>&nbsp;&nbsp;<i class="fa-solid fa-check"></i></td>
+              <td>&nbsp;&nbsp;<i class="fas fa-check"></i></td>
             </tr>
             <tr>
               <td class="fw-bold">STRIDE Mindanao for Relief and Shelter</td>
               <td>5,000,000.00</td>
               <td></td>
-              <td>&nbsp;&nbsp;<i class="fa-solid fa-check"></i></td>
+              <td>&nbsp;&nbsp;<i class="fas fa-check"></i></td>
             </tr>
             <tr>
               <td class="fw-bold">Shelter Repair</td>
               <td>1,400,000.00</td>
               <td>Victims of Typoon</td>
-              <td>&nbsp;&nbsp;<i class="fa-solid fa-check"></i></td>
+              <td>&nbsp;&nbsp;<i class="fas fa-check"></i></td>
             </tr>
             <tr>
               <td class="fw-bold">Early Recovery & Rehabilitation in Central Mindanao</td>
               <td>11,000,000.00</td>
               <td>IDPs during Gloria Macapagal War. 2 Barangays in Balindong</td>
-              <td>&nbsp;&nbsp;<i class="fa-solid fa-check"></i></td>
+              <td>&nbsp;&nbsp;<i class="fas fa-check"></i></td>
             </tr>
             <tr>
               <td class="fw-bold">Relief and Medical</td>
               <td>300,000.00 & 400 relief packages</td>
               <td>IDPs from Marantao and Saguiaran</td>
-              <td>&nbsp;&nbsp;<i class="fa-solid fa-check"></i></td>
+              <td>&nbsp;&nbsp;<i class="fas fa-check"></i></td>
             </tr>
             <tr>
               <td class="fw-bold">Bangladesh Alternative Rural Advancement Delivery Model (BRAC)</td>
               <td>72,655,369.00</td>
               <td>Kinder to Grade 6 students</td>
-              <td>&nbsp;&nbsp;<i class="fa-solid fa-check"></i></td>
+              <td>&nbsp;&nbsp;<i class="fas fa-check"></i></td>
             </tr>
             <tr>
               <td class="fw-bold">Modified Condition Transfer for Family in need of Special Protection (MCCT - FNSP) DSWD ARMM</td>
               <td>7,395,538.48 (3042 4Ps family beneficiaries)</td>
               <td>4Ps Beneficiaries</td>
-              <td>&nbsp;&nbsp;<i class="fa-solid fa-check"></i></td>
+              <td>&nbsp;&nbsp;<i class="fas fa-check"></i></td>
             </tr>
             <tr>
               <td class="fw-bold">Citizen Report Card</td>
               <td>300,000.00</td>
               <td>Training and survey after Marawi Siege</td>
-              <td>&nbsp;&nbsp;<i class="fa-solid fa-check"></i></td>
+              <td>&nbsp;&nbsp;<i class="fas fa-check"></i></td>
             </tr>
             <tr>
               <td class="fw-bold">Community Scorecard Traffic Management in the City</td>
               <td>100,000.00</td>
               <td>Admin of the City, School Head, Barangay Chairman</td>
-              <td>&nbsp;&nbsp;<i class="fa-solid fa-check"></i></td>
+              <td>&nbsp;&nbsp;<i class="fas fa-check"></i></td>
             </tr>
             <tr>
               <td class="fw-bold">Family Conversation on Health Protection of Women, Human rights, & Recovery Rehabilitation</td>
               <td>200,000.00</td>
               <td>Father, Mother, and Children</td>
-              <td>&nbsp;&nbsp;<i class="fa-solid fa-check"></i></td>
+              <td>&nbsp;&nbsp;<i class="fas fa-check"></i></td>
             </tr>
             <tr>
               <td class="fw-bold">EFSA & 3rd Party Monitoring</td>
               <td>1,400,000.00</td>
               <td>Hire 15 Facilitators and 15 Documentors, Surveyors, and Families affected in Ground Zero (Marawi Siege)</td>
-              <td>&nbsp;&nbsp;<i class="fa-solid fa-check"></i></td>
+              <td>&nbsp;&nbsp;<i class="fas fa-check"></i></td>
             </tr>
             <tr>
               <td class="fw-bold">Life-Saving Urban Container Gardening</td>
               <td>1,000,000.00</td>
               <td>Families of Barangay Basak Malutlut</td>
-              <td>&nbsp;&nbsp;<i class="fa-solid fa-check"></i></td>
+              <td>&nbsp;&nbsp;<i class="fas fa-check"></i></td>
             </tr>
             <tr>
               <td class="fw-bold">Echo Forgotten Crisis - Marawi Response</td>
               <td>5,186,846.00 (Admin & Operational); 18,000,000.00 released to beneficiaries</td>
               <td>Marawi Siege IDPs</td>
-              <td>&nbsp;&nbsp;<i class="fa-solid fa-check"></i></td>
+              <td>&nbsp;&nbsp;<i class="fas fa-check"></i></td>
             </tr>
             <tr>
               <td class="fw-bold">PAMANA 2017 Capacity Development & Livelihood Assessments, Organizing, and Appropriate Trainings & Community Assistance Kits Distribution</td>
               <td>11,936,000.00</td>
               <td>Cooperative Members, Out of School Youth, Women, and Youth</td>
-              <td>&nbsp;&nbsp;<i class="fa-solid fa-check"></i></td>
+              <td>&nbsp;&nbsp;<i class="fas fa-check"></i></td>
             </tr>
             <tr>
               <td class="fw-bold">Support to Peacebuilding and Normalization (SPAN) Program Social Healing and Peacebuilding Protect</td>
               <td>15,447,000.00</td>
               <td>Allowance for students and IDPs (2,000,000.00) and Cooperatives for livelihood</td>
-              <td>&nbsp;&nbsp;<i class="fa-solid fa-check"></i></td>
+              <td>&nbsp;&nbsp;<i class="fas fa-check"></i></td>
             </tr>
             <tr>
               <td class="fw-bold">Feeding Peace in Lanao del Sur (Cash grant for food)</td>
               <td>3,059,950.00 (Admin & Operation); 42,000,000.00 for beneficiaries</td>
               <td>Marawi Siege Victims (IDPs)</td>
-              <td>&nbsp;&nbsp;<i class="fa-solid fa-check"></i></td>
+              <td>&nbsp;&nbsp;<i class="fas fa-check"></i></td>
             </tr>
             <tr>
               <td class="fw-bold">Disaster Risk Reduction Management (Prepare, Protect, and Prevent)</td>
               <td>970,000.00</td>
               <td>72 Barangays - Barangay Chairmen, Kagawad, BPAT, and officers of Barangay</td>
-              <td>&nbsp;&nbsp;<i class="fa-solid fa-check"></i></td>
+              <td>&nbsp;&nbsp;<i class="fas fa-check"></i></td>
             </tr>
             <tr>
               <td class="fw-bold">Sustaining Transformative and Resilient in Vulnerable Communities (STRIVEC) in Ranao Philippines</td>
               <td>1,800,000.00</td>
               <td>6 Barangays in Ramain Ditsaan, and 1 Municipality</td>
-              <td>&nbsp;&nbsp;<i class="fa-solid fa-check"></i></td>
+              <td>&nbsp;&nbsp;<i class="fas fa-check"></i></td>
             </tr>
             <tr>
               <td class="fw-bold">Technical Vocational Institute School</td>
               <td>BSPTVET Scholars (595,000.00)</td>
               <td>85 Students (3 Batches)</td>
-              <td>&nbsp;&nbsp;<i class="fa-solid fa-check"></i></td>
+              <td>&nbsp;&nbsp;<i class="fas fa-check"></i></td>
             </tr>
           </tbody>
         </table>
