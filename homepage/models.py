@@ -20,6 +20,14 @@ class Stories(models.Model):
         ('statements', 'Statements'),
         ('notices', 'Notices'),
         ('projects', 'Projects'),
+        ('announcements', 'Announcements'),
+        ('meetings', 'Meetings'),
+        ('assessments', 'Assessments'),
+        ('announcements', 'Announcements'),
+        ('teambuilding', 'Teambuilding'),
+        ('study tour', 'Study Tour'),
+        ('educational', 'Educational'),
+        ('exit conference', 'Exit Conference'),
     ]
 
     title = models.CharField(max_length=200)
