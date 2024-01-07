@@ -18,7 +18,6 @@ class UploadedFile(models.Model):
 class Stories(models.Model):
     CATEGORY_CHOICES = [
         ('statements', 'Statements'),
-        ('notices', 'Notices'),
         ('projects', 'Projects'),
     ]
 
