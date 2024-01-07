@@ -14,6 +14,7 @@ from .forms import FileUploadForm, StoriesForm
 from .models import UploadedFile, Stories
 
 
+
 def index(request):
   return render(request, "homepage.html")
 
@@ -45,9 +46,6 @@ def accreditations(request):
 def administration(request):
   return render(request, "about/administration.html")
 
-def factsandfigures(request):
-  return render(request, "about/factsandfigures.html")
-
 @login_required
 def manualofoperations(request):
   return render(request, "about/manualofoperations.html")
@@ -66,9 +64,6 @@ def storiesstatements(request):
 def volunteeringapply(request):
   return render(request, "volunteering/apply.html")
 
-def volunteeringnotices(request):
-  return render(request, "volunteering/notices.html")
-
 
 def projectsinformation(request):
   return render(request, "projects/information.html")
@@ -80,8 +75,8 @@ def projectspartners(request):
 def tesdacoursesoffered(request):
   return render(request, "tesda/coursesoffered.html")
 
-def tesdainformation(request):
-  return render(request, "tesda/information.html")
+def tesdahistory(request):
+  return render(request, "tesda/history.html")
 
 @login_required
 def file_list(request):
