@@ -1,46 +1,101 @@
-{% extends 'base.html' %} {% block title %} {% load static %}
-<title>Tesda Courses - Kalimudan Sa Ranao</title>
-{% endblock %} {% block content %}
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-11 mt-4 mb-4">
-      <h1 class="fw-bold">Tesda Courses Offered</h1>
-      <p>
-        Welcome to the upcoming "TESDA Courses" page—an informative platform
-        that is currently under construction, designed to showcase the array of
-        Technical Education and Skills Development Authority (TESDA) courses
-        available through Kalimudan sa Ranao Foundation Inc. (KFI). This
-        dedicated webpage is being crafted to offer you a comprehensive and
-        detailed overview of the diverse skill development opportunities
-        facilitated by KFI.
-      </p>
-      <p>
-        Imagine a virtual catalog that not only outlines the various TESDA
-        courses offered but also provides in-depth information about each
-        program, ensuring that you can make informed decisions about your
-        educational and vocational pursuits. From practical skills in technical
-        and vocational instruction to specialized training in areas like
-        participative governance, countering violent extremism, education
-        literacy, peacebuilding, sustainable livelihoods, and disaster
-        preparedness—this page will be your gateway to unlocking a world of
-        learning opportunities.
-      </p>
-      <p>
-        As we work diligently to construct this invaluable resource, anticipate
-        a user-friendly interface that makes navigation seamless, allowing you
-        to explore the details of each TESDA course at your convenience. Whether
-        you're seeking to enhance your existing skills, embark on a new career
-        path, or contribute to community development, the "TESDA Courses" page
-        will be your one-stop destination for educational enrichment.
-      </p>
-      <p>
-        We appreciate your patience as we put the finishing touches on this
-        page, and we look forward to unveiling a platform that empowers you with
-        the knowledge and tools needed to make meaningful educational choices.
-        Check back soon for updates on TESDA courses available through KFI and
-        embark on a journey of skill development and personal growth.
-      </p>
+{% extends 'base.html' %}
+{% block title %}
+  {% load static %} <title>Tesda Courses - Kalimudan Sa Ranao</title>
+{% endblock %}
+{% block content %}
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-11 mt-4 mb-4">
+        <div class="bg-white p-0">
+          <h4 class="fw-bold text-center text-nowrap">TESDA Courses Offered</h4>
+          <div class="list-group">
+            <div class="container">
+              <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="row">
+                  <div class="col-md-3">
+                    <img src="{% static 'images/tesda/css 1.png' %}" alt="Image" class="img-fluid" />
+                  </div>
+                  <div class="col-md-9">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1" style="color: green">Computer Systems Servicing NCII</h5>
+                      <small class="text-muted">08/06/2019</small>
+                    </div>
+                    <p class="mb-1">TESDA CSS NC2, or the Technical Education and Skills Development Authority Computer Systems Servicing National Certificate II, focuses on imparting skills in computer hardware, software, and network maintenance. It equips students with the knowledge and expertise to assemble, troubleshoot, and maintain computer systems effectively. The program emphasizes essential IT competencies, making graduates adept at handling computer-related issues and providing technical support. This training opens doors to careers as computer technicians and IT professionals in various industries.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="container">
+              <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="row">
+                  <div class="col-md-3">
+                    <img src="{% static 'images/tesda/bpp 1.png' %}" alt="Image" class="img-fluid" />
+                  </div>
+                  <div class="col-md-9">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1" style="color: green">Bread & Pastry NCII</h5>
+                      <small class="text-muted">09/27/2022</small>
+                    </div>
+                    <p class="mb-1">TESDA Bread and Pastry Production NC II equips students with the skills needed to excel in the baking and pastry industry. This program focuses on developing competencies in preparing and producing various bakery and pastry products, cakes, and desserts. Students learn about ingredient selection, baking techniques, and presentation, enabling them to work in bakeries, pastry shops, or even start their own baking businesses. It's a hands-on training program that provides a solid foundation in the art and science of baking and pastry production.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="container">
+              <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="row">
+                  <div class="col-md-3">
+                    <img src="{% static 'images/tesda/dressmaking 1.png' %}" alt="Image" class="img-fluid" />
+                  </div>
+                  <div class="col-md-9">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1" style="color: green">Dressmaking NCII</h5>
+                      <small class="text-muted">09/27/2022</small>
+                    </div>
+                    <p class="mb-1">TESDA Dressmaking NC II imparts essential skills for creating ladies' casual apparel in the garment sector. Students learn how to draft and cut patterns, lay them out on fabric, sew the materials together, and add the finishing touches. This program focuses on precise garment construction, fitting, and quality assurance. Graduates are well-prepared to work in the fashion industry, whether in clothing manufacturing, tailoring, or even launching their fashion design businesses, due to the comprehensive knowledge and hands-on experience gained in dressmaking.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="container">
+              <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="row">
+                  <div class="col-md-3">
+                    <img src="{% static 'images/tesda/agri crop 2.png' %}" alt="Image" class="img-fluid" style="opacity: 0.5" />
+                  </div>
+                  <div class="col-md-9">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1" style="color: gray">Agricultural Crops Production NCII</h5>
+                      <small class="text-muted">not available</small>
+                    </div>
+                    <p class="mb-1">The TESDA Agricultural Crops Production (NC II) program equips individuals with fundamental skills for successful engagement in the agricultural sector. Covering key areas such as nursery operations, planting techniques, crop care, and postharvest operations, participants gain a comprehensive understanding of crop cultivation. The program emphasizes both theoretical knowledge and hands-on experience, ensuring graduates are adept at managing various stages of agricultural crop production. Armed with this expertise, they are well-prepared for careers in farm management, agribusiness, or even entrepreneurial pursuits in the dynamic field of agricultural crops production.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="container">
+              <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="row">
+                  <div class="col-md-3">
+                    <img src="{% static 'images/tesda/bookkeeping 2.png' %}" alt="Image" class="img-fluid" style="opacity: 0.5" />
+                  </div>
+                  <div class="col-md-9">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1" style="color: gray">Bookkeeping NCII</h5>
+                      <small class="text-muted">not available</small>
+                    </div>
+                    <p class="mb-1">The TESDA Bookkeeping NC III program, spanning a minimum of 292 hours, hones participants' skills in posting transactions, preparing financial reports, and reviewing internal control systems. Emphasizing the development of negotiation skills and effective client relationships, the course prepares students for bookkeeping roles. Beyond skills acquisition, participants aspire to secure jobs aligned with their passions, fostering pride in their achievements and bringing a positive impact to their families' outlook on life.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 {% endblock %}

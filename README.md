@@ -1,2 +1,2 @@
 # Projects
-This is a personal project for the Kalimudan Foundation Incorporated
+This is a personal project for the Kalimudan Sa Ranao Foundation Incorporated.

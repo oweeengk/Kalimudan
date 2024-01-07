@@ -1,6 +1,9 @@
 name: Django CI
 
-on: push
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -22,7 +25,11 @@ jobs:
           pip install -r requirements.txt
       - name: Deploy to PythonAnywhere
         run: |
-          git pull origin main
-          python manage.py migrate
-          python manage.py collectstatic --noinput
-          # Add any additional deployment steps here
+          if [ "${{ github.ref }}" == "refs/heads/main" ]; then
+            git pull origin main
+            python manage.py migrate
+            python manage.py collectstatic --noinput
+            # Add any additional deployment steps here
+          else
+            echo "Skipping deployment for non-main branch."
+          fi

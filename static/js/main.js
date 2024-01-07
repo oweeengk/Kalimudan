@@ -18,6 +18,14 @@ function setActiveLink() {
 document.querySelectorAll(".nav-item.dropdown").forEach(function (element) {
   const dropdownLink = element.querySelector(".nav-link.dropdown-toggle")
   const dropdownMenu = element.querySelector(".dropdown-menu")
+  const menuItems = dropdownMenu.querySelectorAll(".dropdown-item")
+
+  // Check if the number of menu items is more than 3
+  if (menuItems.length > 3) {
+    dropdownMenu.style.columnCount = 2;
+  } else {
+    dropdownMenu.style.columnCount = 1;
+  }
 
   element.addEventListener("mouseover", function () {
     dropdownLink.classList.add("active")
@@ -66,12 +74,11 @@ document.getElementById(
 */
 
 window.addEventListener("load", function () {
-  // Hide the loading screen
+
   var loadingScreen = document.querySelector(".loading-screen")
   loadingScreen.style.opacity = 0
 
-  // Optionally, remove the loading screen from the DOM
   setTimeout(function () {
     loadingScreen.style.display = "none"
-  }, 0) // Adjust the delay if needed
+  }, 0)
 })
