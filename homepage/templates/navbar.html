@@ -53,7 +53,7 @@
           </li>
 
           <li
-            class="nav-item dropdown me-2 {% is_active request 'homepage:about' %}{% is_active request 'homepage:orgchart' %}{% is_active request 'homepage:manualofoperations' %}{% is_active request 'homepage:visitkfi' %}{% is_active request 'homepage:factsandfigures' %}{% is_active request 'homepage:administration' %}{% is_active request 'homepage:accreditations' %}"
+            class="nav-item dropdown me-2 {% is_active request 'homepage:about' %}{% is_active request 'homepage:orgchart' %}{% is_active request 'homepage:manualofoperations' %}{% is_active request 'homepage:visitkfi' %}{% is_active request 'homepage:administration' %}{% is_active request 'homepage:accreditations' %}"
           >
             <a
               class="nav-link dropdown-toggle fw-bold"
@@ -76,14 +76,7 @@
                 <a
                   class="dropdown-item {% is_active request 'homepage:visitkfi' %}"
                   href="{% url 'homepage:visitkfi' %}"
-                  >Visit KFI</a
-                >
-              </li>
-              <li>
-                <a
-                  class="dropdown-item {% is_active request 'homepage:factsandfigures' %}"
-                  href="{% url 'homepage:factsandfigures' %}"
-                  >Facts and Figures</a
+                  >Visit Kalimudan</a
                 >
               </li>
               <li>
@@ -122,7 +115,7 @@
           </li>
 
           <li
-            class="nav-item dropdown me-2 {% is_active request 'homepage:volunteering' %}{% is_active request 'homepage:volunteeringnotices' %}{% is_active request 'homepage:volunteeringapply' %}"
+            class="nav-item dropdown me-2 {% is_active request 'homepage:volunteering' %}{% is_active request 'homepage:volunteeringapply' %}"
           >
             <a
               class="nav-link dropdown-toggle fw-bold"
@@ -139,14 +132,7 @@
                 <a
                   class="dropdown-item {% is_active request 'homepage:volunteeringapply' %}"
                   href="{% url 'homepage:volunteeringapply' %}"
-                  >Apply</a
-                >
-              </li>
-              <li>
-                <a
-                  class="dropdown-item {% is_active request 'homepage:volunteeringnotices' %}"
-                  href="{% url 'homepage:volunteeringnotices' %}"
-                  >Notices</a
+                  >Apply For Volunteering</a
                 >
               </li>
             </ul>
@@ -179,7 +165,7 @@
                 <a
                   class="dropdown-item {% is_active request 'homepage:projectspartners' %}"
                   href="{% url 'homepage:projectspartners' %}"
-                  >Partners</a
+                  >Project Partners</a
                 >
               </li>
               <li>
@@ -192,7 +178,7 @@
             </ul>
           </li>
           <li
-            class="nav-item dropdown me-2 {% is_active request 'homepage:tesda' %}{% is_active request 'homepage:tesdacoursesoffered' %}{% is_active request 'homepage:tesdainformation' %}"
+            class="nav-item dropdown me-2 {% is_active request 'homepage:tesda' %}{% is_active request 'homepage:tesdacoursesoffered' %}{% is_active request 'homepage:tesdahistory' %}"
           >
             <a
               class="nav-link dropdown-toggle fw-bold"
@@ -209,14 +195,14 @@
                 <a
                   class="dropdown-item {% is_active request 'homepage:tesdacoursesoffered' %}"
                   href="{% url 'homepage:tesdacoursesoffered' %}"
-                  >Courses</a
+                  >Courses Offered</a
                 >
               </li>
               <li>
                 <a
-                  class="dropdown-item {% is_active request 'homepage:tesdainformation' %}"
-                  href="{% url 'homepage:tesdainformation' %}"
-                  >Information</a
+                  class="dropdown-item {% is_active request 'homepage:tesdahistory' %}"
+                  href="{% url 'homepage:tesdahistory' %}"
+                  >KFI-TESDA History</a
                 >
               </li>
             </ul>
