@@ -4,7 +4,7 @@ from .models import UploadedFile, Stories
 class FileUploadForm(forms.ModelForm):
     class Meta:
         model = UploadedFile
-        fields = ['title', 'date', 'file']
+        fields = ['title', 'date', 'file', 'author', 'category']
         widgets = {
             'date': forms.DateInput(attrs={'type': 'date'}),
         }

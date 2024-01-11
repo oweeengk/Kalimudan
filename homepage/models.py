@@ -8,9 +8,19 @@ from django.urls import reverse
 
 
 class UploadedFile(models.Model):
+    category_choices = [
+        ('tesda', 'TESDA'),
+        ('financial','Financial'),
+        ('program and projects', 'Program and Projects'),
+        ('annual reports', 'Annual Reports'),
+        ('administrative', 'Administrative'),
+        ('uncategorized', 'Uncategorized'),
+    ]
     title = models.CharField(max_length=255)
     file = models.FileField(upload_to='uploads/')
     date = models.DateField(default=timezone.now)
+    author = models.CharField(max_length=255, default="n/a")
+    category = models.CharField(max_length=50, choices=category_choices, default='uncategorized')
     
     def __str__(self):
         return self.title
