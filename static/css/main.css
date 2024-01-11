@@ -190,12 +190,11 @@ p {
 }
 
 /*
-This is to divide the mobile phones vs non-phones styling
+This is to divide the mobile phones & tablets vs non phones/tablets styling
 */
-
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   /*
-  To create loading screen
+  To create loading screen for non phones/tablets
   */
   body.loading {
     overflow: hidden;
@@ -324,7 +323,7 @@ This is to divide the mobile phones vs non-phones styling
 }
 
 /* Media query for mobile phones */
-@media (max-width: 767px) {
+@media only screen and (max-width: 1023px) {
   .navbar-nav-wrapper {
     overflow-x: auto;
     white-space: nowrap;
