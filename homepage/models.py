@@ -32,7 +32,6 @@ class Stories(models.Model):
         ('announcements', 'Announcements'),
         ('meetings', 'Meetings'),
         ('assessments', 'Assessments'),
-        ('announcements', 'Announcements'),
         ('teambuilding', 'Teambuilding'),
         ('study tour', 'Study Tour'),
         ('educational', 'Educational'),
