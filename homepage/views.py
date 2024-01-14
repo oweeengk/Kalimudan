@@ -16,7 +16,19 @@ from .models import UploadedFile, Stories
 
 
 def index(request):
-  return render(request, "homepage.html")
+
+  projects_stories = Stories.objects.filter(category="projects").order_by('-date')[:3]
+  announcements_story = Stories.objects.filter(category="announcements").order_by('-date')[:1]
+  statements_story = Stories.objects.filter(category="statements").order_by('-date')[:1]
+  teambuilding_story = Stories.objects.filter(category="teambuilding").order_by('-date')[:1]
+
+  context = {
+      'projects_stories': projects_stories,
+      'announcements_story': announcements_story,
+      'statements_story': statements_story,
+      'teambuilding_story': teambuilding_story,
+  }
+  return render(request, "homepage.html", context)
 
 def about(request):
   return render(request, "about.html")
@@ -78,6 +90,7 @@ def tesdacoursesoffered(request):
 def tesdahistory(request):
   return render(request, "tesda/history.html")
 
+
 @login_required
 def file_list(request):
     files = UploadedFile.objects.all().order_by('-date')
@@ -90,11 +103,7 @@ def file_upload(request):
         form = FileUploadForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            
-            try:
-                return redirect(reverse('file_list'))
-            except NoReverseMatch as e:
-                print(f"Error: {e}")
+            return redirect('homepage:file_list')
     else:
         form = FileUploadForm()
     return render(request, 'db/file_upload.html', {'form': form})
@@ -172,7 +181,3 @@ def stories_detail(request, category, slug):
     stories = get_object_or_404(Stories, category=category, slug=slug)
     return render(request, 'stories/stories_detail.html', {'stories': stories})
 
-def latest_stories(request):
-    latest_stories = Stories.objects.order_by('-date')[:3]
-    context = {'latest_stories': latest_stories}
-    return render(request, 'your_template.html', context)
